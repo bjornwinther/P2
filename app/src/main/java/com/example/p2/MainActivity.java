@@ -15,14 +15,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private TextView numberAttempts;
     private Button login;
-    private int counter;
+    private int counter = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        username = (EditText) findViewById(R.id.editUsername);
+        username = (EditText) findViewById(R.id.editUsername); // binding variables to the layout elements.
         password = (EditText) findViewById(R.id.editPassword);
         numberAttempts = (TextView) findViewById(R.id.tvAttempts);
         login = (Button) findViewById(R.id.btnLogin);
