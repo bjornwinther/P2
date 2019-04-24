@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private TextView numberAttempts;
     private Button login;
+    private Button signUp;
     private int counter = 5;
 
     @Override
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.editPassword);
         numberAttempts = (TextView) findViewById(R.id.tvAttempts);
         login = (Button) findViewById(R.id.btnLogin);
+        signUp = (Button) findViewById(R.id.btnSignUp);
 
         numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
 
@@ -34,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 validate(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
 
+            }
+        });
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signUp();
             }
         });
 
@@ -51,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void signUp() {
+        Intent intent = new Intent(MainActivity.this, SignUp.class);
+        startActivity(intent);
     }
 
 }
