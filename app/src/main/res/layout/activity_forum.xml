@@ -9,10 +9,10 @@
     <EditText
         android:id="@+id/SearchForQuestion"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/BackButton" />
 
     <Button
         android:id="@+id/AskButton"
@@ -65,11 +65,14 @@
         android:id="@+id/imageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+
         app:layout_constraintStart_toEndOf="@+id/SearchForQuestion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/search-icon-by-Vexels"
-        tools:layout_editor_absoluteY="195dp" />
+        app:layout_constraintTop_toBottomOf="@+id/OptionsButton"
+        app:srcCompat="@drawable/search-icon-by-Vexels" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
