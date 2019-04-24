@@ -10,11 +10,10 @@
         android:id="@+id/BackgroundBlue"
         android:layout_width="0dp"
         android:layout_height="250dp"
-        android:layout_marginTop="320dp"
         android:background="#4B9CD3"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +27,7 @@
         android:ems="10"
         android:hint="@string/edit_search_question"
         android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
+        android:background="#FFBDA9"
         app:layout_constraintEnd_toStartOf="@+id/MagnifyingGlass"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +47,45 @@
         app:layout_constraintStart_toEndOf="@+id/SearchForQuestion"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/searchicon" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/button_background"
+        android:text="Options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/button_background"
+        android:text="Ask"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SearchForQuestion" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
