@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validate(String username, String password) {
-        if((username == "Vangede") && (password == "Gudhjem")){
+        if((username.equals("Vangede")) && (password.equals("Gudhjem"))){
             Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
             startActivity(intent);
         }else{
