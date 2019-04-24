@@ -19,7 +19,7 @@ public class Forum extends AppCompatActivity {
     Button back = (Button)findViewById(R.id.BackButton);
     Button options = (Button)findViewById(R.id.OptionsButton);
     Button ask = (Button)findViewById(R.id.BackButton);
-
+/*
     back.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
             Intent intent = new Intent(Forum.this, MainActivity.class);
@@ -28,6 +28,6 @@ public class Forum extends AppCompatActivity {
                             }
 
     );
-
+*/
     }
 }

@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">P2</string>
     <string name="edit_search_question">Search for question..</string>
-    <string name="back_symbol"></string>
 </resources>
