@@ -42,7 +42,7 @@ public class SignUp extends AppCompatActivity {
         createAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(createPass.getText().toString() != confirmPass.getText().toString()) {
+                if(!createPass.getText().toString().equals(confirmPass.getText().toString())) {
                     Toast.makeText(getApplicationContext(),"Created Password must match Confirmed Password", Toast.LENGTH_SHORT).show();
                 }else{
                     accounts[index] = new Account(username.getText().toString(), email.getText().toString(),
@@ -50,6 +50,7 @@ public class SignUp extends AppCompatActivity {
                     index++;
                     Toast.makeText(getApplicationContext(),"Account created", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUp.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });
