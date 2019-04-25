@@ -171,6 +171,81 @@
                 android:text="24th of January 2019"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintTop_toBottomOf="@+id/Profile1" />
+
+
+            <TextView
+                android:id="@+id/Space"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Answers1" />
+
+            <ImageButton
+                android:id="@+id/imageButtonArrow3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrowicon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hashtag2"
+                app:layout_constraintTop_toTopOf="@+id/hashtag2" />
+            '
+
+            <TextView
+                android:id="@+id/hashtag2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="#Living_in_DK"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Space" />
+
+            <TextView
+                android:id="@+id/question2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="How do I apply for SU?"
+                android:textColor="#FFBDA9"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hashtag2" />
+
+            <TextView
+                android:id="@+id/profile2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="Anna, 2nd Semester DTU - Nano"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question2" />
+
+            <TextView
+                android:id="@+id/answers2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="3 Answers >"
+                app:layout_constraintEnd_toStartOf="@+id/Date1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile2" />
+
+            <TextView
+                android:id="@+id/date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="24th of January 2019"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintTop_toBottomOf="@+id/Profile1" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
