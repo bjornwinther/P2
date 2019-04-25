@@ -20,9 +20,9 @@ public class SignUp extends AppCompatActivity {
     private EditText confirmPass;
     private Button createAcc;
 
-    static Account[] accounts = new Account[25];
+    static Account[] accounts = new Account[10];
     static int indexOfAcc = 0;
-    private int maxAccounts = 25;
+    private int maxAccounts = 10;
 
 
     @Override
@@ -42,8 +42,11 @@ public class SignUp extends AppCompatActivity {
         createAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //put all the following in a method instead perhaps?:
-                if(!createPass.getText().toString().equals(confirmPass.getText().toString())) {
+                //put all the following in a method instead perhaps?: and consider putting in try-catch?
+                if(indexOfAcc == maxAccounts){
+                    Toast.makeText(getApplicationContext(),"Maximum number of accounts reached", Toast.LENGTH_SHORT).show();
+                }
+                else if(!createPass.getText().toString().equals(confirmPass.getText().toString())) {
                     Toast.makeText(getApplicationContext(),"Created Password must match Confirmed Password", Toast.LENGTH_SHORT).show();
                 }else{
                     indexOfAcc++;
