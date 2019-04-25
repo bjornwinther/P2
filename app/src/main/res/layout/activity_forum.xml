@@ -111,12 +111,14 @@
             <ImageButton
                 android:id="@+id/imageButton2"
                 android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/Date1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/searchicon" />
+                app:layout_constraintTop_toTopOf="@+id/Hashtag1"
+                app:srcCompat="@drawable/arrowicon" />
 
             <TextView
                 android:id="@+id/Hashtag1"
@@ -132,6 +134,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="How do I apply for SU?"
+                android:textSize="24sp"
+                android:textColor="#FFBDA9"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Hashtag1" />
