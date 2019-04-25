@@ -29,12 +29,12 @@
         android:hint="@string/edit_search_question"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="@+id/MagnifyingGlass"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/MagnifyingGlass"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="32dp"
@@ -105,11 +105,12 @@
         app:layout_constraintTop_toBottomOf="@+id/BackgroundBlue" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Box1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imageButtonArrow1"
                 android:layout_width="50dp"
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
@@ -124,21 +125,21 @@
                 android:id="@+id/Hashtag1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="#Living_in_DK"
                 android:background="#FFFFFF"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                android:text="#Living_in_DK"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="0dp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/Question1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="How do I apply for SU?"
-                android:textSize="24sp"
-                android:textColor="#FFBDA9"
                 android:background="#FFFFFF"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                android:text="How do I apply for SU?"
+                android:textColor="#FFBDA9"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Hashtag1" />
 
@@ -146,29 +147,32 @@
                 android:id="@+id/Profile1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Anna, 2nd Semester DTU - Nano"
                 android:background="#FFFFFF"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                android:text="Anna, 2nd Semester DTU - Nano"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Question1" />
 
             <TextView
                 android:id="@+id/Answers1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="3 Answers >"
                 android:background="#FFFFFF"
+                android:text="3 Answers >"
+                app:layout_constraintEnd_toStartOf="@+id/Date1"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Profile1" />
 
             <TextView
                 android:id="@+id/Date1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="24th of January 2019"
                 android:background="#FFFFFF"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                android:text="24th of January 2019"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintTop_toBottomOf="@+id/Profile1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
 
