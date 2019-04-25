@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                changePageTo(ForgotPass.class);
             }
         });
 
