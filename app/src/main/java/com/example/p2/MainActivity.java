@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.example.p2.SignUp.accounts;
+import static com.example.p2.SignUp.indexOfAcc;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,12 +61,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validate(String username, String password) {
-        if((username.equals("Vangede")) && (password.equals("Gudhjem"))){
+        if(username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())){
+            Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
+            startActivity(intent);
+        }
+            else if((username.equals("Vangede")) && (password.equals("Gudhjem"))){
             Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
             startActivity(intent);
         }else{
+            Toast.makeText(getApplicationContext(),"Incorrect Username or Password", Toast.LENGTH_LONG).show();
             counter--;
             numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
+            // maybe add if counter < 3 - turn text red?
             if(counter <= 0) {
                 login.setEnabled(false); // Deactivates login-button.
             }
