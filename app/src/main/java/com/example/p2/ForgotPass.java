@@ -27,6 +27,7 @@ public class ForgotPass extends AppCompatActivity {
         fpSendNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //add a method to validate whether it is an actual email, and then give the toast as a response if it is. (look at validate method in MainActivity).
                 Toast.makeText(getApplicationContext(),"Email with instructions sent", Toast.LENGTH_LONG).show();
             }
         });

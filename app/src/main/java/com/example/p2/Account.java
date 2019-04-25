@@ -17,4 +17,24 @@ public class Account {
         this.confirmPass = confirmPass;
     }
 
+
+    public String getUsername(){
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getCreatePass() {
+        return createPass;
+    }
+
+    public String getConfirmPass() {
+        return confirmPass;
+    }
 }
