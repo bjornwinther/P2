@@ -42,6 +42,7 @@ public class SignUp extends AppCompatActivity {
         createAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //put all the following in a method instead:
                 if(!createPass.getText().toString().equals(confirmPass.getText().toString())) {
                     Toast.makeText(getApplicationContext(),"Created Password must match Confirmed Password", Toast.LENGTH_SHORT).show();
                 }else{
