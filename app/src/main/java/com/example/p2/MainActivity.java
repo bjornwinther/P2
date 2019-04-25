@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText username;
     private EditText password;
     private TextView numberAttempts;
+    private TextView forgotPass;
     private Button login;
     private Button signUp;
     private int counter = 5;
@@ -26,23 +27,30 @@ public class MainActivity extends AppCompatActivity {
         username = (EditText) findViewById(R.id.editUsername); // binding variables to the layout elements.
         password = (EditText) findViewById(R.id.editPassword);
         numberAttempts = (TextView) findViewById(R.id.tvAttempts);
+        forgotPass = (TextView) findViewById(R.id.tvForgotPass);
         login = (Button) findViewById(R.id.btnLogin);
         signUp = (Button) findViewById(R.id.btnSignUp);
 
         numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
 
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validate(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
-
             }
         });
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signUp();
+                changePageTo(SignUp.class);
             }
         });
 
@@ -62,9 +70,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void signUp() {
-        Intent intent = new Intent(MainActivity.this, SignUp.class);
+    private void changePageTo(Class page) {
+        Intent intent = new Intent(MainActivity.this, page);
         startActivity(intent);
     }
+
+
 
 }
