@@ -17,14 +17,12 @@ public class Forum extends AppCompatActivity {
         setContentView(R.layout.activity_forum);
 /*
     EditText search = (EditText)findViewById(R.id.SearchForQuestion);
-    Button back = (Button)findViewById(R.id.BackButton);
+
     Button options = (Button)findViewById(R.id.OptionsButton);
     Button ask = (Button)findViewById(R.id.BackButton);
     */
-
-/*
-    TextView textView1 = (TextView)findViewById(R.id.textView3);
-    textView1.setOnClickListener(new View.OnClickListener(){
+    Button back = (Button)findViewById(R.id.forumBack);
+    back.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
             Intent intent = new Intent(Forum.this, MainActivity.class);
             startActivity(intent);
@@ -32,6 +30,15 @@ public class Forum extends AppCompatActivity {
                             }
 
     );
-*/
+
+
+    Button ask = (Button)findViewById(R.id.Ask);
+    ask.setOnClickListener(new View.OnClickListener(){
+        public void onClick(View view){
+            Intent intent = new Intent(Forum.this, Ask.class);
+            startActivity(intent);
+        }
+    }
+    );
     }
 }

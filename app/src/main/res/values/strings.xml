@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">P2</string>
     <string name="edit_search_question">Search for question..</string>
+    <string name="hashtag"></string>
+    <string name="question"></string>
+    <string name="profile"></string>
+    <string name="answers"></string>
+    <string name="date"></string>
+    <string name="typequestion">Type question..</string>
 </resources>

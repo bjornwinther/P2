@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/BackgroundBlue"
         android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         android:background="#4B9CD3"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -173,14 +173,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/Profile1" />
 
 
-            <TextView
-                android:id="@+id/Space"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Answers1" />
-
             <ImageButton
                 android:id="@+id/imageButtonArrow2"
                 android:layout_width="0dp"
@@ -203,7 +195,7 @@
                 android:text="#Living_in_DK"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Space" />
+                tools:layout_editor_absoluteY="109dp" />
 
             <TextView
                 android:id="@+id/question2"
