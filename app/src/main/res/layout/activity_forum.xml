@@ -125,6 +125,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="#Living_in_DK"
+                android:background="#FFFFFF"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton2"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="0dp" />
@@ -136,6 +137,7 @@
                 android:text="How do I apply for SU?"
                 android:textSize="24sp"
                 android:textColor="#FFBDA9"
+                android:background="#FFFFFF"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Hashtag1" />
@@ -145,6 +147,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Anna, 2nd Semester DTU - Nano"
+                android:background="#FFFFFF"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Question1" />
@@ -154,6 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3 Answers >"
+                android:background="#FFFFFF"
                 app:layout_constraintTop_toBottomOf="@+id/Profile1" />
 
             <TextView
@@ -161,6 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="24th of January 2019"
+                android:background="#FFFFFF"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton2"
                 app:layout_constraintTop_toBottomOf="@+id/Profile1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
