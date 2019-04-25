@@ -62,6 +62,16 @@ public class SignUp extends AppCompatActivity {
     }
 
 
+    //the following methods needs to replace the code in the create.acc on click:
+    public boolean checkPassword(String createPass, String confirmPass){
+        if(createPass.equals(confirmPass)){
+            return true;
+        }
+        return false;
+    }
+
+    //create general method that can check different things with different parameters or do overriding.
+
 
 
 }
