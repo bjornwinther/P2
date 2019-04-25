@@ -23,30 +23,27 @@
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="88dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="@string/edit_search_question"
         android:inputType="textPersonName"
-        android:background="#FFBDA9"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/MagnifyingGlass"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="@+id/MagnifyingGlass"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/MagnifyingGlass"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="116dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:adjustViewBounds="true"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/SearchForQuestion"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/SearchForQuestion"
         app:srcCompat="@drawable/searchicon" />
 
     <Button
@@ -87,9 +84,96 @@
         android:background="@drawable/button_background"
         android:text="Ask"
         android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SearchForQuestion" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BackgroundBlue" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Box1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imageButtonArrow1"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/Date1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/Hashtag1"
+                app:srcCompat="@drawable/arrowicon" />
+
+            <TextView
+                android:id="@+id/Hashtag1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="#Living_in_DK"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Question1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="How do I apply for SU?"
+                android:textColor="#FFBDA9"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Hashtag1" />
+
+            <TextView
+                android:id="@+id/Profile1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="Anna, 2nd Semester DTU - Nano"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Question1" />
+
+            <TextView
+                android:id="@+id/Answers1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="3 Answers >"
+                app:layout_constraintEnd_toStartOf="@+id/Date1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Profile1" />
+
+            <TextView
+                android:id="@+id/Date1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="24th of January 2019"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
+                app:layout_constraintTop_toBottomOf="@+id/Profile1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
