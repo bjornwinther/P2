@@ -8,7 +8,7 @@
     tools:context=".Ask">
 
     <Button
-        android:id="@+id/askBack"
+        android:id="@+id/questionBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/askOptions"
+        android:id="@+id/questionOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -101,7 +101,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/askBack" />
+        app:layout_constraintTop_toBottomOf="@+id/questionBack" />
 
     <TextView
         android:id="@+id/askTopicView"
