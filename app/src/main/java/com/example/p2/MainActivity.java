@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {// maybe put in try-catch?
             @Override
             public void onClick(View v) {
                 validate(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void validate(String username, String password) {
+    private void validate(String username, String password) { // maybe put in try-catch?
         if(username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())){
             Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
             startActivity(intent);
