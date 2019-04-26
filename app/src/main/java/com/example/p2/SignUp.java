@@ -3,6 +3,7 @@ package com.example.p2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class SignUp extends AppCompatActivity {
     private EditText createPass;
     private EditText confirmPass;
     private Button createAcc;
+    private TextView suWarningUsername;
 
     static Account[] accounts = new Account[10];
     static int indexOfAcc = 0;
@@ -30,6 +32,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        suWarningUsername = (TextView) findViewById(R.id.suWarningUsername);
         suInfo = (TextView) findViewById(R.id.suText);
         username = (EditText) findViewById(R.id.suUsername);
         email = (EditText) findViewById(R.id.suEmail);
@@ -38,6 +41,9 @@ public class SignUp extends AppCompatActivity {
         confirmPass = (EditText) findViewById(R.id.suConfirmPass);
         createAcc = (Button) findViewById(R.id.subtnCreate);
 
+        suWarningUsername.setText("Ostemad");
+        suWarningUsername.setVisibility(View.GONE);
+
 
         createAcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +51,12 @@ public class SignUp extends AppCompatActivity {
                 //put all the following in a method instead perhaps?: and consider putting in try-catch?
                 if(indexOfAcc == maxAccounts){
                     Toast.makeText(getApplicationContext(),"Maximum number of accounts reached", Toast.LENGTH_SHORT).show();
+                }else if(username.getText().toString().length() < 4){
+                    suWarningUsername.setTextColor(Color.RED);
+                    suWarningUsername.setText("Must be 4 chars long");
+                    suWarningUsername.setVisibility(View.VISIBLE);
+                }else if () {
+
                 }
                 else if(!createPass.getText().toString().equals(confirmPass.getText().toString())) {
                     Toast.makeText(getApplicationContext(),"Created Password must match Confirmed Password", Toast.LENGTH_SHORT).show();
@@ -70,7 +82,16 @@ public class SignUp extends AppCompatActivity {
         return false;
     }
 
+    /*public void displayWarning() {
+        suWarningUsername.setTextColor(Color.RED);
+        suWarningUsername.setVisibility(View.VISIBLE);
+
+    }*/
+
+
+
     //create general method that can check different things with different parameters or do overriding.
+    // consider whether it is necassary to do the methods, since they will only be used once, and ultimately just be more code.
 
 
 
