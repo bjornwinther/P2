@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class Ask extends AppCompatActivity {
 
     static String questionTitleString;
@@ -36,23 +38,31 @@ public class Ask extends AppCompatActivity {
                 EditText questionTitle = (EditText)findViewById(R.id.askQuestionTitle);
                 EditText questionDescription = (EditText)findViewById(R.id.askQuestionDescription);
                 TextView topicView = (TextView) findViewById(R.id.askTopicView);
-
+/*
                 TextView hashtag1 = (TextView)findViewById(R.id.hashtag1);
                 TextView question1 = (TextView)findViewById(R.id.question1);
                 TextView profile1 = (TextView)findViewById(R.id.profile1);
                 TextView answers1 = (TextView)findViewById(R.id.answers1);
                 TextView date1 = (TextView)findViewById(R.id.date1);
+*/
+                TextView title = (TextView)findViewById(R.id.questionTitle);
+                TextView description = (TextView)findViewById(R.id.questionDescription);
 
                 questionTitleString = questionTitle.getText().toString();
                 questionDescriptionString = questionDescription.getText().toString();
                 topicString = topicView.getText().toString();
 
+                title.setText(questionTitleString);
+                description.setText(questionDescriptionString);
+
+
+/*
                 hashtag1.setText(questionTitleString);
                 question1.setText(questionDescriptionString);
+*/
 
 
-
-                Intent intent = new Intent(Ask.this, Forum.class);
+                Intent intent = new Intent(Ask.this, Question.class);
                 startActivity(intent);
         }
         }
