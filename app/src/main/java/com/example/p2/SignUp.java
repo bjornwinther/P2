@@ -55,9 +55,9 @@ public class SignUp extends AppCompatActivity {
                     suWarningUsername.setTextColor(Color.RED);
                     suWarningUsername.setText("Must be 4 chars long");
                     suWarningUsername.setVisibility(View.VISIBLE);
-                }else if () {
-
-                }
+                }//else if () {
+                    //put in restriction for email....
+                //}
                 else if(!createPass.getText().toString().equals(confirmPass.getText().toString())) {
                     Toast.makeText(getApplicationContext(),"Created Password must match Confirmed Password", Toast.LENGTH_SHORT).show();
                 }else{
@@ -65,7 +65,7 @@ public class SignUp extends AppCompatActivity {
                     accounts[indexOfAcc] = new Account(username.getText().toString(), email.getText().toString(),
                             phone.getText().toString(), createPass.getText().toString(), confirmPass.getText().toString());
                     Toast.makeText(getApplicationContext(),"Account created", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignUp.this, MainActivity.class);
+                    Intent intent = new Intent(SignUp.this, SignUp2.class);
                     startActivity(intent);
                 }
             }
