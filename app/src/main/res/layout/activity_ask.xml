@@ -8,7 +8,7 @@
     tools:context=".Ask">
 
     <Button
-        android:id="@+id/forumBack"
+        android:id="@+id/askBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Options"
+        android:id="@+id/askOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -33,45 +33,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/AskingAQuestion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="Asking a Question"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forumBack" />
-
     <Button
-        android:id="@+id/ChooseTopic"
-        android:layout_width="wrap_content"
+        android:id="@+id/askChooseTopic"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/button_background"
         android:text="Choose Topic"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AskingAQuestion" />
+        app:layout_constraintTop_toBottomOf="@+id/askQuestionTitle" />
 
     <Button
-        android:id="@+id/Post"
+        android:id="@+id/askPost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/button_background"
         android:text="Post"
         android:textColor="#FFFFFF"
@@ -81,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/TypeQuestion"
+        android:id="@+id/askQuestionDescription"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -92,14 +75,44 @@
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
 
+        android:background="#FFFFFF"
         android:ems="10"
         android:gravity="top"
-        android:hint="@string/typequestion"
+        android:hint="@string/typedescription"
         android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/Post"
+
+        app:layout_constraintBottom_toTopOf="@+id/askPost"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ChooseTopic" />
+        app:layout_constraintTop_toBottomOf="@+id/askChooseTopic" />
+
+    <EditText
+        android:id="@+id/askQuestionTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/typequestion"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/askBack" />
+
+    <TextView
+        android:id="@+id/askTopicView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Topic"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/askChooseTopic"
+        app:layout_constraintTop_toBottomOf="@+id/askQuestionTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
