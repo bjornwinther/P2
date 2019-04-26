@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
             startActivity(intent);
         }
-            else if((username.equals("Vangede")) && (password.equals("Gudhjem"))){
+            else if((username.equals("")) && (password.equals(""))){
             Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
             startActivity(intent);
         }else{
