@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class Forum extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +19,8 @@ public class Forum extends AppCompatActivity {
 
     Button options = (Button)findViewById(R.id.OptionsButton);
     Button ask = (Button)findViewById(R.id.BackButton);
-    */
+*/
+
     Button back = (Button)findViewById(R.id.questionBack);
     back.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){

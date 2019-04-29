@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 
 public class Ask extends AppCompatActivity {
 
+
     static String questionTitleString;
     static String questionDescriptionString;
     static String topicString;
@@ -50,7 +51,7 @@ public class Ask extends AppCompatActivity {
 
                 questionTitleString = questionTitle.getText().toString();
                 questionDescriptionString = questionDescription.getText().toString();
-                topicString = topicView.getText().toString();
+                //topicString = topicView.getText().toString();
 
                 title.setText(questionTitleString);
                 description.setText(questionDescriptionString);
