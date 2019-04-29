@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.SignUp.accounts;
+import static com.example.p2.SignUp.indexOfAcc;
 
 public class Forum extends AppCompatActivity {
 
