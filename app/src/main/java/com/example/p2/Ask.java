@@ -42,7 +42,7 @@ public class Ask extends AppCompatActivity {
 
         post.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
-                Intent intent = new Intent(Ask.this, Question.class);
+                Intent intent = new Intent(Ask.this, Question2.class);
                 startActivity(intent);
 
             }
