@@ -60,7 +60,6 @@ public class SignUp extends AppCompatActivity {
                     suWarningUsername.setTextColor(Color.RED);
                     suWarningUsername.setText("Must be 4 chars long");
                     suWarningUsername.setVisibility(View.VISIBLE);
-                    /*|| !email.getText().toString().toLowerCase().contains("@student.aau.dk"))*/
                 }else if (!email.getText().toString().endsWith("@hotmail.com") || email.getText().toString().endsWith("@student.aau.dk")){ //after || doesn't work
                     suWarningUsername.setVisibility(View.GONE);
                     suWarningEmail.setTextColor(Color.RED);
@@ -72,14 +71,14 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Created Password must match Confirmed Password", Toast.LENGTH_SHORT).show();
                 }else {
                     suWarningEmail.setVisibility(View.GONE);
-                    suWarningUsername.setVisibility(View.VISIBLE);
+                    suWarningUsername.setVisibility(View.GONE);
                     indexOfAcc++;
                     accounts[indexOfAcc] = new Account(username.getText().toString(), email.getText().toString(),
                             phone.getText().toString(), createPass.getText().toString(), confirmPass.getText().toString());
                     Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUp.this, SignUp2.class);
                     startActivity(intent);
-                    }
+                }
                 } catch(Exception e){
                     System.out.println("SignUp onclick Failed.");
                     }
@@ -103,7 +102,6 @@ public class SignUp extends AppCompatActivity {
         suWarningUsername.setVisibility(View.VISIBLE);
 
     }*/
-
 
 
     //create general method that can check different things with different parameters or do overriding.

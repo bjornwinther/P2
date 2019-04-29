@@ -62,13 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String username, String password) { // maybe put in try-catch?
         try {
-            if (username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())) {
+            if ((username.equals("")) && (password.equals(""))) {
                 Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                 startActivity(intent);
-            } else if ((username.equals("")) && (password.equals(""))) {
+            }
+            else if (username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())) {
                 Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                 startActivity(intent);
-            } else {
+            }else {
                 Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
                 counter--;
                 numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
@@ -77,9 +78,8 @@ public class MainActivity extends AppCompatActivity {
                     login.setEnabled(false); // Deactivates login-button.
                 }
             }
-
         }catch(Exception e){
-            System.out.println("validate method went wrong");
+            System.out.println("validate-method went wrong");
         }
     }
 
