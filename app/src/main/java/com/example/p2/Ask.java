@@ -30,20 +30,18 @@ public class Ask extends AppCompatActivity {
         final EditText questionTitle = (EditText)findViewById(R.id.askQuestionTitle);
         final EditText questionDescription = (EditText)findViewById(R.id.askQuestionDescription);
 
-        /*
-
-                questionData[indexQuestionData] = new QuestionData(
-                     questionTitle.getText().toString(),
-                     questionDescription.getText().toString()
-                );
-                indexQuestionData++;
-
-         */
-
         post.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(Ask.this, Question2.class);
                 startActivity(intent);
+
+
+                questionData[indexQuestionData] = new QuestionData(
+                        questionTitle.getText().toString(),
+                        questionDescription.getText().toString()
+                );
+                indexQuestionData++;
+
 
             }
         });
