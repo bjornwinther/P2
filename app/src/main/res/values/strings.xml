@@ -8,7 +8,7 @@
     <string name="questionDescriptionString"></string>
     <string name="topicString"></string>
 
-    <string-array name="age">
+    <integer-array name="age">
         <item>16</item>
         <item>17</item>
         <item>18</item>
@@ -19,5 +19,5 @@
         <item>23</item>
         <item>24</item>
 
-    </string-array>
+    </integer-array>
 </resources>

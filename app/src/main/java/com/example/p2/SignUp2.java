@@ -14,6 +14,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.p2.SignUp.accounts;
+import static com.example.p2.SignUp.indexOfAcc;
+
 public class SignUp2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
@@ -57,7 +60,8 @@ public class SignUp2 extends AppCompatActivity implements AdapterView.OnItemSele
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        accounts[indexOfAcc].setGender(parent.getItemAtPosition(position).toString()); // setting gender to selected item.
+        //accounts[indexOfAcc].setAge(parent.getItemAtPosition(position).);
     }
 
     @Override

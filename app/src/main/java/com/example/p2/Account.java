@@ -7,6 +7,8 @@ public class Account {
     private String phone;
     private String createPass;
     private String confirmPass;
+    private String gender;
+    private int age;
 
 
     public Account(String username, String email, String phone, String createPass, String confirmPass) {
@@ -15,6 +17,22 @@ public class Account {
         this.phone = phone;
         this.createPass = createPass;
         this.confirmPass = confirmPass;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getGender() {
+        return gender;
     }
 
 
