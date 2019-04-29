@@ -15,5 +15,10 @@ public class Question extends AppCompatActivity {
         TextView title = (TextView)findViewById(R.id.questionTitle);
         TextView description = (TextView)findViewById(R.id.questionDescription);
 
+
+        title.setText(getString(R.string.questionTitleString));
+        description.setText(getString(R.string.questionDescriptionString));
+
+
     }
 }
