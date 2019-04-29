@@ -24,8 +24,8 @@ public class Forum extends AppCompatActivity {
         TextView date1 = (TextView)findViewById(R.id.date1);
         TextView hashtag1 = (TextView)findViewById(R.id.hashtag1);
 
-        question1.setText(questionData[0].getQuestionTitle());
-        profile1.setText(accounts[0].getUsername());
+        //question1.setText(questionData[0].getQuestionTitle());
+        //profile1.setText(accounts[0].getUsername());
 
 /*
     EditText search = (EditText)findViewById(R.id.SearchForQuestion);
