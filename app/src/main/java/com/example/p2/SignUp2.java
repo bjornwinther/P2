@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,7 @@ public class SignUp2 extends AppCompatActivity implements AdapterView.OnItemSele
         createAccbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignUp2.this, MainActivity.class);
                 startActivity(intent);
             }

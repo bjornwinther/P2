@@ -21,6 +21,7 @@ public class SignUp extends AppCompatActivity {
     private EditText confirmPass;
     private Button createAcc;
     private TextView suWarningUsername;
+    private TextView suWarningEmail;
 
     static Account[] accounts = new Account[10];
     static int indexOfAcc = 0;
@@ -40,34 +41,49 @@ public class SignUp extends AppCompatActivity {
         createPass = (EditText) findViewById(R.id.suCreatePass);
         confirmPass = (EditText) findViewById(R.id.suConfirmPass);
         createAcc = (Button) findViewById(R.id.subtnCreate);
+        suWarningEmail = (TextView) findViewById(R.id.suWarningEmail);
 
         suWarningUsername.setText("Ostemad");
         suWarningUsername.setVisibility(View.GONE);
+        suWarningEmail.setVisibility(View.GONE);
+
 
 
         createAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //put all the following in a method instead perhaps?: and consider putting in try-catch?
+                try{
                 if(indexOfAcc == maxAccounts){
                     Toast.makeText(getApplicationContext(),"Maximum number of accounts reached", Toast.LENGTH_SHORT).show();
                 }else if(username.getText().toString().length() < 4){
                     suWarningUsername.setTextColor(Color.RED);
                     suWarningUsername.setText("Must be 4 chars long");
                     suWarningUsername.setVisibility(View.VISIBLE);
-                }//else if () {
-                    //put in restriction for email....
-                //}
+                    /*|| !email.getText().toString().toLowerCase().contains("@student.aau.dk"))*/
+                }else if (!email.getText().toString().endsWith("@hotmail.com") || email.getText().toString().endsWith("@student.aau.dk")){ //after || doesn't work
+                    suWarningUsername.setVisibility(View.GONE);
+                    suWarningEmail.setTextColor(Color.RED);
+                    suWarningEmail.setText("Email entered not valid");
+                    suWarningEmail.setVisibility(View.VISIBLE);
+                }
                 else if(!createPass.getText().toString().equals(confirmPass.getText().toString())) {
+                    suWarningEmail.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(),"Created Password must match Confirmed Password", Toast.LENGTH_SHORT).show();
-                }else{
+                }else {
+                    suWarningEmail.setVisibility(View.GONE);
+                    suWarningUsername.setVisibility(View.VISIBLE);
                     indexOfAcc++;
                     accounts[indexOfAcc] = new Account(username.getText().toString(), email.getText().toString(),
                             phone.getText().toString(), createPass.getText().toString(), confirmPass.getText().toString());
-                    Toast.makeText(getApplicationContext(),"Account created", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUp.this, SignUp2.class);
                     startActivity(intent);
-                }
+                    }
+                } catch(Exception e){
+                    System.out.println("SignUp onclick Failed.");
+                    }
+
             }
         });
 
