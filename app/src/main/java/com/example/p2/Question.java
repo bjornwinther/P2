@@ -14,6 +14,8 @@ public class Question extends AppCompatActivity {
 
         TextView title = (TextView)findViewById(R.id.questionTitle);
         TextView description = (TextView)findViewById(R.id.questionDescription);
+        TextView date = (TextView)findViewById(R.id.questionDate);
+
 
     }
 }

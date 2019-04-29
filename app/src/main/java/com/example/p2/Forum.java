@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class Forum extends AppCompatActivity {
-
-
+/*
+    static QuestionData [] questionData = new QuestionData[10];
+    static int indexQuestionData = 0;
+    private int maxIndexQuestionData = 10;
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

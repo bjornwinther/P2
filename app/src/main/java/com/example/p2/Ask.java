@@ -13,12 +13,9 @@ import org.w3c.dom.Text;
 
 public class Ask extends AppCompatActivity {
 
-
-    static String questionTitleString;
-    static String questionDescriptionString;
-    static String topicString;
-
-
+    static int indexQuestionData = 0;
+    static private int maxIndexQuestionData = 10;
+    static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,48 +24,29 @@ public class Ask extends AppCompatActivity {
 
         Button back = (Button)findViewById(R.id.questionBack);
         Button options = (Button)findViewById(R.id.questionOptions);
-
-
         Button post = (Button)findViewById(R.id.askPost);
         Button chooseTopic = (Button)findViewById(R.id.askChooseTopic);
 
+        final EditText questionTitle = (EditText)findViewById(R.id.askQuestionTitle);
+        final EditText questionDescription = (EditText)findViewById(R.id.askQuestionDescription);
 
+        /*
+
+                questionData[indexQuestionData] = new QuestionData(
+                     questionTitle.getText().toString(),
+                     questionDescription.getText().toString()
+                );
+                indexQuestionData++;
+
+         */
 
         post.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
-                EditText questionTitle = (EditText)findViewById(R.id.askQuestionTitle);
-                EditText questionDescription = (EditText)findViewById(R.id.askQuestionDescription);
-                TextView topicView = (TextView) findViewById(R.id.askTopicView);
-/*
-                TextView hashtag1 = (TextView)findViewById(R.id.hashtag1);
-                TextView question1 = (TextView)findViewById(R.id.question1);
-                TextView profile1 = (TextView)findViewById(R.id.profile1);
-                TextView answers1 = (TextView)findViewById(R.id.answers1);
-                TextView date1 = (TextView)findViewById(R.id.date1);
-*/
-                TextView title = (TextView)findViewById(R.id.questionTitle);
-                TextView description = (TextView)findViewById(R.id.questionDescription);
-
-                questionTitleString = questionTitle.getText().toString();
-                questionDescriptionString = questionDescription.getText().toString();
-                //topicString = topicView.getText().toString();
-
-                title.setText(questionTitleString);
-                description.setText(questionDescriptionString);
-
-
-/*
-                hashtag1.setText(questionTitleString);
-                question1.setText(questionDescriptionString);
-*/
-
-
                 Intent intent = new Intent(Ask.this, Question.class);
                 startActivity(intent);
-        }
-        }
-        );
 
+            }
+        });
     }
 
 
