@@ -72,12 +72,11 @@ public class SignUp extends AppCompatActivity {
                 }else {
                     suWarningEmail.setVisibility(View.GONE);
                     suWarningUsername.setVisibility(View.GONE);
-                    //indexOfAcc++;
+                    indexOfAcc++;
                     accounts[indexOfAcc] = new Account(username.getText().toString(), email.getText().toString(),
                             phone.getText().toString(), createPass.getText().toString(), confirmPass.getText().toString());
-                    indexOfAcc++;
                     Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignUp.this, SignUp2.class);
+                    Intent intent = new Intent(SignUp.this, SignUpSecond.class);
                     startActivity(intent);
                 }
                 } catch(Exception e){

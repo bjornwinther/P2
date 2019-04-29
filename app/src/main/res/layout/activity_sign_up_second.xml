@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp2">
+    tools:context=".SignUpSecond">
 
     <EditText
-        android:id="@+id/su2FName"
+        android:id="@+id/susFName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.092" />
 
     <EditText
-        android:id="@+id/su2LName"
+        android:id="@+id/susLName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -41,29 +41,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/su2FName"
+        app:layout_constraintTop_toBottomOf="@+id/susFName"
         app:layout_constraintVertical_bias="0.027" />
 
-    <Spinner
-        android:id="@+id/su2SpinnerAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.293"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/su2LName"
-        app:layout_constraintVertical_bias="0.043" />
 
     <Spinner
-        android:id="@+id/su2SpinnerGender"
+        android:id="@+id/susSpinnerGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -76,11 +59,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.634"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/su2LName"
+        app:layout_constraintTop_toBottomOf="@+id/susLName"
         app:layout_constraintVertical_bias="0.043" />
 
     <Button
-        android:id="@+id/su2Createbtn"
+        android:id="@+id/susCreatebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -94,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/su2LName"
+        app:layout_constraintTop_toBottomOf="@+id/susLName"
         app:layout_constraintVertical_bias="0.725" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

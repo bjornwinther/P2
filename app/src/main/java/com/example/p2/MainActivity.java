@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {// maybe put in try-catch?
             @Override
             public void onClick(View v) {
-                validate(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
+                validateUser(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
+                adminLogin(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
             }
         });
 
@@ -60,13 +61,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void validate(String username, String password) { // maybe put in try-catch?
+    private void adminLogin(String username, String password) { // maybe put in try-catch?
         try {
             if ((username.equals("")) && (password.equals(""))) {
                 Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                 startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
+                counter--;
+                numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
+                // maybe add if counter < 3 - turn text red?
+                if (counter <= 0) {
+                    login.setEnabled(false); // Deactivates login-button.
+                }
             }
-            else if (username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())) {
+        }catch(Exception e){
+            System.out.println("validate-method went wrong");
+        }
+    }
+
+    private void validateUser(String username, String password) { // maybe put in try-catch?
+        try {
+            if (username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())) {
                 Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                 startActivity(intent);
             }else {
@@ -82,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("validate-method went wrong");
         }
     }
+
 
 
 

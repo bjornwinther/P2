@@ -35,7 +35,6 @@ public class Account {
         return gender;
     }
 
-
     public String getUsername(){
         return username;
     }
