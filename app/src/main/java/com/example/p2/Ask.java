@@ -13,9 +13,9 @@ import org.w3c.dom.Text;
 
 public class Ask extends AppCompatActivity {
 
-
-    public static String questionTitleString = "com.example.P2.questionTitleString";
-    public static String questionDescriptionString = "com.example.P2.questionDescriptionString";
+    static int indexQuestionData = 0;
+    static private int maxIndexQuestionData = 10;
+    static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +27,26 @@ public class Ask extends AppCompatActivity {
         Button post = (Button)findViewById(R.id.askPost);
         Button chooseTopic = (Button)findViewById(R.id.askChooseTopic);
 
-        EditText questionTitle = (EditText)findViewById(R.id.askQuestionTitle);
-        EditText questionDescription = (EditText)findViewById(R.id.askQuestionDescription);
+        final EditText questionTitle = (EditText)findViewById(R.id.askQuestionTitle);
+        final EditText questionDescription = (EditText)findViewById(R.id.askQuestionDescription);
 
-        questionTitleString = questionTitle.getText().toString();
-        questionDescriptionString = questionDescription.getText().toString();
+        /*
 
+                questionData[indexQuestionData] = new QuestionData(
+                     questionTitle.getText().toString(),
+                     questionDescription.getText().toString()
+                );
+                indexQuestionData++;
 
-
+         */
 
         post.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(Ask.this, Question.class);
                 startActivity(intent);
-        }
-        }
-        );
 
+            }
+        });
     }
 
 
