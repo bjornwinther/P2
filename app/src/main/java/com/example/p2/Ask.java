@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class Ask extends AppCompatActivity {
+public class Ask extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     static int indexQuestionData = 0;
     static private int maxIndexQuestionData = 10;
@@ -30,6 +31,7 @@ public class Ask extends AppCompatActivity {
 
 //define spinner
         Spinner topicSpinner = (Spinner)findViewById(R.id.topicSpinner);
+        topicSpinner.setOnItemSelectedListener(this);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.topics_array, android.R.layout.simple_spinner_item);
@@ -50,6 +52,7 @@ public class Ask extends AppCompatActivity {
                 questionData[indexQuestionData] = new QuestionData(
                         questionTitle.getText().toString(),
                         questionDescription.getText().toString()
+
                 );
                 indexQuestionData++;
 
@@ -59,5 +62,14 @@ public class Ask extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String topicSelected = parent.getItemAtPosition(position).toString();
 
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
