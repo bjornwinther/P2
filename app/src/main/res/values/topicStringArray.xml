@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="topics_array">
+    <item>Programming</item>
+    <item>Math</item>
+    <item>LivingInDenmark</item>
+    </string-array>
+</resources>

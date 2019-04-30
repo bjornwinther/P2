@@ -1,8 +1,9 @@
 package com.example.p2;
 
 import java.util.Date;
+import java.io.Serializable;
 
-public class QuestionData {
+public class QuestionData implements Serializable{
 
     public String username;
     public String questionTitle;
