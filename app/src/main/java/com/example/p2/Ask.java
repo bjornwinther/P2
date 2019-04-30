@@ -44,6 +44,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
         final EditText questionTitle = (EditText)findViewById(R.id.askQuestionTitle);
         final EditText questionDescription = (EditText)findViewById(R.id.askQuestionDescription);
 
+        //if (topicSelected != "Choose topic" && questionTitle.getText()!=null){
         post.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(Ask.this, Question2.class);
@@ -61,6 +62,8 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
 
             }
         });
+       // }
+
     }
 
 
