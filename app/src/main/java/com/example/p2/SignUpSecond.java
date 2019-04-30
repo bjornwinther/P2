@@ -61,7 +61,7 @@ public class SignUpSecond extends AppCompatActivity {
                 accounts[indexOfAcc].setMajor(major.getText().toString());
                 accounts[indexOfAcc].setStatus(status.getText().toString());
                 Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignUpSecond.this, Profile.class); // change to MainActivity. going to profile is temporary.
+                Intent intent = new Intent(SignUpSecond.this, MainActivity.class); // change to MainActivity. going to profile is temporary.
                 startActivity(intent);
             }
         });
