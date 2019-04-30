@@ -75,7 +75,6 @@ public class SignUp extends AppCompatActivity {
                     indexOfAcc++;
                     accounts[indexOfAcc] = new Account(username.getText().toString(), email.getText().toString(),
                             phone.getText().toString(), createPass.getText().toString(), confirmPass.getText().toString());
-                    Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUp.this, SignUpSecond.class);
                     startActivity(intent);
                 }
