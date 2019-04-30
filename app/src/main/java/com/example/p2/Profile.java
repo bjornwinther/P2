@@ -34,7 +34,7 @@ public class Profile extends AppCompatActivity {
         name.setText(accounts[indexOfAcc].getFirstName() + " " + accounts[indexOfAcc].getLastName()); // set name
         semesterAndUni.setText(accounts[indexOfAcc].getUniveristy()); // add semester-spinner info the same way as with name above.
         major.setText(accounts[indexOfAcc].getMajor());
-        age.setText(accounts[indexOfAcc].getAge() + "Yo");
+        age.setText(accounts[indexOfAcc].getAge() +  " Yo " + accounts[indexOfAcc].getGender());
 
         profilePicture.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +18,7 @@ import java.util.List;
 import static com.example.p2.SignUp.accounts;
 import static com.example.p2.SignUp.indexOfAcc;
 
-public class SignUpSecond extends AppCompatActivity {
+public class SignUpSecond extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button createAccount;
     private EditText firstName;
@@ -26,6 +27,9 @@ public class SignUpSecond extends AppCompatActivity {
     private Spinner spinnerSemester;
     private EditText major;
     private EditText status;
+    private String selectedGender;
+    private int selectedAge;
+    private String selectedSemester;
 
 
     @Override
@@ -43,15 +47,26 @@ public class SignUpSecond extends AppCompatActivity {
         major = findViewById(R.id.susMajor);
         status = findViewById(R.id.susStatus);
 
+        spinnerGender.setOnItemSelectedListener(this);
+        spinnerAge.setOnItemSelectedListener(this);
 
-        List<String> genderArray = new ArrayList<>();
-        genderArray.add("Male");
-        genderArray.add("Female");
-        genderArray.add("Freak");
+        List<String> genderList = new ArrayList<>();
+        genderList.add("Male");
+        genderList.add("Female");
+        genderList.add("Freak");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, genderArray);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerGender.setAdapter(adapter);
+        List<Integer>  ageList = new ArrayList<>();
+        for(int i = 0; i < 10; i++){
+            ageList.add(16+i);
+        }
+
+        ArrayAdapter<String> genderAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, genderList);
+        genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerGender.setAdapter(genderAdapter);
+
+        ArrayAdapter<Integer> ageAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ageList);
+        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAge.setAdapter(ageAdapter);
 
         createAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -60,11 +75,25 @@ public class SignUpSecond extends AppCompatActivity {
                 accounts[indexOfAcc].setUniveristy(uni.getText().toString());
                 accounts[indexOfAcc].setMajor(major.getText().toString());
                 accounts[indexOfAcc].setStatus(status.getText().toString());
+                accounts[indexOfAcc].setGender(selectedGender);
+                accounts[indexOfAcc].setAge(selectedAge);
                 Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignUpSecond.this, MainActivity.class); // change to MainActivity. going to profile is temporary.
+                Intent intent = new Intent(SignUpSecond.this, Profile.class); // change to MainActivity. going to profile is temporary.
                 startActivity(intent);
             }
         });
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        selectedGender = parent.getItemAtPosition(position).toString();
+        //selectedAge = parent.getItemAtPosition(position)
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
