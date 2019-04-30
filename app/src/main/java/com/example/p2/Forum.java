@@ -13,47 +13,46 @@ import static com.example.p2.Ask.questionData;
 import static com.example.p2.SignUp.accounts;
 import static com.example.p2.SignUp.indexOfAcc;
 
+
 public class Forum extends AppCompatActivity {
-/*
-    static int indexQuestionData = 0;
-    static private int maxIndexQuestionData = 10;
-    static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
-    String topicSelected;
-*/
+
+    private Class page;
+
+    private TextView question1;
+    private TextView profile1;
+    private TextView date1;
+    private TextView hashtag1;
+    private TextView answers1;
+
+    private TextView question2;
+    private TextView profile2;
+    private TextView date2;
+    private TextView hashtag2;
+    private TextView answers2;
+
+    private TextView question3;
+    private TextView profile3;
+    private TextView date3;
+    private TextView hashtag3;
+    private TextView answers3;
+
+    private TextView question4;
+    private TextView profile4;
+    private TextView date4;
+    private TextView hashtag4;
+    private TextView answers4;
+
+    private TextView question5;
+    private TextView profile5;
+    private TextView date5;
+    private TextView hashtag5;
+    private TextView answers5;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
-
-        TextView question1;
-        TextView profile1;
-        TextView date1;
-        TextView hashtag1;
-        TextView answers1;
-
-        TextView question2;
-        TextView profile2;
-        TextView date2;
-        TextView hashtag2;
-        TextView answers2;
-
-        TextView question3;
-        TextView profile3;
-        TextView date3;
-        TextView hashtag3;
-        TextView answers3;
-
-        TextView question4;
-        TextView profile4;
-        TextView date4;
-        TextView hashtag4;
-        TextView answers4;
-
-        TextView question5;
-        TextView profile5;
-        TextView date5;
-        TextView hashtag5;
-        TextView answers5;
 
         question1 = findViewById(R.id.question1);
         profile1 = findViewById(R.id.profile1);
@@ -86,29 +85,18 @@ public class Forum extends AppCompatActivity {
         answers5 = findViewById(R.id.answers5);
 
 
-        //TextView question
-
-
-     //   if (questionData[0].getQuestionTitle() != null){
-     //   question1.setText(questionData[0].getQuestionTitle());
-     //   profile1.setText(accounts[0].getUsername());
-     //   }
-
-/*
-    EditText search = (EditText)findViewById(R.id.SearchForQuestion);
-    Button options = (Button)findViewById(R.id.OptionsButton);
-    Button ask = (Button)findViewById(R.id.BackButton);
-*/
-
-
     Button ask = (Button)findViewById(R.id.Ask);
     ask.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
-            Intent intent = new Intent(Forum.this, Ask.class);
-            startActivity(intent);
+            changePageTo(Ask.class);
         }
-    }
-    );
+    });
 
     }
+
+    private void changePageTo(Class page) {
+        Intent intent = new Intent(Forum.this, page);
+        startActivity(intent);
+    }
+
 }

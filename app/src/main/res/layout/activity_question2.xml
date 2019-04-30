@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2F4E73"
     tools:context=".Question2">
 
 
@@ -59,10 +58,10 @@
         android:inputType="date"
         android:text="Date"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/questionProfile"
+        app:layout_constraintBottom_toBottomOf="@+id/questionUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/questionProfile" />
+        app:layout_constraintStart_toEndOf="@+id/questionUser" />
 
     <TextView
         android:id="@+id/questionTopic"
@@ -80,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/questionTitle" />
 
     <TextView
-        android:id="@+id/questionProfile"
+        android:id="@+id/questionUser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -107,6 +106,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/questionUser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

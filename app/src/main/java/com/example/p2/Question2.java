@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.SignUp.accounts;
+import static com.example.p2.SignUp.indexOfAcc;
 
 public class Question2 extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class Question2 extends AppCompatActivity {
         TextView title = (TextView)findViewById(R.id.questionTitle);
         TextView description = (TextView)findViewById(R.id.questionDescription);
         TextView date = (TextView)findViewById(R.id.questionDate);
-        TextView profile = (TextView)findViewById(R.id.questionProfile);
+        TextView user = (TextView)findViewById(R.id.questionUser);
         TextView topic = (TextView)findViewById(R.id.questionTopic);
 
         title.setText(questionData[0].getQuestionTitle());
@@ -29,9 +30,14 @@ public class Question2 extends AppCompatActivity {
         topic.setText(questionData[0].getQuestionTopic());
         date.setText(questionData[0].getQuestionDate());
 
-        //profile.setText(accounts[0].getUsername());
-
-
+        // Username or name / education / semester?
+        //user.setText(accounts[indexOfAcc].getUsername());
+        user.setText(
+                          accounts[indexOfAcc].getFirstName() + ", "
+                        //+ accounts[indexOfAcc].getLastName() + ", "
+                        + accounts[indexOfAcc].getSemester() + ", "
+                        + accounts[indexOfAcc].getUniveristy()
+        );
 
     }
 }

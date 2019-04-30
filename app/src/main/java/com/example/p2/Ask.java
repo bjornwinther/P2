@@ -26,8 +26,8 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
     static int indexQuestionData = 0;
     static private int maxIndexQuestionData = 10;
     static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
-    private String topicSelected;
-    private TextView missingInput;
+    private String questionTopicSelected;
+    private TextView askMissingInput;
     private EditText questionDescription;
     private EditText questionTitle;
     public String questionDate;
@@ -35,14 +35,15 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
     private Button options;
     private Button post;
     Date date;
+    private int minEntryLength = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask);
 
-        missingInput = (TextView) findViewById(R.id.askMissingInput);
-        missingInput.setVisibility(View.GONE);
+        askMissingInput = findViewById(R.id.askMissingInput);
+        askMissingInput.setVisibility(View.GONE);
 
         back = findViewById(R.id.questionBack);
         options = findViewById(R.id.questionOptions);
@@ -79,22 +80,31 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                if (questionTitle.getText() != null) {
-
+                if (questionTitle.getText().toString().length() < minEntryLength){
+                    askMissingInput.setVisibility(View.VISIBLE);
+                    askMissingInput.setText("Please write your question");
+                }
+                else if (questionTopicSelected.equals("Choose topic")) {
+                    askMissingInput.setVisibility(View.VISIBLE);
+                    askMissingInput.setText("Please choose a topic");
+                }
+                else if (questionDescription.length() < minEntryLength) {
+                    askMissingInput.setVisibility(View.VISIBLE);
+                    askMissingInput.setText("Please write a short description");
+                } else {
+                    askMissingInput.setVisibility(View.GONE);
                     Intent intent = new Intent(Ask.this, Question2.class);
                     startActivity(intent);
 
                     questionData[indexQuestionData] = new QuestionData(
                             questionTitle.getText().toString(),
                             questionDescription.getText().toString(),
-                            topicSelected,
+                            questionTopicSelected,
                             questionDate
-
                     );
                     indexQuestionData++;
-                } else {
-
                 }
+
             }
         });
     }
@@ -102,7 +112,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        topicSelected = parent.getItemAtPosition(position).toString();
+        questionTopicSelected = parent.getItemAtPosition(position).toString();
 
     }
 
