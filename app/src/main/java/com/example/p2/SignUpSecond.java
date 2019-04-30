@@ -22,6 +22,10 @@ public class SignUpSecond extends AppCompatActivity {
     private Button createAccount;
     private EditText firstName;
     private EditText lastName;
+    private EditText uni;
+    private Spinner spinnerSemester;
+    private EditText major;
+    private EditText status;
 
 
     @Override
@@ -34,6 +38,10 @@ public class SignUpSecond extends AppCompatActivity {
         Spinner spinnerAge = findViewById(R.id.susSpinnerAge);
         firstName = findViewById(R.id.susFName);
         lastName = findViewById(R.id.susLName);
+        uni = findViewById(R.id.susUni);
+        spinnerSemester = findViewById(R.id.susSpinnerSemester);
+        major = findViewById(R.id.susMajor);
+        status = findViewById(R.id.susStatus);
 
 
         List<String> genderArray = new ArrayList<>();
@@ -49,6 +57,7 @@ public class SignUpSecond extends AppCompatActivity {
             public void onClick(View v) {
                 accounts[indexOfAcc].setFirstName(firstName.getText().toString());
                 accounts[indexOfAcc].setLastName(lastName.getText().toString());
+
                 Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignUpSecond.this, Profile.class); // change to MainActivity. going to profile is temporary.
                 startActivity(intent);

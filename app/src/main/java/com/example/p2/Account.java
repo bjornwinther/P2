@@ -12,6 +12,9 @@ public class Account {
     private int age;
     private String firstName;
     private String lastName;
+    private String univeristy;
+    private String major;
+    private String status;
 
 
     public Account(String username, String email, String phone, String createPass, String confirmPass) {
