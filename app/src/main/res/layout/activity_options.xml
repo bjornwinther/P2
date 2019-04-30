@@ -8,25 +8,12 @@
 
     <TextView
         android:id="@+id/Options"
-        android:layout_width="168dp"
+        android:layout_width="190dp"
         android:layout_height="733dp"
+        android:background="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Options"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars[0]" />
 
     <TextView
         android:id="@+id/ProfileName"
@@ -53,12 +40,30 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/ProfileName" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Options"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
     <Button
         android:id="@+id/Profile"
-        android:layout_width="168dp"
-        android:layout_height="87dp"
-        android:visibility="invisible"
+        android:layout_width="190dp"
+        android:layout_height="93dp"
+        android:background="@android:color/darker_gray"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/Options"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Options"
         app:layout_constraintTop_toTopOf="parent" />
 

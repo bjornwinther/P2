@@ -20,6 +20,9 @@ public class Options extends AppCompatActivity {
         public void onClick(View view){
             Intent intent = new Intent(Options.this, Profile.class);
             startActivity(intent);
+
+
+
         }
     }
     );

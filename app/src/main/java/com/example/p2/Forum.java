@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import static com.example.p2.Ask.questionData;
@@ -111,6 +112,13 @@ public class Forum extends AppCompatActivity {
         }
     }
     );
-
+    ImageButton goOption = (ImageButton)findViewById(R.id.menubutt);
+    goOption.setOnClickListener(new View.OnClickListener(){
+        public void onClick(View view){
+            Intent intent = new Intent(Forum.this, Options.class);
+            startActivity(intent);
+        }
+    }
+        );
     }
 }
