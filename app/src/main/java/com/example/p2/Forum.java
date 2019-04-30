@@ -102,14 +102,6 @@ public class Forum extends AppCompatActivity {
     Button ask = (Button)findViewById(R.id.BackButton);
 */
 
-    Button back = (Button)findViewById(R.id.questionBack);
-    back.setOnClickListener(new View.OnClickListener(){
-        public void onClick(View view){
-            Intent intent = new Intent(Forum.this, MainActivity.class);
-            startActivity(intent);
-        }
-    }
-    );
 
     Button ask = (Button)findViewById(R.id.Ask);
     ask.setOnClickListener(new View.OnClickListener(){
