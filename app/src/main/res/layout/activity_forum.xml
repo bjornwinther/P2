@@ -17,28 +17,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/Title"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text="Search or Ask"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/SearchForQuestion"
-        app:layout_constraintEnd_toStartOf="@+id/questionOptions"
-        app:layout_constraintStart_toEndOf="@+id/questionBack"
-
-
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/SearchForQuestion"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="@string/edit_search_question"
@@ -46,7 +31,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/MagnifyingGlass"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
     <ImageButton
         android:id="@+id/MagnifyingGlass"
@@ -62,32 +47,6 @@
         app:srcCompat="@drawable/searchicon" />
 
     <Button
-        android:id="@+id/questionBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_background"
-        android:text="Back"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/questionOptions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/button_background"
-        android:text="Options"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/Ask"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -97,7 +56,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/button_background"
-        android:text="Ask"
+        android:text="Ask a question"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,6 +116,7 @@
                 android:text="How do I apply for SU?"
                 android:textColor="#FFBDA9"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hashtag1" />
@@ -226,6 +186,7 @@
                 android:text="How do I apply for SU?"
                 android:textColor="#FFBDA9"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hashtag2" />
@@ -293,6 +254,7 @@
                 android:text="How do I apply for SU?"
                 android:textColor="#FFBDA9"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hashtag3" />
@@ -360,6 +322,7 @@
                 android:text="How do I apply for SU?"
                 android:textColor="#FFBDA9"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hashtag4" />
@@ -427,6 +390,7 @@
                 android:text="How do I apply for SU?"
                 android:textColor="#FFBDA9"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hashtag5" />
@@ -463,6 +427,38 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/menubutt"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/MagnifyingGlass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menubutt" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
