@@ -85,7 +85,7 @@
         android:ems="10"
         android:hint="@string/typequestion"
         android:inputType="textPersonName"
-        android:background="@drawable/text_input_background"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionBack" />
