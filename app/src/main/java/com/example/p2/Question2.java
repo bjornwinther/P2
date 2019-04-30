@@ -27,7 +27,7 @@ public class Question2 extends AppCompatActivity {
         title.setText(questionData[0].getQuestionTitle());
         description.setText(questionData[0].getQuestionDescription());
         topic.setText(questionData[0].getQuestionTopic());
-        
+        date.setText(questionData[0].getQuestionDate());
 
         //profile.setText(accounts[0].getUsername());
 

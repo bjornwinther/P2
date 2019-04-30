@@ -25,8 +25,6 @@ public class Forum extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
-
-
         TextView question1;
         TextView profile1;
         TextView date1;
