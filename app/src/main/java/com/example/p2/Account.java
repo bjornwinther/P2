@@ -15,6 +15,7 @@ public class Account {
     private String univeristy;
     private String major;
     private String status;
+    private String semester;
 
 
     public Account(String username, String email, String phone, String createPass, String confirmPass) {
@@ -25,6 +26,14 @@ public class Account {
         this.confirmPass = confirmPass;
     }
 
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
 
     public String getUniveristy() {
         return univeristy;
