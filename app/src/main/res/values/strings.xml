@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">P2</string>
-    <string name="edit_search_question">Search for question..</string>
-    <string name="typequestion">Type question..</string>
-    <string name="typedescription">Type description..</string>
+    <string name="edit_search_question">" Search for question.."</string>
+    <string name="typequestion">" Type question.."</string>
+    <string name="typedescription">" Type description.."</string>
 
     <string name="questionTitleString"></string>
     <string name="questionDescriptionString"></string>
