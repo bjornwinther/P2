@@ -24,7 +24,6 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
     private EditText firstName;
     private EditText lastName;
     private EditText uni;
-    private Spinner spinnerSemester;
     private EditText major;
     private EditText status;
     private String selectedGender;
@@ -40,15 +39,16 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
         createAccount = (Button) findViewById(R.id.susCreatebtn);
         Spinner spinnerGender = findViewById(R.id.susSpinnerGender);
         Spinner spinnerAge = findViewById(R.id.susSpinnerAge);
+        Spinner spinnerSemester = findViewById(R.id.susSpinnerSemester);
         firstName = findViewById(R.id.susFName);
         lastName = findViewById(R.id.susLName);
         uni = findViewById(R.id.susUni);
-        spinnerSemester = findViewById(R.id.susSpinnerSemester);
         major = findViewById(R.id.susMajor);
         status = findViewById(R.id.susStatus);
 
         spinnerGender.setOnItemSelectedListener(this);
         spinnerAge.setOnItemSelectedListener(this);
+        spinnerSemester.setOnItemSelectedListener(this);
 
         List<String> genderList = new ArrayList<>();
         genderList.add("Male");
@@ -60,6 +60,12 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
             ageList.add(16+i);
         }
 
+        List<String> semesterList = new ArrayList<>();
+        for(int i = 1; i <= 8; i++) {
+            semesterList.add(i + ". semester");
+        }
+
+
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, genderList);
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGender.setAdapter(genderAdapter);
@@ -67,6 +73,10 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<Integer> ageAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ageList);
         ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerAge.setAdapter(ageAdapter);
+
+        ArrayAdapter<String> semesterAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, semesterList);
+        semesterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSemester.setAdapter(semesterAdapter);
 
         createAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -77,8 +87,9 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
                 accounts[indexOfAcc].setStatus(status.getText().toString());
                 accounts[indexOfAcc].setGender(selectedGender);
                 accounts[indexOfAcc].setAge(selectedAge);
+                accounts[indexOfAcc].setSemester(selectedSemester);
                 Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignUpSecond.this, Profile.class); // change to MainActivity. going to profile is temporary.
+                Intent intent = new Intent(SignUpSecond.this, MainActivity.class); // change to MainActivity. going to profile is temporary.
                 startActivity(intent);
             }
         });
@@ -87,8 +98,14 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        selectedGender = parent.getItemAtPosition(position).toString();
-        //selectedAge = parent.getItemAtPosition(position)
+        if(parent.getId() == R.id.susSpinnerGender) {
+            selectedGender = parent.getItemAtPosition(position).toString();
+        }
+        else if(parent.getId() == R.id.susSpinnerSemester) {
+            selectedSemester = parent.getItemAtPosition(position).toString(); // move selectedSemester and selectedAge to other method paired with drop down menu.
+        }else if(parent.getId() == R.id.susSpinnerAge) {
+            //selectedAge = parent.getItemAtPosition(position) // fix for integers
+        }
 
     }
 

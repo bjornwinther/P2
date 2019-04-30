@@ -32,7 +32,7 @@ public class Profile extends AppCompatActivity {
         age = findViewById(R.id.profileAge);
 
         name.setText(accounts[indexOfAcc].getFirstName() + " " + accounts[indexOfAcc].getLastName()); // set name
-        semesterAndUni.setText(accounts[indexOfAcc].getUniveristy()); // add semester-spinner info the same way as with name above.
+        semesterAndUni.setText(accounts[indexOfAcc].getSemester()+ " - " + accounts[indexOfAcc].getUniveristy());
         major.setText(accounts[indexOfAcc].getMajor());
         age.setText(accounts[indexOfAcc].getAge() +  " Yo " + accounts[indexOfAcc].getGender());
 
