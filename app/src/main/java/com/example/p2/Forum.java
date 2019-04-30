@@ -16,6 +16,8 @@ import static com.example.p2.SignUp.indexOfAcc;
 
 public class Forum extends AppCompatActivity {
 
+    private Button ask;
+
     private Class page;
 
     private TextView question1;
@@ -54,6 +56,8 @@ public class Forum extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
+        ask = findViewById(R.id.Ask);
+/*
         question1 = findViewById(R.id.question1);
         profile1 = findViewById(R.id.profile1);
         date1 = findViewById(R.id.date1);
@@ -83,9 +87,9 @@ public class Forum extends AppCompatActivity {
         date5 = findViewById(R.id.date5);
         hashtag5 = findViewById(R.id.hashtag5);
         answers5 = findViewById(R.id.answers5);
+*/
 
 
-    Button ask = (Button)findViewById(R.id.Ask);
     ask.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
             changePageTo(Ask.class);
