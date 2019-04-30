@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/BackgroundBlue"
         android:layout_width="0dp"
-        android:layout_height="220dp"
+        android:layout_height="150dp"
         android:background="#2F4E73"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,16 +93,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_background"
         android:text="Ask"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SearchForQuestion" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -460,6 +461,73 @@
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow5"
                 app:layout_constraintTop_toBottomOf="@+id/profile5" />
 
+
+            <ImageButton
+                android:id="@+id/imageButtonArrow6"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrowicon"
+                app:layout_constraintBottom_toBottomOf="@+id/answers6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hashtag6"
+                app:layout_constraintTop_toTopOf="@+id/hashtag6" />
+
+            <TextView
+                android:id="@+id/hashtag6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#FFFFFF"
+                android:text="#Living_in_DK"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/answers5" />
+
+            <TextView
+                android:id="@+id/question6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="How do I apply for SU?"
+                android:textColor="#FFBDA9"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hashtag6" />
+
+            <TextView
+                android:id="@+id/profile6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="Anna, 2nd Semester DTU - Nano"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question6" />
+
+            <TextView
+                android:id="@+id/answers6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="3 Answers >"
+                app:layout_constraintEnd_toStartOf="@+id/date6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile6" />
+
+            <TextView
+                android:id="@+id/date6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="24th of January 2019"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
+                app:layout_constraintTop_toBottomOf="@+id/profile6" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
