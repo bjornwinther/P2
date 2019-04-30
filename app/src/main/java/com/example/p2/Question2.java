@@ -22,9 +22,12 @@ public class Question2 extends AppCompatActivity {
         TextView description = (TextView)findViewById(R.id.questionDescription);
         TextView date = (TextView)findViewById(R.id.questionDate);
         TextView profile = (TextView)findViewById(R.id.questionProfile);
+        TextView topic = (TextView)findViewById(R.id.questionTopic);
 
         title.setText(questionData[0].getQuestionTitle());
         description.setText(questionData[0].getQuestionDescription());
+        topic.setText(questionData[0].getQuestionTopic());
+        
 
         //profile.setText(accounts[0].getUsername());
 

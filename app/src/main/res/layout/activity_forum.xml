@@ -10,7 +10,7 @@
         android:id="@+id/BackgroundBlue"
         android:layout_width="0dp"
         android:layout_height="220dp"
-        android:background="#4B9CD3"
+        android:background="#2F4E73"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

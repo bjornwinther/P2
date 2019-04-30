@@ -19,6 +19,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
     static int indexQuestionData = 0;
     static private int maxIndexQuestionData = 10;
     static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
+    String topicSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,8 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
 
                 questionData[indexQuestionData] = new QuestionData(
                         questionTitle.getText().toString(),
-                        questionDescription.getText().toString()
+                        questionDescription.getText().toString(),
+                        topicSelected
 
                 );
                 indexQuestionData++;
@@ -64,7 +66,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String topicSelected = parent.getItemAtPosition(position).toString();
+        topicSelected = parent.getItemAtPosition(position).toString();
 
     }
 
