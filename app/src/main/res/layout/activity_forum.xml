@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Forum">
+    tools:context=".Forum"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/BackgroundBlue"
@@ -54,8 +55,9 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_background"
+        android:padding="10dp"
         android:text="Ask a question"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -105,6 +107,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -121,6 +124,7 @@
                 android:id="@+id/questionBox1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -129,7 +133,8 @@
                     android:id="@+id/boxConstraint1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/card_background">
+                    android:background="@drawable/card_background"
+                    android:padding="10dp">
 
                     <TextView
                         android:id="@+id/topicView1"
@@ -215,7 +220,9 @@
                     android:id="@+id/boxConstraint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/card_background">
+                    android:background="@drawable/card_background"
+                    android:padding="10dp"
+                    >
 
                     <TextView
                         android:id="@+id/topicView2"
