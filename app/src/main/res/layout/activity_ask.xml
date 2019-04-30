@@ -7,7 +7,6 @@
     android:background="#2F4E73"
     tools:context=".Ask">
 
-
     <Button
         android:id="@+id/questionBack"
         android:layout_width="wrap_content"
@@ -94,7 +93,7 @@
     <Spinner
         android:id="@+id/topicSpinner"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -104,5 +103,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/askQuestionTitle" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Missing Input"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/askPost" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
