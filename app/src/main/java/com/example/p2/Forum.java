@@ -14,11 +14,18 @@ import static com.example.p2.SignUp.accounts;
 import static com.example.p2.SignUp.indexOfAcc;
 
 public class Forum extends AppCompatActivity {
-
+/*
+    static int indexQuestionData = 0;
+    static private int maxIndexQuestionData = 10;
+    static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
+    String topicSelected;
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
+
+
 
         TextView question1;
         TextView profile1;
@@ -83,12 +90,12 @@ public class Forum extends AppCompatActivity {
 
         //TextView question
 
-        /*
-        if (questionData[0].getQuestionTitle() != null){
-        question1.setText(questionData[0].getQuestionTitle());
-        profile1.setText(accounts[0].getUsername());
-        }
-        */
+
+     //   if (questionData[0].getQuestionTitle() != null){
+     //   question1.setText(questionData[0].getQuestionTitle());
+     //   profile1.setText(accounts[0].getUsername());
+     //   }
+
 /*
     EditText search = (EditText)findViewById(R.id.SearchForQuestion);
     Button options = (Button)findViewById(R.id.OptionsButton);
