@@ -57,7 +57,9 @@ public class SignUpSecond extends AppCompatActivity {
             public void onClick(View v) {
                 accounts[indexOfAcc].setFirstName(firstName.getText().toString());
                 accounts[indexOfAcc].setLastName(lastName.getText().toString());
-
+                accounts[indexOfAcc].setUniveristy(uni.getText().toString());
+                accounts[indexOfAcc].setMajor(major.getText().toString());
+                accounts[indexOfAcc].setStatus(status.getText().toString());
                 Toast.makeText(getApplicationContext(), "Account created", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignUpSecond.this, Profile.class); // change to MainActivity. going to profile is temporary.
                 startActivity(intent);

@@ -15,6 +15,10 @@ public class Profile extends AppCompatActivity {
 
     private TextView name;
     private ImageButton profilePicture;
+    private TextView semesterAndUni;
+    private TextView major;
+    private TextView age;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +27,14 @@ public class Profile extends AppCompatActivity {
 
         name = (TextView) findViewById(R.id.profileName);
         profilePicture = (ImageButton) findViewById(R.id.profilePic);
+        semesterAndUni = findViewById(R.id.profileSemUni);
+        major = findViewById(R.id.profileMajor);
+        age = findViewById(R.id.profileAge);
 
         name.setText(accounts[indexOfAcc].getFirstName() + " " + accounts[indexOfAcc].getLastName()); // set name
+        semesterAndUni.setText(accounts[indexOfAcc].getUniveristy()); // add semester-spinner info the same way as with name above.
+        major.setText(accounts[indexOfAcc].getMajor());
+        age.setText(accounts[indexOfAcc].getAge() + "Yo");
 
         profilePicture.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
