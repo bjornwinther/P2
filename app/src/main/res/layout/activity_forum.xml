@@ -31,7 +31,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/MagnifyingGlass"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
 
     <ImageButton
         android:id="@+id/MagnifyingGlass"
@@ -54,515 +54,15 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/button_background"
         android:text="Ask a question"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BackgroundBlue">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConstraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/imageButtonArrow1"
-                android:layout_width="50dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-
-                app:layout_constraintBottom_toBottomOf="@+id/date1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/hashtag1"
-                app:srcCompat="@drawable/arrowicon" />
-
-            <TextView
-                android:id="@+id/hashtag1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="#Living_in_DK"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/question1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="How do I apply for SU?"
-                android:textColor="#EBA888"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hashtag1" />
-
-            <TextView
-                android:id="@+id/profile1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="Anna, 2nd Semester DTU - Nano"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question1" />
-
-            <TextView
-                android:id="@+id/answers1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="3 Answers >"
-                app:layout_constraintEnd_toStartOf="@+id/date1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile1" />
-
-            <TextView
-                android:id="@+id/date1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="24th of January 2019"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintTop_toBottomOf="@+id/profile1" />
-
-
-            <ImageButton
-                android:id="@+id/imageButtonArrow2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrowicon"
-                app:layout_constraintBottom_toBottomOf="@+id/answers2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hashtag2"
-                app:layout_constraintTop_toTopOf="@+id/hashtag2" />
-
-
-            <TextView
-                android:id="@+id/hashtag2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:text="#Living_in_DK"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answers1" />
-
-            <TextView
-                android:id="@+id/question2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="How do I apply for SU?"
-                android:textColor="#EBA888"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hashtag2" />
-
-            <TextView
-                android:id="@+id/profile2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="Anna, 2nd Semester DTU - Nano"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question2" />
-
-            <TextView
-                android:id="@+id/answers2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="3 Answers >"
-                app:layout_constraintEnd_toStartOf="@+id/date1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile2" />
-
-            <TextView
-                android:id="@+id/date2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="24th of January 2019"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow2"
-                app:layout_constraintTop_toBottomOf="@+id/profile2" />
-
-            <ImageButton
-                android:id="@+id/imageButtonArrow3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrowicon"
-                app:layout_constraintBottom_toBottomOf="@+id/answers3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hashtag3"
-                app:layout_constraintTop_toTopOf="@+id/hashtag3" />
-
-            <TextView
-                android:id="@+id/hashtag3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:text="#Living_in_DK"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answers2" />
-
-            <TextView
-                android:id="@+id/question3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="How do I apply for SU?"
-                android:textColor="#EBA888"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hashtag3" />
-
-            <TextView
-                android:id="@+id/profile3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="Anna, 2nd Semester DTU - Nano"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question3" />
-
-            <TextView
-                android:id="@+id/answers3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="3 Answers >"
-                app:layout_constraintEnd_toStartOf="@+id/date1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile3" />
-
-            <TextView
-                android:id="@+id/date3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="24th of January 2019"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow3"
-                app:layout_constraintTop_toBottomOf="@+id/profile3" />
-
-            <ImageButton
-                android:id="@+id/imageButtonArrow4"
-                android:layout_width="50dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrowicon"
-                app:layout_constraintBottom_toBottomOf="@+id/answers4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hashtag4"
-                app:layout_constraintTop_toTopOf="@+id/hashtag4" />
-
-            <TextView
-                android:id="@+id/hashtag4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:text="#Living_in_DK"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answers3" />
-
-            <TextView
-                android:id="@+id/question4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="How do I apply for SU?"
-                android:textColor="#EBA888"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hashtag4" />
-
-            <TextView
-                android:id="@+id/profile4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="Anna, 2nd Semester DTU - Nano"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question4" />
-
-            <TextView
-                android:id="@+id/answers4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="3 Answers >"
-                app:layout_constraintEnd_toStartOf="@+id/date4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile4" />
-
-            <TextView
-                android:id="@+id/date4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="24th of January 2019"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow4"
-                app:layout_constraintTop_toBottomOf="@+id/profile4" />
-
-            <ImageButton
-                android:id="@+id/imageButtonArrow5"
-                android:layout_width="50dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrowicon"
-                app:layout_constraintBottom_toBottomOf="@+id/answers5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hashtag5"
-                app:layout_constraintTop_toTopOf="@+id/hashtag5" />
-
-            <TextView
-                android:id="@+id/hashtag5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:text="#Living_in_DK"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answers4" />
-
-            <TextView
-                android:id="@+id/question5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="How do I apply for SU?"
-                android:textColor="#EBA888"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hashtag5" />
-
-            <TextView
-                android:id="@+id/profile5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="Anna, 2nd Semester DTU - Nano"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question5" />
-
-            <TextView
-                android:id="@+id/answers5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="3 Answers >"
-                app:layout_constraintEnd_toStartOf="@+id/date5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile5" />
-
-            <TextView
-                android:id="@+id/date5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="24th of January 2019"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow5"
-                app:layout_constraintTop_toBottomOf="@+id/profile5" />
-
-
-            <ImageButton
-                android:id="@+id/imageButtonArrow6"
-                android:layout_width="50dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrowicon"
-                app:layout_constraintBottom_toBottomOf="@+id/answers6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hashtag6"
-                app:layout_constraintTop_toTopOf="@+id/hashtag6" />
-
-            <TextView
-                android:id="@+id/hashtag6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:text="#Living_in_DK"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answers5" />
-
-            <TextView
-                android:id="@+id/question6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="How do I apply for SU?"
-                android:textColor="#EBA888"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hashtag6" />
-
-            <TextView
-                android:id="@+id/profile6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="Anna, 2nd Semester DTU - Nano"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question6" />
-
-            <TextView
-                android:id="@+id/answers6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="3 Answers >"
-                app:layout_constraintEnd_toStartOf="@+id/date6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile6" />
-
-            <TextView
-                android:id="@+id/date6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="24th of January 2019"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow6"
-                app:layout_constraintTop_toBottomOf="@+id/profile6" />
-
-            <ImageButton
-                android:id="@+id/imageButtonArrow7"
-                android:layout_width="50dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrowicon"
-                app:layout_constraintBottom_toBottomOf="@+id/answers7"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hashtag7"
-                app:layout_constraintTop_toTopOf="@+id/hashtag7" />
-
-            <TextView
-                android:id="@+id/hashtag7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:text="#Living_in_DK"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow7"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answers6" />
-
-            <TextView
-                android:id="@+id/question7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="How do I apply for SU?"
-                android:textColor="#EBA888"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow7"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hashtag7" />
-
-            <TextView
-                android:id="@+id/profile7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="Anna, 2nd Semester DTU - Nano"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow7"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question7" />
-
-            <TextView
-                android:id="@+id/answers7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="3 Answers >"
-                app:layout_constraintEnd_toStartOf="@+id/date7"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile7" />
-
-            <TextView
-                android:id="@+id/date7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="24th of January 2019"
-                app:layout_constraintEnd_toStartOf="@+id/imageButtonArrow7"
-                app:layout_constraintTop_toBottomOf="@+id/profile7" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
 
     <ImageButton
         android:id="@+id/menubutt"
@@ -583,7 +83,7 @@
         app:srcCompat="@drawable/menubutt" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/backButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -595,6 +95,210 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BackgroundBlue"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/questionBox1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:cardBackgroundColor="#2F4E73"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/boxConstraint1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/topicView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="topicView1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/questionView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="questionView1"
+                        android:textColor="#EBA888"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/topicView1" />
+
+                    <TextView
+                        android:id="@+id/userView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="userView1"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/answersView1" />
+
+                    <TextView
+                        android:id="@+id/answersView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="answersView1"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/questionView1" />
+
+                    <TextView
+                        android:id="@+id/dateView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dateView1"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/arrowButton1" />
+
+                    <ImageButton
+                        android:id="@+id/arrowButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/forward" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/questionBox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:cardBackgroundColor="#2F4E73"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionBox1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/boxConstraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/topicView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="topicView1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/questionView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="questionView1"
+                        android:textColor="#EBA888"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/topicView2" />
+
+                    <TextView
+                        android:id="@+id/userView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="userView1"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/answersView2" />
+
+                    <TextView
+                        android:id="@+id/answersView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="answersView1"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/questionView2" />
+
+                    <TextView
+                        android:id="@+id/dateView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dateView1"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/arrowButton2" />
+
+                    <ImageButton
+                        android:id="@+id/arrowButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/forward" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
