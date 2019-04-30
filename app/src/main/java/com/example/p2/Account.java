@@ -25,6 +25,31 @@ public class Account {
         this.confirmPass = confirmPass;
     }
 
+
+    public String getUniveristy() {
+        return univeristy;
+    }
+
+    public void setUniveristy(String univeristy) {
+        this.univeristy = univeristy;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getFirstName() {
         return firstName;
     }
