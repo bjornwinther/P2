@@ -109,7 +109,6 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
         });
     }
 
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         questionTopicSelected = parent.getItemAtPosition(position).toString();
