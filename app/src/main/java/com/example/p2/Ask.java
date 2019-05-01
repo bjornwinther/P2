@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,15 +26,15 @@ import java.util.Locale;
 public class Ask extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     static int indexQuestionData = 0;
-    static private int maxIndexQuestionData = 10;
+    static private int maxIndexQuestionData = 1;
     static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
     private String questionTopicSelected;
     private TextView askMissingInput;
     private EditText questionDescription;
     private EditText questionTitle;
     public String questionDate;
-    private Button back;
-    private Button options;
+    private ImageButton back;
+    private ImageView options;
     private Button post;
     Date date;
     private int minEntryLength = 4;
@@ -45,8 +47,8 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
         askMissingInput = findViewById(R.id.askMissingInput);
         askMissingInput.setVisibility(View.GONE);
 
-        back = findViewById(R.id.questionBack);
-        options = findViewById(R.id.questionOptions);
+        back = findViewById(R.id.askBackButton);
+        options = findViewById(R.id.askMenuButton);
         post = findViewById(R.id.askPost);
 
 
@@ -103,10 +105,32 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                             questionDate
                     );
                     indexQuestionData++;
+                    maxIndexQuestionData++;
                 }
 
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePageTo(Forum.class);
+            }
+        });
+
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //changePageTo();
+            }
+        });
+
+
+    }
+
+    private void changePageTo(Class page) {
+        Intent intent = new Intent(Ask.this, page);
+        startActivity(intent);
     }
 
     @Override

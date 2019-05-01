@@ -11,11 +11,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
+import static com.example.p2.Ask.indexQuestionData;
+import static com.example.p2.Ask.questionData;
+
 public class Forum extends AppCompatActivity {
 
     private Button ask;
     ListView listView;
-    int insertArrayIndexHere = 10;
+    //int insertArrayIndexHere = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class Forum extends AppCompatActivity {
         listView.setAdapter(itemArrayAdapter);
 
         // Populating list items
-        for(int i=0; i<insertArrayIndexHere; i++) {
+        for(int i=0; i<indexQuestionData; i++) {
             itemList.add(new Item("Item " + i));
         }
 

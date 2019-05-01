@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.example.p2.Ask.indexQuestionData;
+import static com.example.p2.Ask.questionData;
+
 public class ItemArrayAdapter extends ArrayAdapter<Item> {
 
     private int listItemLayout;
@@ -48,12 +51,13 @@ public class ItemArrayAdapter extends ArrayAdapter<Item> {
         }
 
         // Populate the data into the template view using the data object
-        viewHolder.topicView.setText("Topic View");
-        viewHolder.questionView.setText("Question View");
-        viewHolder.userView.setText("User View");
-        viewHolder.dateView.setText("Date View");
+        viewHolder.topicView.setText(questionData[0].getQuestionTopic());
+        viewHolder.questionView.setText(questionData[0].getQuestionTitle());
+        viewHolder.dateView.setText(questionData[0].getQuestionDate());
+
         viewHolder.answersView.setText("Answers View");
         viewHolder.arrowView.setImageBitmap(arrowImage);
+
 
 
 
