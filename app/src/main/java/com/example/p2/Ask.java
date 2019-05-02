@@ -124,8 +124,6 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                 //changePageTo();
             }
         });
-
-
     }
 
     private void changePageTo(Class page) {

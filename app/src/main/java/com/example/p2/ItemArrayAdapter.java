@@ -19,7 +19,7 @@ public class ItemArrayAdapter extends ArrayAdapter<Item> {
 
     private int listItemLayout;
     Bitmap arrowImage = BitmapFactory.decodeResource(getContext().getResources(),
-            R.drawable.arrowsmall);
+            R.drawable.forward);
 
     public ItemArrayAdapter(Context context, int layoutId, ArrayList<Item> itemList) {
         super(context, layoutId, itemList);
