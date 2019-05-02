@@ -26,6 +26,37 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/treeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/item_list"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/item_list"
+        app:srcCompat="@drawable/branch_tree_crop" />
+
+    <ImageView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/item_list"
+        app:layout_constraintStart_toStartOf="@+id/item_list"
+        app:layout_constraintTop_toTopOf="@+id/item_list"
+        app:srcCompat="@drawable/branch_text" />
+
+    <TextView
+        android:id="@+id/noPosts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Questions"
+        android:textSize="36sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/nameView"
+        app:layout_constraintStart_toStartOf="@+id/nameView"
+        app:layout_constraintTop_toBottomOf="@+id/nameView" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/header"
         android:layout_width="0dp"

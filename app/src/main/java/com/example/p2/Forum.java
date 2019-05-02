@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ import static com.example.p2.Ask.questionData;
 
 public class Forum extends AppCompatActivity {
 
+    TextView noPosts;
     private Button ask;
     ListView listView;
     //int insertArrayIndexHere = 10;
@@ -27,13 +29,19 @@ public class Forum extends AppCompatActivity {
         setContentView(R.layout.activity_forum);
 
         ask = findViewById(R.id.Ask);
-
+        noPosts = findViewById(R.id.noPosts);
 
         ask.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
             changePageTo(Ask.class);
         }
     });
+
+        if (indexQuestionData != 0){
+            noPosts.setVisibility(View.GONE);
+        } else {
+            noPosts.setVisibility(View.VISIBLE);
+        }
 
 
         // Initializing list view with the custom adapter
