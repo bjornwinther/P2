@@ -26,6 +26,17 @@ public class Account {
         this.confirmPass = confirmPass;
     }
 
+    public Account(String username, String email, String phone, String createPass, String confirmPass, String gender, int age, String firstName,
+                   String lastName, String university, String major, String Status, String) {
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.createPass = createPass;
+        this.confirmPass = confirmPass;
+    }
+
+
+
 
     public String getSemester() {
         return semester;
