@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
-import static com.example.p2.SignUp.accounts;
-import static com.example.p2.SignUp.indexOfAcc;
 
 public class Question2 extends AppCompatActivity {
 
@@ -23,7 +20,7 @@ public class Question2 extends AppCompatActivity {
         setContentView(R.layout.activity_question2);
 
         ImageButton backButton = (ImageButton)findViewById(R.id.questionBackButton);
-        ImageButton menuButton = (ImageButton)findViewById(R.id.questionMenuButton);
+        ImageButton menuButton = (ImageButton)findViewById(R.id.questionForumButton);
 
 
         TextView title = (TextView)findViewById(R.id.questionTitle);
@@ -32,10 +29,12 @@ public class Question2 extends AppCompatActivity {
         TextView user = (TextView)findViewById(R.id.questionUser);
         TextView topic = (TextView)findViewById(R.id.questionTopic);
 
-        title.setText(questionData[0].getQuestionTitle());
-        description.setText(questionData[0].getQuestionDescription());
-        topic.setText(questionData[0].getQuestionTopic());
-        date.setText(questionData[0].getQuestionDate());
+        title.setText(questionData[indexQuestionData].getQuestionTitle());
+        description.setText(questionData[indexQuestionData].getQuestionDescription());
+        topic.setText(questionData[indexQuestionData].getQuestionTopic());
+        date.setText(questionData[indexQuestionData].getQuestionDate());
+
+        indexQuestionData++;
 
 
         // Username or name / education / semester?

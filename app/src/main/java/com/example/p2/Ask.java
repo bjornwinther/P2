@@ -25,8 +25,8 @@ import java.util.Locale;
 
 public class Ask extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    static int indexQuestionData = 0;
-    static private int maxIndexQuestionData = 1;
+    public static int indexQuestionData = 0;
+    public static int maxIndexQuestionData = 5;
     static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
     private String questionTopicSelected;
     private TextView askMissingInput;
@@ -95,17 +95,19 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                     askMissingInput.setText("Please write a short description");
                 } else {
                     askMissingInput.setVisibility(View.GONE);
-                    Intent intent = new Intent(Ask.this, Question2.class);
-                    startActivity(intent);
-
                     questionData[indexQuestionData] = new QuestionData(
                             questionTitle.getText().toString(),
                             questionDescription.getText().toString(),
                             questionTopicSelected,
                             questionDate
                     );
-                    indexQuestionData++;
-                    maxIndexQuestionData++;
+
+
+                    Intent intent = new Intent(Ask.this, Question2.class);
+                    startActivity(intent);
+
+
+
                 }
 
             }

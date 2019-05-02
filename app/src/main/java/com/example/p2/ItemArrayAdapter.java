@@ -54,7 +54,6 @@ public class ItemArrayAdapter extends ArrayAdapter<Item> {
         viewHolder.topicView.setText(questionData[0].getQuestionTopic());
         viewHolder.questionView.setText(questionData[0].getQuestionTitle());
         viewHolder.dateView.setText(questionData[0].getQuestionDate());
-
         viewHolder.answersView.setText("Answers View");
         viewHolder.arrowView.setImageBitmap(arrowImage);
 
