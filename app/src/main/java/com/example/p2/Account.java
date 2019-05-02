@@ -12,7 +12,7 @@ public class Account {
     private int age;
     private String firstName;
     private String lastName;
-    private String univeristy;
+    private String university;
     private String major;
     private String status;
     private String semester;
@@ -26,6 +26,25 @@ public class Account {
         this.confirmPass = confirmPass;
     }
 
+    public Account(String username, String email, String phone, String createPass, String confirmPass, String gender, int age, String firstName,
+                   String lastName, String university, String major, String status, String semester) {
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.createPass = createPass;
+        this.confirmPass = confirmPass;
+        this.gender = gender;
+        this.age = age;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.university = university;
+        this.major = major;
+        this.status = status;
+        this.semester = semester;
+    }
+
+
+
 
     public String getSemester() {
         return semester;
@@ -36,11 +55,11 @@ public class Account {
     }
 
     public String getUniveristy() {
-        return univeristy;
+        return university;
     }
 
     public void setUniveristy(String univeristy) {
-        this.univeristy = univeristy;
+        this.university = univeristy;
     }
 
     public String getMajor() {

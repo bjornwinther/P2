@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private Button signUp;
     private int counter = 5;
 
+    Account admin = new Account("admin", "admin@hotmail.com", "12345678", "","","SuperHuMAN", 22,
+            "Iver", "Ottosen", "AAU", "Math", "Complicated", "6.Semester");
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                 startActivity(intent);
             } else {
-                Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
                 counter--;
                 numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
                 // maybe add if counter < 3 - turn text red?
@@ -78,13 +81,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }catch(Exception e){
-            System.out.println("validate-method went wrong");
+            System.out.println("AdminLogin went wrong");
         }
     }
 
     private void validateUser(String username, String password) { // maybe put in try-catch?
         try {
-            if (username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())) {
+            if (username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass()) ||
+                    username.equals(admin.getUsername()) && password.equals(admin.getConfirmPass())){
                 Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                 startActivity(intent);
             }else {
@@ -97,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }catch(Exception e){
-           System.out.println("validate-method went wrong");
+           System.out.println("validateUser-method went wrong");
         }
     }
 
