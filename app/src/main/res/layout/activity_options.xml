@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Options">
 
+    <Button
+        android:id="@+id/Profile"
+        android:layout_width="190dp"
+        android:layout_height="93dp"
+        android:background="@android:color/darker_gray"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/Options"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Options"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/Options"
         android:layout_width="190dp"
@@ -55,16 +66,5 @@
         app:layout_constraintStart_toStartOf="@+id/Options"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars[0]" />
-
-    <Button
-        android:id="@+id/Profile"
-        android:layout_width="190dp"
-        android:layout_height="93dp"
-        android:background="@android:color/darker_gray"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/Options"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/Options"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
