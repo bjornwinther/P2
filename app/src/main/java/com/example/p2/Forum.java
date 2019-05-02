@@ -28,7 +28,7 @@ public class Forum extends AppCompatActivity {
         ask = findViewById(R.id.Ask);
 
 
-    ask.setOnClickListener(new View.OnClickListener(){
+        ask.setOnClickListener(new View.OnClickListener(){
         public void onClick(View view){
             changePageTo(Ask.class);
         }
