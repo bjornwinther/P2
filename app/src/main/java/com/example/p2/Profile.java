@@ -34,7 +34,7 @@ public class Profile extends AppCompatActivity {
         name.setText(accounts[indexOfAcc].getFirstName() + " " + accounts[indexOfAcc].getLastName()); // set name
         semesterAndUni.setText(accounts[indexOfAcc].getSemester()+ " - " + accounts[indexOfAcc].getUniveristy());
         major.setText(accounts[indexOfAcc].getMajor());
-        age.setText(accounts[indexOfAcc].getAge() +  " Yo " + accounts[indexOfAcc].getGender());
+        age.setText(accounts[indexOfAcc].getAge() +  " years old");
 
         profilePicture.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
