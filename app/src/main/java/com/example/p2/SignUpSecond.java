@@ -104,7 +104,7 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
         else if(parent.getId() == R.id.susSpinnerSemester) {
             selectedSemester = parent.getItemAtPosition(position).toString(); // move selectedSemester and selectedAge to other method paired with drop down menu.
         }else if(parent.getId() == R.id.susSpinnerAge) {
-            //selectedAge = parent.getItemAtPosition(position) // fix for integers
+            selectedAge = (Integer) parent.getItemAtPosition(position); // Might cause a crash - Be aware.
         }
 
     }

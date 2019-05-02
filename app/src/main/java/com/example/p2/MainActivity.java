@@ -47,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {// maybe put in try-catch?
             @Override
             public void onClick(View v) {
+
                 // as long as both of the methods are called, it will always run at least ONE of the else-statements in one of the methods!
-                validateUser(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
+                validateUser(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString() - temporary commented out
                 adminLogin(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
             }
         });
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }catch(Exception e){
-            System.out.println("validate-method went wrong");
+           System.out.println("validate-method went wrong");
         }
     }
 
