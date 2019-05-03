@@ -37,25 +37,17 @@
         app:layout_constraintStart_toStartOf="@+id/item_list"
         app:srcCompat="@drawable/branch_tree_crop" />
 
-    <ImageView
-        android:id="@+id/nameView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/item_list"
-        app:layout_constraintStart_toStartOf="@+id/item_list"
-        app:layout_constraintTop_toTopOf="@+id/item_list"
-        app:srcCompat="@drawable/branch_text" />
-
     <TextView
         android:id="@+id/noPosts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="No Questions"
         android:textSize="36sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/nameView"
-        app:layout_constraintStart_toStartOf="@+id/nameView"
-        app:layout_constraintTop_toBottomOf="@+id/nameView" />
+        app:layout_constraintEnd_toEndOf="@+id/header"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/header"

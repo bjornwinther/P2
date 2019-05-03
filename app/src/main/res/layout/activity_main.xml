@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/branch_tree_crop" />
+        app:srcCompat="@drawable/branch_tree_crop"
+        />
 
     <ImageView
         android:id="@+id/imageView4"

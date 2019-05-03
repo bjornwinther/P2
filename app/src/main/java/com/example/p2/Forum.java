@@ -1,6 +1,7 @@
 package com.example.p2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,12 +22,15 @@ public class Forum extends AppCompatActivity {
     TextView noPosts;
     private Button ask;
     ListView listView;
+
     //int insertArrayIndexHere = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
+
+        // look up enums for sorting through posts - implement it as interface
 
         ask = findViewById(R.id.Ask);
         noPosts = findViewById(R.id.noPosts);

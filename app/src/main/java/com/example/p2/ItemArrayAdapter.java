@@ -3,6 +3,7 @@ package com.example.p2;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 
@@ -20,6 +24,8 @@ public class ItemArrayAdapter extends ArrayAdapter<Item> {
     private int listItemLayout;
     Bitmap arrowImage = BitmapFactory.decodeResource(getContext().getResources(),
             R.drawable.forward);
+
+    private ArrayList<String> topicText = new ArrayList<>();
 
     public ItemArrayAdapter(Context context, int layoutId, ArrayList<Item> itemList) {
         super(context, layoutId, itemList);
@@ -64,12 +70,36 @@ public class ItemArrayAdapter extends ArrayAdapter<Item> {
         return convertView;
     }
 
-    private static class ViewHolder {
+    private static class ViewHolder // extends RecyclerView.ViewHolder
+    {
+
         TextView topicView;
         TextView questionView;
         TextView answersView;
         TextView userView;
         TextView dateView;
         ImageView arrowView;
+/*
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            topicView = itemView.findViewById(R.id.topicView);
+
+        }
+*/
     }
+/*
+    private void initCardsData(){
+        //Log.d(TAG, "initCards: preparing cards.");
+
+        topicText.add("you");
+
+        topicText.add("what");
+
+        topicText.add("mate");
+
+        //initRecyclerView();
+
+    }
+    */
 }
