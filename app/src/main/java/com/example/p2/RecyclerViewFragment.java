@@ -9,12 +9,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import static com.example.p2.Ask.indexQuestionData;
+import static com.example.p2.Ask.questionData;
+
 public class RecyclerViewFragment extends Fragment {
 
     private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
-    private static final int DATASET_COUNT = 10;
+    private static final int DATASET_COUNT = 1;
 
     private enum LayoutManagerType {
         LINEAR_LAYOUT_MANAGER
@@ -25,7 +28,10 @@ public class RecyclerViewFragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected CustomAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected String[] mDataset;
+    protected String[] mtitleDataset;
+    protected String[] mtopicDataset;
+    protected String[] mdateDataset;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,8 @@ public class RecyclerViewFragment extends Fragment {
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
         initDataset();
+        initDatasetDate();
+        initDatasetTopic();
     }
 
     @Override
@@ -59,7 +67,7 @@ public class RecyclerViewFragment extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new CustomAdapter(mDataset);
+        mAdapter = new CustomAdapter(mtitleDataset, mtopicDataset, mdateDataset);
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -96,10 +104,28 @@ public class RecyclerViewFragment extends Fragment {
      * Generates Strings for RecyclerView's adapter. This data would usually come
      * from a local content provider or remote server.
      */
+
+
     private void initDataset() {
-        mDataset = new String[DATASET_COUNT];
-        for (int i = 0; i < DATASET_COUNT; i++) {
-            mDataset[i] = "This is element VIGTIGTTT #" + i;
+        mtitleDataset = new String[indexQuestionData];
+        for (int i = 0; i < indexQuestionData; i++) {
+
+            mtitleDataset[i] = questionData[i].getQuestionTitle();
         }
     }
+    private void initDatasetTopic() {
+        mtopicDataset = new String[indexQuestionData];
+        for (int i = 0; i < indexQuestionData; i++) {
+
+            mtopicDataset[i] = questionData[i].getQuestionTopic();
+        }
+    }
+    private void initDatasetDate() {
+        mdateDataset = new String[indexQuestionData];
+        for (int i = 0; i < indexQuestionData; i++) {
+
+            mdateDataset[i] = questionData[i].getQuestionDate();
+        }
+    }
+
 }
