@@ -1,12 +1,15 @@
 package com.example.p2;
 
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
@@ -15,6 +18,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private String[] mtitleDataSet;
     private String[] mdateDataSet;
     private String[] mtopicDataSet;
+    private int[] midDataset;
 
 
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
@@ -25,7 +29,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         private final TextView titleView;
         private final TextView topicView;
         private final TextView dateView;
-        private final ImageView forwardView;
+        private final ConstraintLayout constraintLayout;
+       // private final ImageView forwardView;
         //private final TextView textView;
         //private final TextView textView;
 
@@ -35,15 +40,27 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
+                    Intent intent = new Intent(v.getContext(), Answers.class);
+                    v.getContext().startActivity(intent);
+                    //intent.putExtra("Id", questionID);
+                    Toast.makeText(v.getContext(), "id", Toast.LENGTH_SHORT).show();
                 }
             });
+
             topicView = (TextView) v.findViewById(R.id.topicView);
             dateView = (TextView) v.findViewById(R.id.dateView);
             titleView = (TextView) v.findViewById(R.id.titleView);
-            forwardView = (ImageView) v.findViewById(R.id.imageView);
+            constraintLayout = (ConstraintLayout) v.findViewById(R.id.rowConstraint);
+
+
+
+           //forwardView = (ImageView) v.findViewById(R.id.imageView);
         }
-/*
+
+
+
+
+        /*
         public TextView getTextView() {
             return textView;
         }
@@ -66,9 +83,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
     public CustomAdapter(String[] titleDataSet, String[] topicDataSet, String[] dateDataSet) {
+        //, int[]id
         mtitleDataSet = titleDataSet;
         mtopicDataSet = topicDataSet;
         mdateDataSet = dateDataSet;
+        //midDataset = id;
     }
 
     // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
@@ -94,6 +113,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getDateView().setText(mdateDataSet[position]);
         viewHolder.getTitleView().setText(mtitleDataSet[position]);
         viewHolder.getTopicView().setText(mtopicDataSet[position]);
+
 
     }
     // END_INCLUDE(recyclerViewOnBindViewHolder)

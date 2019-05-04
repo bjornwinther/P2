@@ -28,6 +28,8 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
     public static int indexQuestionData = 0;
     public static int maxIndexQuestionData = 5;
     static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
+
+
     private String questionTopicSelected;
     private TextView askMissingInput;
     private EditText questionDescription;
@@ -78,6 +80,9 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
 
         //questionDate = android.text.format.DateFormat.format("dd-MM-yyyy - hh:mm:ss", new java.util.Date()).toString();
 
+        for(int i = 0; i<indexQuestionData; i++){
+
+        }
 
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -99,7 +104,8 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                             questionTitle.getText().toString(),
                             questionDescription.getText().toString(),
                             questionTopicSelected,
-                            questionDate
+                            questionDate,
+                            indexQuestionData
                     );
 
 

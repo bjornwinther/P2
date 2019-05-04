@@ -9,14 +9,15 @@ public class QuestionData implements Serializable{
     public String questionAnswers;
     public String questionTopic;
     public String questionDate;
+    public int questionID;
 
 
-    public QuestionData(String questionTitle, String questionDescription, String questionTopic, String questionDate){
+    public QuestionData(String questionTitle, String questionDescription, String questionTopic, String questionDate, int questionID){
         this.questionTitle = questionTitle;
         this.questionDescription = questionDescription;
         this.questionTopic = questionTopic;
         this.questionDate = questionDate;
-
+        this.questionID = questionID;
     }
 
     public String getQuestionTitle(){
@@ -33,5 +34,8 @@ public class QuestionData implements Serializable{
     }
     public String getQuestionTopic() {
         return questionTopic;
+    }
+    public  int getQuestionID(){
+        return questionID;
     }
 }
