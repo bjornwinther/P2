@@ -30,11 +30,11 @@
         android:id="@+id/treeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:alpha=".20"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/item_list"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="@+id/item_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/branch_tree_crop" />
 
     <TextView
@@ -62,48 +62,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#2F4E73">
-
-            <ImageButton
-                android:id="@+id/forumBackButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/back" />
-
-            <ImageButton
-                android:id="@+id/forumForumButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toTopOf="@+id/SearchForQuestion"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/branch_small" />
-
-            <ImageButton
-                android:id="@+id/forumMenuButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/menu" />
 
             <EditText
                 android:id="@+id/SearchForQuestion"
@@ -137,24 +95,47 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/SearchForQuestion"
                 app:srcCompat="@drawable/searchicon" />
+
+            <ImageButton
+                android:id="@+id/forumBackButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/forumMenuButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <ListView
-        android:id="@+id/item_list"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/sample_content_fragment"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
+        app:layout_constraintTop_toBottomOf="@+id/header"></LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

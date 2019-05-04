@@ -1,6 +1,8 @@
 package com.example.p2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -17,11 +19,10 @@ import java.util.ArrayList;
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 
-public class Forum extends AppCompatActivity {
+public class Forum extends FragmentActivity {
 
     TextView noPosts;
     private Button ask;
-    ListView listView;
 
     //int insertArrayIndexHere = 10;
 
@@ -31,6 +32,13 @@ public class Forum extends AppCompatActivity {
         setContentView(R.layout.activity_forum);
 
         // look up enums for sorting through posts - implement it as interface
+
+        if (savedInstanceState == null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            RecyclerViewFragment fragment = new RecyclerViewFragment();
+            transaction.replace(R.id.sample_content_fragment, fragment);
+            transaction.commit();
+        }
 
         ask = findViewById(R.id.Ask);
         noPosts = findViewById(R.id.noPosts);
@@ -48,19 +56,7 @@ public class Forum extends AppCompatActivity {
         }
 
 
-        // Initializing list view with the custom adapter
-        ArrayList<Item> itemList = new ArrayList<Item>();
-        ItemArrayAdapter itemArrayAdapter = new ItemArrayAdapter(this, R.layout.list_item, itemList);
-        listView = (ListView) findViewById(R.id.item_list);
-        listView.setAdapter(itemArrayAdapter);
 
-        // Populating list items
-        for(int i=0; i<indexQuestionData; i++) {
-            itemList.add(new Item("Item " + i));
-        }
-
-        // Set up list item onclick listener
-        setUpListItemClickListener();
 
         ImageButton goOptions = (ImageButton) findViewById(R.id.forumMenuButton);
         goOptions.setOnClickListener(new View.OnClickListener(){
@@ -77,12 +73,4 @@ public class Forum extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void setUpListItemClickListener() {
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), "item " + position + " clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }

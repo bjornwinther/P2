@@ -3,6 +3,7 @@
     <string name="edit_search_question">" Search for question.."</string>
     <string name="typequestion">" Type question.."</string>
     <string name="typedescription">" Type description.."</string>
+    <string name="element_text">Element</string>
 
 
     <string name="questionTitleString"></string>
