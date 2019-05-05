@@ -13,6 +13,7 @@ import static com.example.p2.Ask.questionData;
 
 public class Question2 extends AppCompatActivity {
 
+    public int questionID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class Question2 extends AppCompatActivity {
         description.setText(questionData[indexQuestionData].getQuestionDescription());
         topic.setText(questionData[indexQuestionData].getQuestionTopic());
         date.setText(questionData[indexQuestionData].getQuestionDate());
+        questionID = (questionData[indexQuestionData].getQuestionID());
 
         indexQuestionData++;
 

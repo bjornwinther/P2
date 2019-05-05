@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     private static final String TAG = "CustomAdapter";
 
-    private String[] mtitleDataSet;
-    private String[] mdateDataSet;
-    private String[] mtopicDataSet;
-    private int[] midDataset;
+    private String[] forumTitleDataSet;
+    private String[] forumDateDataSet;
+    private String[] forumTopicDataSet;
+    private int[] forumIDDataset;
 
 
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
@@ -29,10 +29,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         private final TextView titleView;
         private final TextView topicView;
         private final TextView dateView;
-        private final ConstraintLayout constraintLayout;
-       // private final ImageView forwardView;
-        //private final TextView textView;
-        //private final TextView textView;
+
 
         public ViewHolder(View v) {
             super(v);
@@ -42,29 +39,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), Answers.class);
                     v.getContext().startActivity(intent);
-                    //intent.putExtra("Id", questionID);
-                    Toast.makeText(v.getContext(), "id", Toast.LENGTH_SHORT).show();
+                    //intent.putExtra("ID", getAdapterPosition());
+
+                    Toast.makeText(v.getContext(), ""+getAdapterPosition(), Toast.LENGTH_SHORT).show();
                 }
             });
 
             topicView = (TextView) v.findViewById(R.id.topicView);
             dateView = (TextView) v.findViewById(R.id.dateView);
             titleView = (TextView) v.findViewById(R.id.titleView);
-            constraintLayout = (ConstraintLayout) v.findViewById(R.id.rowConstraint);
 
 
-
-           //forwardView = (ImageView) v.findViewById(R.id.imageView);
         }
 
-
-
-
-        /*
-        public TextView getTextView() {
-            return textView;
-        }
-        */
         public TextView getTitleView() {
             return titleView;
         }
@@ -84,9 +71,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      */
     public CustomAdapter(String[] titleDataSet, String[] topicDataSet, String[] dateDataSet) {
         //, int[]id
-        mtitleDataSet = titleDataSet;
-        mtopicDataSet = topicDataSet;
-        mdateDataSet = dateDataSet;
+        forumTitleDataSet = titleDataSet;
+        forumTopicDataSet = topicDataSet;
+        forumDateDataSet = dateDataSet;
         //midDataset = id;
     }
 
@@ -110,9 +97,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
-        viewHolder.getDateView().setText(mdateDataSet[position]);
-        viewHolder.getTitleView().setText(mtitleDataSet[position]);
-        viewHolder.getTopicView().setText(mtopicDataSet[position]);
+        viewHolder.getDateView().setText(forumDateDataSet[position]);
+        viewHolder.getTitleView().setText(forumTitleDataSet[position]);
+        viewHolder.getTopicView().setText(forumTopicDataSet[position]);
 
 
     }
@@ -121,6 +108,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mtitleDataSet.length;
+        return forumTitleDataSet.length;
     }
 }

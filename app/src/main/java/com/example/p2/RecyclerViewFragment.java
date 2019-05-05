@@ -28,9 +28,9 @@ public class RecyclerViewFragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected CustomAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected String[] mtitleDataset;
-    protected String[] mtopicDataset;
-    protected String[] mdateDataset;
+    protected String[] forumTitleDataset;
+    protected String[] forumTopicDataset;
+    protected String[] forumDateDataset;
 
 
     @Override
@@ -67,7 +67,7 @@ public class RecyclerViewFragment extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new CustomAdapter(mtitleDataset, mtopicDataset, mdateDataset);
+        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset);
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -107,24 +107,24 @@ public class RecyclerViewFragment extends Fragment {
 
 
     private void initDataset() {
-        mtitleDataset = new String[indexQuestionData];
+        forumTitleDataset = new String[indexQuestionData];
         for (int i = 0; i < indexQuestionData; i++) {
 
-            mtitleDataset[i] = questionData[i].getQuestionTitle();
+            forumTitleDataset[i] = questionData[i].getQuestionTitle();
         }
     }
     private void initDatasetTopic() {
-        mtopicDataset = new String[indexQuestionData];
+        forumTopicDataset = new String[indexQuestionData];
         for (int i = 0; i < indexQuestionData; i++) {
 
-            mtopicDataset[i] = questionData[i].getQuestionTopic();
+            forumTopicDataset[i] = questionData[i].getQuestionTopic();
         }
     }
     private void initDatasetDate() {
-        mdateDataset = new String[indexQuestionData];
+        forumDateDataset = new String[indexQuestionData];
         for (int i = 0; i < indexQuestionData; i++) {
 
-            mdateDataset[i] = questionData[i].getQuestionDate();
+            forumDateDataset[i] = questionData[i].getQuestionDate();
         }
     }
 

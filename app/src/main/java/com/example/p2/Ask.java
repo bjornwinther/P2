@@ -68,17 +68,9 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
         date = new java.util.Date();
         questionTitle = findViewById(R.id.askQuestionTitle);
         questionDescription = findViewById(R.id.askQuestionDescription);
-        //questionDate = new java.util.Date().toString();
-        //questionDate = DateFormat.getDateInstance().format(myDate);
-        //
-        //questionDate = String.format(questionDate, df);
 
-        //android.text.format.DateFormat dateFormat = new android.text.format.DateFormat();
-        //android.text.format.DateFormat.format("yyyy-MM-dd a", new java.util.Date());
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
         questionDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
-
-        //questionDate = android.text.format.DateFormat.format("dd-MM-yyyy - hh:mm:ss", new java.util.Date()).toString();
 
         for(int i = 0; i<indexQuestionData; i++){
 
