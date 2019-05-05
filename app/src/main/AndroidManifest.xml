@@ -16,7 +16,6 @@
         <activity android:name=".SignUpSecond" />
         <activity android:name=".SignUp" />
         <activity android:name=".Forum" />
-        <activity android:name=".Question2" />
         <activity android:name=".Options" />
         <activity android:name=".MainActivity">
             <intent-filter>

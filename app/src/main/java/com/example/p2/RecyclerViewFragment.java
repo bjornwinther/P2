@@ -31,6 +31,7 @@ public class RecyclerViewFragment extends Fragment {
     protected String[] forumTitleDataset;
     protected String[] forumTopicDataset;
     protected String[] forumDateDataset;
+    protected int[] forumIDDataset;
 
 
     @Override
@@ -42,6 +43,7 @@ public class RecyclerViewFragment extends Fragment {
         initDataset();
         initDatasetDate();
         initDatasetTopic();
+        initDatasetID();
     }
 
     @Override
@@ -67,7 +69,7 @@ public class RecyclerViewFragment extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset);
+        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset, forumIDDataset);
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -125,6 +127,14 @@ public class RecyclerViewFragment extends Fragment {
         for (int i = 0; i < indexQuestionData; i++) {
 
             forumDateDataset[i] = questionData[i].getQuestionDate();
+        }
+    }
+
+    private void initDatasetID() {
+        forumIDDataset = new int[indexQuestionData];
+        for (int i = 0; i < indexQuestionData; i++) {
+
+            forumIDDataset[i] = questionData[i].getQuestionID();
         }
     }
 

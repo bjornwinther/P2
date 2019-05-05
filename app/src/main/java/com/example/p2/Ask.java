@@ -99,9 +99,9 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                             questionDate,
                             indexQuestionData
                     );
+                    indexQuestionData++;
 
-
-                    Intent intent = new Intent(Ask.this, Question2.class);
+                    Intent intent = new Intent(Ask.this, Answers.class);
                     startActivity(intent);
 
 
