@@ -64,17 +64,19 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
+                android:src="@drawable/up_green"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answeranswerView"
-                android:src="@drawable/back" />
+                app:layout_constraintTop_toBottomOf="@+id/answeranswerView" />
 
             <TextView
                 android:id="@+id/answerupView"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
+                android:layout_marginStart="8dp"
                 android:text="5"
-                android:textColor="#EBA888"
+                android:textColor="#00FF00"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/upVote"
                 app:layout_constraintStart_toEndOf="@+id/upVote"
                 app:layout_constraintTop_toTopOf="@+id/upVote" />
 
@@ -86,17 +88,19 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
+                android:src="@drawable/down_red"
                 app:layout_constraintStart_toEndOf="@+id/answerupView"
-                app:layout_constraintTop_toTopOf="@+id/upVote"
-                android:src="@drawable/back" />
+                app:layout_constraintTop_toTopOf="@+id/upVote" />
 
             <TextView
                 android:id="@+id/answerdownView"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
+                android:layout_marginStart="8dp"
                 android:text="0"
-                android:textColor="#EBA888"
+                android:textColor="#FF0000"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/downVote"
                 app:layout_constraintStart_toEndOf="@+id/downVote"
                 app:layout_constraintTop_toTopOf="@+id/upVote" />
 

@@ -81,8 +81,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:background="@drawable/card_white_background">
+            android:background="@drawable/card_white_background"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/questionTitle"
@@ -143,17 +143,59 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/noAnswersView"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sortBar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="There are no answers yet"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/answers_sample_content_fragment"
-        app:layout_constraintStart_toStartOf="@+id/answers_sample_content_fragment"
-        app:layout_constraintTop_toTopOf="@+id/answers_sample_content_fragment" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerView"
+        app:cardBackgroundColor="#00FFFFFF"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/sortDate"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/text_background_bluealpha"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicatorColor="#EBA888"
+                app:tabIndicatorHeight="5dp">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/Popular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Answers" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/Newest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Newest" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/Oldest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oldest" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/answerButton"
@@ -170,6 +212,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/noAnswersView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="There are no answers yet"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/answers_sample_content_fragment"
+        app:layout_constraintStart_toStartOf="@+id/answers_sample_content_fragment"
+        app:layout_constraintTop_toTopOf="@+id/answers_sample_content_fragment" />
+
     <LinearLayout
         android:id="@+id/answers_sample_content_fragment"
         android:layout_width="0dp"
@@ -182,6 +236,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerView"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/sortBar"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

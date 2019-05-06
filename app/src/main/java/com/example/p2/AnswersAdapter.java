@@ -11,7 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHolder> {
 
     private String[] answerAnswerDataSet;
-    private static int[] forumIDDataset;
+    private String[] answerUserDataSet;
+    private String[] answerUpDataSet;
+    private String[] answerDownDataSet;
+    private String[] answerDateDataSet;
+
+
 
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
     /**
@@ -73,8 +78,18 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
      * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
     public AnswersAdapter(String[] answerDataSet) {
+        /*
+        String[] userDataSet
+        String[] upDataSet
+        String[] downDataSet
+        String[] dateDataSet
+
+        */
+
+
 
         answerAnswerDataSet = answerDataSet;
+
     }
 
     // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
@@ -100,7 +115,12 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
 
         viewHolder.getAnswerView().setText(answerAnswerDataSet[position]);
 
-
+        /*
+viewHolder.getDateView().setText(dataset[position]);
+viewHolder.getDownView().setText(dataset[position]);
+viewHolder.getUpView().setText(dataset[position]);
+viewHolder.getUserView().setText(dataset[position]);
+        */
 
     }
     // END_INCLUDE(recyclerViewOnBindViewHolder)
