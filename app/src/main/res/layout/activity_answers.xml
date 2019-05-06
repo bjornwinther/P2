@@ -32,7 +32,7 @@
                 android:scaleType="fitEnd"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/back" />
+                android:src="@drawable/back" />
 
             <ImageButton
                 android:id="@+id/forumForumButton"
@@ -47,7 +47,7 @@
                 app:layout_constraintStart_toStartOf="parent"
 
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/branch_small" />
+                android:src="@drawable/branch_small" />
 
             <ImageButton
                 android:id="@+id/questionForumButton"
@@ -61,7 +61,7 @@
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/menu" />
+                android:src="@drawable/menu" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -150,6 +150,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="There are no answers yet"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/answersLayout"
         app:layout_constraintEnd_toEndOf="@+id/answersLayout"
