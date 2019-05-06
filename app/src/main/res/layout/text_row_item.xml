@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,10 +11,11 @@
     android:gravity="center_vertical"
     android:orientation="vertical">
 
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        
+
 
         >
 
@@ -28,8 +32,10 @@
                 android:id="@+id/topicView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/tahoma"
                 android:text="topic"
                 android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,9 +43,12 @@
                 android:id="@+id/titleView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/tahoma"
+
                 android:text="title"
                 android:textColor="#EBA888"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/topicView" />
 
@@ -47,8 +56,10 @@
                 android:id="@+id/userView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/tahoma"
                 android:text="user"
                 android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleView" />
 
@@ -56,8 +67,10 @@
                 android:id="@+id/answersView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/tahoma"
                 android:text="answers"
                 android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/userView" />
 
@@ -65,6 +78,7 @@
                 android:id="@+id/dateView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/tahoma"
                 android:text="date"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="@+id/answersView"

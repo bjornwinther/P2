@@ -1,6 +1,7 @@
 package com.example.p2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 
-public class Answers extends AppCompatActivity {
+public class Answers extends FragmentActivity {
 
     ImageButton backButton;
     int ID;
@@ -42,14 +43,10 @@ public class Answers extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //textView = findViewById(R.id.textView);
-
-
 
         Intent intent = getIntent();
         intent.getIntExtra("ID", 0);
         ID = getIntent().getIntExtra("ID", 0);
-        Toast.makeText(this,"Question Posted", Toast.LENGTH_SHORT).show();
 
         questionTitle.setText(questionData[ID].getQuestionTitle());
         questionTopic.setText(questionData[ID].getQuestionTopic());

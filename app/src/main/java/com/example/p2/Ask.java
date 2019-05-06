@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -100,8 +101,11 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                             indexQuestionData
                     );
                     indexQuestionData++;
+                    Toast.makeText(getApplicationContext(),"Question Posted", Toast.LENGTH_SHORT).show();
+
 
                     Intent intent = new Intent(Ask.this, Answers.class);
+                    //intent.putExtra("Ask", 0);
                     startActivity(intent);
 
 

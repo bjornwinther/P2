@@ -20,7 +20,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private String[] forumTopicDataSet;
     private static int[] forumIDDataset;
 
-
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
     /**
      * Provide a reference to the type of views that you are using (custom ViewHolder)
@@ -39,11 +38,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), Answers.class);
                     intent.putExtra("ID", forumIDDataset[getAdapterPosition()]);
+                    //intent.putExtra("Forum", 0);
                     v.getContext().startActivity(intent);
-                    //intent.putExtra("ID", getAdapterPosition());
 
-
-                    Toast.makeText(v.getContext(), ""+getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(v.getContext(), ""+getAdapterPosition(), Toast.LENGTH_SHORT).show();
                 }
             });
 
