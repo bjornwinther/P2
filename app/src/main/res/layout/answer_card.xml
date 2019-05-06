@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/answerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_background"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/answeruserView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tahoma"
+                android:text="User"
+                android:textColor="#EBA888"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/answeranswerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/tahoma"
+                android:text="Answer"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/answeruserView" />
+
+            <TextView
+                android:id="@+id/answerdateView"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/tahoma"
+                android:text="Date"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/answeranswerView" />
+
+            <ImageButton
+                android:id="@+id/upVote"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/answeranswerView"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/answerupView"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="5"
+                android:textColor="#EBA888"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/upVote"
+                app:layout_constraintTop_toTopOf="@+id/upVote" />
+
+            <ImageButton
+                android:id="@+id/downVote"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toEndOf="@+id/answerupView"
+                app:layout_constraintTop_toTopOf="@+id/upVote"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/answerdownView"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="0"
+                android:textColor="#EBA888"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/downVote"
+                app:layout_constraintTop_toTopOf="@+id/upVote" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+</LinearLayout>

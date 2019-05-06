@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2F4E73"
     tools:context=".Answers">
 
 
@@ -70,20 +69,20 @@
         android:id="@+id/headerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:cardBackgroundColor="@color/cardview_shadow_end_color"
-
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsView">
+        app:layout_constraintTop_toBottomOf="@+id/buttonsView"
+
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/card_white_background"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:background="@drawable/card_white_background">
 
             <TextView
                 android:id="@+id/questionTitle"
@@ -148,13 +147,13 @@
         android:id="@+id/noAnswersView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="There are no answers yet"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/answersLayout"
-        app:layout_constraintEnd_toEndOf="@+id/answersLayout"
-        app:layout_constraintStart_toStartOf="@+id/answersLayout"
-        app:layout_constraintTop_toTopOf="@+id/answersLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/answers_sample_content_fragment"
+        app:layout_constraintStart_toStartOf="@+id/answers_sample_content_fragment"
+        app:layout_constraintTop_toTopOf="@+id/answers_sample_content_fragment" />
 
     <Button
         android:id="@+id/answerButton"
@@ -167,18 +166,18 @@
         android:text="Answer"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/answersLayout"
-        app:layout_constraintEnd_toEndOf="@+id/answersLayout"
-        app:layout_constraintStart_toStartOf="@+id/answersLayout" />
+        app:layout_constraintBottom_toBottomOf="@+id/answers_sample_content_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:id="@+id/answersLayout"
+        android:id="@+id/answers_sample_content_fragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

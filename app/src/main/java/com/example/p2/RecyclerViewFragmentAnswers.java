@@ -12,9 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragmentAnswers extends Fragment {
 
-    private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
     private static final int DATASET_COUNT = 1;
@@ -24,12 +23,12 @@ public class RecyclerViewFragment extends Fragment {
     }
 
     protected LayoutManagerType mCurrentLayoutManagerType;
-
     protected RecyclerView mRecyclerView;
-    protected CustomAdapter mAdapter;
+    protected AnswersAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected String[] forumTitleDataset;
-    protected String[] forumTopicDataset;
+
+    protected String[] answerAnswerDataSet;
+
     protected String[] forumDateDataset;
     protected int[] forumIDDataset;
 
@@ -41,19 +40,19 @@ public class RecyclerViewFragment extends Fragment {
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
         initDataset();
-        initDatasetDate();
-        initDatasetTopic();
-        initDatasetID();
+        //initDatasetDate();
+        //initDatasetTopic();
+        //initDatasetID();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.recycler_view_frag, container, false);
+        View rootView = inflater.inflate(R.layout.answers_recycler_view_frag, container, false);
 
 
         // BEGIN_INCLUDE(initializeRecyclerView)
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerViewAnswers);
 
         // LinearLayoutManager is used here, this will layout the elements in a similar fashion
         // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
@@ -69,7 +68,8 @@ public class RecyclerViewFragment extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset, forumIDDataset);
+        mAdapter = new AnswersAdapter(answerAnswerDataSet);
+
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -77,12 +77,13 @@ public class RecyclerViewFragment extends Fragment {
         return rootView;
     }
 
+
     /**
      * Set RecyclerView's LayoutManager to the one given.
      *
      * @param layoutManagerType Type of layout manager to switch to.
      */
-    public void setRecyclerViewLayoutManager(LayoutManagerType layoutManagerType) {
+    public void setRecyclerViewLayoutManager(RecyclerViewFragmentAnswers.LayoutManagerType layoutManagerType) {
         int scrollPosition = 0;
 
         // If a layout manager has already been set, get current scroll position.
@@ -109,33 +110,13 @@ public class RecyclerViewFragment extends Fragment {
 
 
     private void initDataset() {
-        forumTitleDataset = new String[indexQuestionData];
+        answerAnswerDataSet = new String[indexQuestionData];
         for (int i = 0; i < indexQuestionData; i++) {
 
-            forumTitleDataset[i] = questionData[i].getQuestionTitle();
-        }
-    }
-    private void initDatasetTopic() {
-        forumTopicDataset = new String[indexQuestionData];
-        for (int i = 0; i < indexQuestionData; i++) {
+            answerAnswerDataSet[i] = questionData[i].getQuestionTitle();
 
-            forumTopicDataset[i] = questionData[i].getQuestionTopic();
-        }
-    }
-    private void initDatasetDate() {
-        forumDateDataset = new String[indexQuestionData];
-        for (int i = 0; i < indexQuestionData; i++) {
-
-            forumDateDataset[i] = questionData[i].getQuestionDate();
         }
     }
 
-    private void initDatasetID() {
-        forumIDDataset = new int[indexQuestionData];
-        for (int i = 0; i < indexQuestionData; i++) {
-
-            forumIDDataset[i] = questionData[i].getQuestionID();
-        }
-    }
 
 }
