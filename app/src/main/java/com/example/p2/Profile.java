@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import static com.example.p2.SignUp.accounts;
-import static com.example.p2.SignUp.indexOfAcc;
+import static com.example.p2.MainActivity.accounts;
+import static com.example.p2.MainActivity.indexOfAcc;
+import static com.example.p2.MainActivity.accounts;
+import static com.example.p2.MainActivity.indexOfAcc;
 
 public class Profile extends AppCompatActivity {
 
