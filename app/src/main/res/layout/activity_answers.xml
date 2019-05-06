@@ -30,9 +30,9 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitEnd"
+                android:src="@drawable/back"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/back" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/forumForumButton"
@@ -42,12 +42,12 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
+                android:src="@drawable/branch_small"
                 app:layout_constraintBottom_toTopOf="@+id/SearchForQuestion"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
 
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/branch_small" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/questionForumButton"
@@ -59,9 +59,9 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
+                android:src="@drawable/menu"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/menu" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -71,10 +71,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         app:cardBackgroundColor="@color/cardview_shadow_end_color"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,6 +90,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/tahoma"
                 android:text="Title"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -102,8 +101,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/tahoma"
                 android:text="Topic"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/questionTitle" />
 
@@ -112,8 +112,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/tahoma"
                 android:text="Profile"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/questionTopic" />
 
@@ -122,28 +123,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/tahoma"
                 android:gravity="end"
                 android:inputType="date"
                 android:text="Date"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/questionUser"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tahoma"
+                android:text="Description"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionUser" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/questionDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/text_background"
-        android:padding="10dp"
-        android:text="Description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerView" />
 
     <TextView
         android:id="@+id/noAnswersView"
@@ -184,6 +183,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionDescription"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/headerView"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

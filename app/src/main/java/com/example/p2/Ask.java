@@ -73,9 +73,6 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
         questionDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
 
-        for(int i = 0; i<indexQuestionData; i++){
-
-        }
 
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
