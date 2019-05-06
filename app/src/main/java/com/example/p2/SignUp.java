@@ -11,6 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.p2.MainActivity.accounts;
+import static com.example.p2.MainActivity.indexOfAcc;
+import static com.example.p2.MainActivity.maxAccounts;
+
 public class SignUp extends AppCompatActivity {
 
     private TextView suInfo;
@@ -23,9 +27,9 @@ public class SignUp extends AppCompatActivity {
     private TextView suWarningUsername;
     private TextView suWarningEmail;
 
-    static Account[] accounts = new Account[10];
+    /*static Account[] accounts = new Account[10];
     static int indexOfAcc = 0;
-    private int maxAccounts = 10;
+    static int maxAccounts = 10;*/
 
 
     @Override
@@ -74,7 +78,7 @@ public class SignUp extends AppCompatActivity {
                     suWarningUsername.setVisibility(View.GONE);
                     indexOfAcc++;
                     accounts[indexOfAcc] = new Account(username.getText().toString(), email.getText().toString(),
-                            phone.getText().toString(), createPass.getText().toString(), confirmPass.getText().toString());
+                            phone.getText().toString(), createPass.getText().toString(), confirmPass.getText().toString(),indexOfAcc);
                     Intent intent = new Intent(SignUp.this, SignUpSecond.class);
                     startActivity(intent);
                 }

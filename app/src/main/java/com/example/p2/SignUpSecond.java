@@ -15,8 +15,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.p2.SignUp.accounts;
-import static com.example.p2.SignUp.indexOfAcc;
+import static com.example.p2.MainActivity.accounts;
+import static com.example.p2.MainActivity.indexOfAcc;
 
 public class SignUpSecond extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
