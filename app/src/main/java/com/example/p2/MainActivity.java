@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     static Account[] accounts = new Account[10];
     static int indexOfAcc = 0;
     static int maxAccounts = 10;
+    static int uniqueAccID;
 
 
     @Override
@@ -70,36 +71,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* private void adminLogin(String username, String password) { // maybe put in try-catch?
-        try {
-            if ((username.equals("")) && (password.equals(""))) {
-                Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
-                startActivity(intent);
-            } else {
-                counter--;
-                numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
-                // maybe add if counter < 3 - turn text red?
-                if (counter <= 0) {
-                    login.setEnabled(false); // Deactivates login-button.
-                }
-            }
-        }catch(Exception e){
-            System.out.println("AdminLogin went wrong");
-        }
-    }*/
 
     private void validateUser(String username, String password) { // maybe put in try-catch?
         try {
-            if (username.equals(accounts[indexOfAcc].getUsername()) && password.equals(accounts[indexOfAcc].getConfirmPass())){
-                Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
-                startActivity(intent);
-            }else {
-                Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
-                counter--;
-                numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
-                // maybe add if counter < 3 - turn text red?
-                if (counter <= 0) {
-                    login.setEnabled(false); // Deactivates login-button.
+
+
+            for(int indexLoop = 0; indexLoop < 10; indexLoop ++) {
+                if (username.equals(accounts[indexLoop].getUsername()) && password.equals(accounts[indexLoop].getConfirmPass())) {
+                    Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
+                    startActivity(intent);
+                    uniqueAccID = indexLoop;
+
+                } else { // fix else method - so it doesnt run every time:
+                    Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
+                    counter--;
+                    numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
+                    // maybe add if counter < 3 - turn text red?
+                    if (counter <= 0) {
+                        login.setEnabled(false); // Deactivates login-button.
+                    }
                 }
             }
         }catch(Exception e){
@@ -107,34 +97,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*private void validateAdmin(String username, String password) { // maybe put in try-catch?
-        try {
-            if (username.equals(admin.getUsername()) && password.equals(admin.getConfirmPass()) ||
-                    username.equals(admin.getUsername()) && password.equals(admin.getConfirmPass())){
-                Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
-                startActivity(intent);
-            }else {
-                Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
-                counter--;
-                numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
-                // maybe add if counter < 3 - turn text red?
-                if (counter <= 0) {
-                    login.setEnabled(false); // Deactivates login-button.
-                }
-            }
-        }catch(Exception e){
-            System.out.println("validateUser-method went wrong");
-        }
-    }*/
-
-
-
-
     private void changePageTo(Class page) {
         Intent intent = new Intent(MainActivity.this, page);
         startActivity(intent);
     }
-
 
 
 }

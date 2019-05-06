@@ -2,6 +2,7 @@ package com.example.p2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,9 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import static com.example.p2.MainActivity.accounts;
-import static com.example.p2.MainActivity.indexOfAcc;
-import static com.example.p2.MainActivity.accounts;
-import static com.example.p2.MainActivity.indexOfAcc;
+import static com.example.p2.MainActivity.uniqueAccID;
 
 public class Profile extends AppCompatActivity {
 
@@ -20,7 +19,6 @@ public class Profile extends AppCompatActivity {
     private TextView semesterAndUni;
     private TextView major;
     private TextView age;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +31,12 @@ public class Profile extends AppCompatActivity {
         major = findViewById(R.id.profileMajor);
         age = findViewById(R.id.profileAge);
 
-        name.setText(accounts[indexOfAcc].getFirstName() + " " + accounts[indexOfAcc].getLastName()); // set name
-        semesterAndUni.setText(accounts[indexOfAcc].getSemester()+ " - " + accounts[indexOfAcc].getUniveristy());
-        major.setText(accounts[indexOfAcc].getMajor());
-        age.setText(accounts[indexOfAcc].getAge() +  " years old");
+
+                name.setText(accounts[uniqueAccID].getFirstName() + " " + accounts[uniqueAccID].getLastName()); // set name
+                semesterAndUni.setText(accounts[uniqueAccID].getSemester() + " - " + accounts[uniqueAccID].getUniveristy());
+                major.setText(accounts[uniqueAccID].getMajor());
+                age.setText(accounts[uniqueAccID].getAge() + " years old");
+
 
         profilePicture.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -45,4 +45,5 @@ public class Profile extends AppCompatActivity {
         });
 
     }
+
 }
