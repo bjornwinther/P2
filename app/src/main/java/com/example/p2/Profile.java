@@ -59,6 +59,7 @@ public class Profile extends AppCompatActivity {
 
 
 
+
         profilePicture.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 //Onclick listener for profile picture - Method for changing profil pic.

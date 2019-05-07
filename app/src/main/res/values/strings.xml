@@ -4,6 +4,9 @@
     <string name="typequestion">" Type question.."</string>
     <string name="typedescription">" Type description.."</string>
     <string name="element_text">Element</string>
+    <string name="skill1">"skill uno"</string>
+    <string name="skill2">"skill dos"</string>
+    <string name="skill3">"skill tres"</string>
 
 
     <string name="questionTitleString"></string>
