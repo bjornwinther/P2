@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
 
-            for(int indexLoop = 0; indexLoop < 10; indexLoop ++) {
+            for(int indexLoop = 0; indexLoop <= indexOfAcc; indexLoop ++) {
                 if (username.equals(accounts[indexLoop].getUsername()) && password.equals(accounts[indexLoop].getConfirmPass())) {
                     Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                     startActivity(intent);
