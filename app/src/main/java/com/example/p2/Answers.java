@@ -2,6 +2,7 @@ package com.example.p2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +35,13 @@ public class Answers extends FragmentActivity {
         questionDescription = findViewById(R.id.questionDescription);
 
         backButton = findViewById(R.id.answersBackButton);
+
+        if (savedInstanceState == null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            RecyclerViewFragmentAnswers fragmentAnswers = new RecyclerViewFragmentAnswers();
+            transaction.replace(R.id.answers_sample_content_fragment, fragmentAnswers);
+            transaction.commit();
+        }
 
 
         backButton.setOnClickListener(new View.OnClickListener() {
