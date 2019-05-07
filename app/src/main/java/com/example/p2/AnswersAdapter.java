@@ -128,7 +128,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         // with that element
 
         viewHolder.getAnswerView().setText(answerAnswerDataSet[position]);
-        viewHolder.getScoreView().setText(String.valueOf(answerScoreDataSet[position]));
+        //viewHolder.getScoreView().setText(String.valueOf(answerScoreDataSet[position]));
 
 
         /*
