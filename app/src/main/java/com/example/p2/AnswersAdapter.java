@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
     private String[] answerUpDataSet;
     private String[] answerDownDataSet;
     private String[] answerDateDataSet;
+    private int[] answerScoreDataSet;
 
 
 
@@ -26,8 +28,12 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         private final TextView userView;
         private final TextView answerView;
         private final TextView dateView;
-        private final TextView upView;
-        private final TextView downView;
+        private final TextView scoreView;
+        private final ImageButton upView;
+        private final ImageButton downView;
+
+
+
 
 
         public ViewHolder(View v) {
@@ -43,9 +49,20 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
             userView = v.findViewById(R.id.answeruserView);
             dateView = v.findViewById(R.id.answerdateView);
             answerView = v.findViewById(R.id.answeranswerView);
-            upView = v.findViewById(R.id.answerupView);
-            downView = v.findViewById(R.id.answerdownView);
+            scoreView = v.findViewById(R.id.scoreView);
 
+            upView = v.findViewById(R.id.upVote);
+            downView = v.findViewById(R.id.downVote);
+
+
+            upView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+            //downView.setImageResource(R.drawable.down_peach);
+            //upView.setImageResource(R.drawable.up_peach);
 
 
         }
@@ -62,12 +79,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
             return dateView;
         }
 
-        public TextView getUpView() {
-            return upView;
-        }
-
-        public TextView getDownView() {
-            return downView;
+        public TextView getScoreView() {
+            return scoreView;
         }
     }
     // END_INCLUDE(recyclerViewSampleViewHolder)
@@ -77,7 +90,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
      *
      * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
-    public AnswersAdapter(String[] answerDataSet) {
+    public AnswersAdapter(String[] answerDataSetA, int[] answerScoreDataSetA) {
         /*
         String[] userDataSet
         String[] upDataSet
@@ -86,9 +99,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
 
         */
 
-
-
-        answerAnswerDataSet = answerDataSet;
+        answerAnswerDataSet = answerDataSetA;
+        answerScoreDataSet = answerScoreDataSetA;
 
     }
 
@@ -114,6 +126,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         // with that element
 
         viewHolder.getAnswerView().setText(answerAnswerDataSet[position]);
+        viewHolder.getScoreView().setText(String.valueOf(answerScoreDataSet[position]));
+
 
         /*
 viewHolder.getDateView().setText(dataset[position]);

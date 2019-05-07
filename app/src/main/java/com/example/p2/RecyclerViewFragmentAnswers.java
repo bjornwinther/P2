@@ -28,7 +28,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     protected RecyclerView.LayoutManager mLayoutManager;
 
     protected String[] answerAnswerDataSet;
-
+    protected int[] answerScoreDataset;
     protected String[] forumDateDataset;
     protected int[] forumIDDataset;
 
@@ -40,6 +40,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
         initDataset();
+        initDatasetScore();
         //initDatasetDate();
         //initDatasetTopic();
         //initDatasetID();
@@ -68,7 +69,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new AnswersAdapter(answerAnswerDataSet);
+        mAdapter = new AnswersAdapter(answerAnswerDataSet, answerScoreDataset);
 
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
@@ -117,6 +118,16 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
         }
     }
+
+    private void initDatasetScore() {
+        answerScoreDataset = new int[indexQuestionData]; //remember to change to indexAnswerData
+        for (int i = 0; i < indexQuestionData; i++) {
+
+            answerScoreDataset[i] = 2;
+
+        }
+    }
+
 
 
 }

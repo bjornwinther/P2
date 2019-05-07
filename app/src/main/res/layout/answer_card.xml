@@ -25,6 +25,7 @@
                 android:id="@+id/answeruserView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
                 android:fontFamily="@font/tahoma"
                 android:text="User"
                 android:textColor="#EBA888"
@@ -34,13 +35,15 @@
 
             <TextView
                 android:id="@+id/answeranswerView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/tahoma"
                 android:text="Answer"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/answeruserView" />
 
@@ -48,13 +51,13 @@
                 android:id="@+id/answerdateView"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/tahoma"
                 android:text="Date"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answeranswerView" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/upVote"
@@ -64,45 +67,58 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/up_green"
+                android:src="@drawable/up"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answeranswerView" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/upVoteClicked"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/up_peach"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/answerupView"
+                android:id="@+id/scoreView"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginStart="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="5"
-                android:textColor="#00FF00"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/upVote"
-                app:layout_constraintStart_toEndOf="@+id/upVote"
-                app:layout_constraintTop_toTopOf="@+id/upVote" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/upVote"
+                app:layout_constraintStart_toStartOf="@+id/upVote"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/downVote"
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/down_red"
-                app:layout_constraintStart_toEndOf="@+id/answerupView"
-                app:layout_constraintTop_toTopOf="@+id/upVote" />
+                android:src="@drawable/down"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scoreView" />
 
-            <TextView
-                android:id="@+id/answerdownView"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginStart="8dp"
-                android:text="0"
-                android:textColor="#FF0000"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/downVote"
-                app:layout_constraintStart_toEndOf="@+id/downVote"
-                app:layout_constraintTop_toTopOf="@+id/upVote" />
+            <ImageButton
+                android:id="@+id/downVoteClicked"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/down_peach"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scoreView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
