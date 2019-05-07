@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 
-public class Forum extends FragmentActivity implements AdapterView.OnItemSelectedListener {
+public class Forum extends FragmentActivity implements AdapterView.OnItemSelectedListener, PopupMenu.OnMenuItemClickListener {
 
     TextView noPosts;
     private Button ask;
@@ -60,13 +62,15 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
         }
 
         ImageButton goOptions = (ImageButton) findViewById(R.id.forumMenuButton);
-        goOptions.setOnClickListener(new View.OnClickListener() {
+        registerForContextMenu(goOptions);
+
+        /*goOptions.setOnClickListener(new View.OnClickListener() {
                                          public void onClick(View view) {
                                              Intent intent = new Intent(Forum.this, Options.class);
                                              startActivity(intent);
                                          }
                                      }
-        );
+        );*/
 
         //define spinner
         final Spinner topicSpinner = (Spinner) findViewById(R.id.topicSpinner);
@@ -80,6 +84,36 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
         topicSpinner.setAdapter(adapter);
     }
 
+    public void showPopup(View v){
+        PopupMenu popup = new PopupMenu(this,v);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.options_menu);
+        popup.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.option_1:
+                Toast.makeText(this, "Option 1 clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.option_2:
+                Toast.makeText(this, "Option 2 clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.option_3:
+                Toast.makeText(this, "Option 3 clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.option_4:
+                Toast.makeText(this, "Option 4 clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.option_5:
+                Toast.makeText(this, "Option 5 clicked", Toast.LENGTH_SHORT).show();
+                return true;
+
+            default:
+                return false;
+        }
+    }
     private void changePageTo(Class page) {
         Intent intent = new Intent(Forum.this, page);
         startActivity(intent);
