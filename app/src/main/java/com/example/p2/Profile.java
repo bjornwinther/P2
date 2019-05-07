@@ -23,6 +23,10 @@ public class Profile extends AppCompatActivity {
     private EditText info;
     private TextView saveInfo;
     private TextView editInfo;
+    private TextView profileUni;
+    private TextView rating;
+    private TextView mentors;
+    private TextView questAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,10 @@ public class Profile extends AppCompatActivity {
         info = findViewById(R.id.profileInfo);
         saveInfo = findViewById(R.id.profileSave);
         editInfo = findViewById(R.id.profileEdit);
+        profileUni = findViewById(R.id.profileUni);
+        rating = findViewById(R.id.profileRating);
+        mentors = findViewById(R.id.profileMentor);
+        questAnswers = findViewById(R.id.profileQuestAnswer);
 
 
 
@@ -44,6 +52,10 @@ public class Profile extends AppCompatActivity {
                 semesterAndUni.setText(accounts[uniqueAccID].getSemester() + " - " + accounts[uniqueAccID].getUniveristy());
                 major.setText(accounts[uniqueAccID].getMajor());
                 age.setText(accounts[uniqueAccID].getAge() + " years old");
+                profileUni.setText(accounts[uniqueAccID].getUniveristy());
+                rating.setText(String.valueOf((accounts[uniqueAccID].getRating())));
+                mentors.setText(String.valueOf(accounts[uniqueAccID].getMentorships()));
+                questAnswers.setText(String.valueOf(accounts[uniqueAccID].getTotalAnswers()));
 
 
 
