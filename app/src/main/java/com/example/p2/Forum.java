@@ -83,31 +83,41 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
 // Apply the adapter to the spinner
         topicSpinner.setAdapter(adapter);
     }
-
+//Popup Menu
     public void showPopup(View v){
         PopupMenu popup = new PopupMenu(this,v);
         popup.setOnMenuItemClickListener(this);
         popup.inflate(R.menu.options_menu);
         popup.show();
     }
-
+    //Popup Menu intents
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.option_1:
-                Toast.makeText(this, "Option 1 clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+                Intent goToProfile = new Intent(Forum.this, Profile.class);
+                startActivity(goToProfile);
                 return true;
             case R.id.option_2:
-                Toast.makeText(this, "Option 2 clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
+                Intent goToChat = new Intent(Forum.this, Profile.class);
+                startActivity(goToChat);
                 return true;
             case R.id.option_3:
-                Toast.makeText(this, "Option 3 clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                Intent goToSettings = new Intent(Forum.this, Settings.class);
+                startActivity(goToSettings);
                 return true;
             case R.id.option_4:
-                Toast.makeText(this, "Option 4 clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Help", Toast.LENGTH_SHORT).show();
+                Intent goToHelp = new Intent(Forum.this, Help.class);
+                startActivity(goToHelp);
                 return true;
             case R.id.option_5:
-                Toast.makeText(this, "Option 5 clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
+                Intent logOut = new Intent(Forum.this, MainActivity.class);
+                startActivity(logOut);
                 return true;
 
             default:
