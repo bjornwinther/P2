@@ -23,7 +23,7 @@ public class Account {
     private String status;
     private String semester;
     private double rating;
-    private static int counterRating;
+    private int amountOfRates;
     private int mentorships;
     private int totalAnswers;
 
@@ -78,8 +78,8 @@ public class Account {
     }
 
     public void updateRating() { // use for rating
-        counterRating++;
-        rating += rating/counterRating;
+        amountOfRates++;
+        rating += rating/amountOfRates;
     }
 
     public String getSemester() {
