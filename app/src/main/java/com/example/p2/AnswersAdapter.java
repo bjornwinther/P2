@@ -90,7 +90,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
     /**
      * Initialize the dataset of the Adapter.
      *
-     * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
+     * @param //dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
     public AnswersAdapter(String[] answerDataSetA, int[] answerScoreDataSetA) {
         /*
