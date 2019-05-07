@@ -22,6 +22,11 @@ public class Account {
     private String major;
     private String status;
     private String semester;
+    private double rating;
+    private int amountOfRates;
+    private int mentorships;
+    private int totalAnswers;
+
 
     public Account(String username, String email, String phone, String createPass, String confirmPass) {
         this.username = username;
@@ -46,6 +51,35 @@ public class Account {
         this.major = major;
         this.status = status;
         this.semester = semester;
+    }
+
+    public int getTotalAnswers() {
+        return totalAnswers;
+    }
+
+    public void setTotalAnswers(int totalAnswers) {
+        this.totalAnswers = totalAnswers;
+    }
+
+    public int getMentorships() {
+        return mentorships;
+    }
+
+    public void setMentorships(int mentorships) {
+        this.mentorships = mentorships;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) { // probably useless
+        this.rating = rating;
+    }
+
+    public void updateRating() { // use for rating
+        amountOfRates++;
+        rating += rating/amountOfRates;
     }
 
     public String getSemester() {
