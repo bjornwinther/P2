@@ -11,12 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
+import static com.example.p2.CustomAdapter.setID;
 
 public class RecyclerViewFragmentAnswers extends Fragment {
 
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
-    private static final int SPAN_COUNT = 2;
-    private static final int DATASET_COUNT = 1;
 
     private enum LayoutManagerType {
         LINEAR_LAYOUT_MANAGER
@@ -27,20 +26,28 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     protected AnswersAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
 
-    protected String[] answerAnswerDataSet;
+    protected String[] answerAnswerDataset;
     protected int[] answerScoreDataset;
     protected String[] forumDateDataset;
     protected int[] forumIDDataset;
 
+    protected int[] answerArray;
+
+    protected static int getID;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getID = setID;
+
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
-        initDataset();
-        initDatasetScore();
+
+        initID();
+
+        //initDatasetAnswer();
+        //initDatasetScore();
         //initDatasetDate();
         //initDatasetTopic();
         //initDatasetID();
@@ -50,7 +57,6 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.answers_recycler_view_frag, container, false);
-
 
         // BEGIN_INCLUDE(initializeRecyclerView)
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerViewAnswers);
@@ -69,7 +75,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new AnswersAdapter(answerAnswerDataSet, answerScoreDataset);
+        mAdapter = new AnswersAdapter(answerAnswerDataset, answerScoreDataset);
 
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
@@ -109,12 +115,20 @@ public class RecyclerViewFragmentAnswers extends Fragment {
      * from a local content provider or remote server.
      */
 
+    private void initID() {
+        for (int i = 0; i < 2; i++) {
 
-    private void initDataset() {
-        answerAnswerDataSet = new String[indexQuestionData];
+            initDatasetAnswer();
+            initDatasetScore();
+
+        }
+    }
+
+    private void initDatasetAnswer() {
+        answerAnswerDataset = new String[indexQuestionData];
         for (int i = 0; i < indexQuestionData; i++) {
 
-            answerAnswerDataSet[i] = questionData[i].getQuestionTitle();
+            answerAnswerDataset[i] = questionData[i].getQuestionTitle();
 
         }
     }

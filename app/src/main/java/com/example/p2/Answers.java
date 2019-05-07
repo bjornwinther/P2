@@ -7,21 +7,24 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
+import static com.example.p2.CustomAdapter.setID;
+import static com.example.p2.RecyclerViewFragmentAnswers.getID;
 
 public class Answers extends FragmentActivity {
 
     ImageButton backButton;
-    int ID;
     TextView questionTitle;
     TextView questionTopic;
     TextView questionDate;
     TextView questionDescription;
+    Button answer;
 
 
     @Override
@@ -29,10 +32,13 @@ public class Answers extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answers);
 
+        getID = setID;
+
         questionTitle = findViewById(R.id.questionTitle);
         questionTopic = findViewById(R.id.questionTopic);
         questionDate = findViewById(R.id.questionDate);
         questionDescription = findViewById(R.id.questionDescription);
+        answer = findViewById(R.id.answerButton);
 
         backButton = findViewById(R.id.answersBackButton);
 
@@ -43,7 +49,6 @@ public class Answers extends FragmentActivity {
             transaction.commit();
         }
 
-
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,14 +57,23 @@ public class Answers extends FragmentActivity {
             }
         });
 
-        Intent intent = getIntent();
-        intent.getIntExtra("ID", 0);
-        ID = getIntent().getIntExtra("ID", 0);
+        answer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Answers.this, InitAnswer.class);
+                startActivity(intent);
+            }
+        });
 
-        questionTitle.setText(questionData[ID].getQuestionTitle());
-        questionTopic.setText(questionData[ID].getQuestionTopic());
-        questionDescription.setText(questionData[ID].getQuestionDescription());
-        questionDate.setText(questionData[ID].getQuestionDate());
+        //Intent intent = getIntent();
+       // intent.getIntExtra("ID", 0);
+        //ID = getIntent().getIntExtra("ID", 0);
+
+
+        questionTitle.setText(questionData[getID].getQuestionTitle());
+        questionTopic.setText(questionData[getID].getQuestionTopic());
+        questionDescription.setText(questionData[getID].getQuestionDescription());
+        questionDate.setText(questionData[getID].getQuestionDate());
 
 
 
