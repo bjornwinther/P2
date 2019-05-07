@@ -58,11 +58,17 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
             upView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    upView.setImageResource(R.drawable.up_peach);
+                    downView.setImageResource(R.drawable.down);
                 }
             });
-            //downView.setImageResource(R.drawable.down_peach);
-            //upView.setImageResource(R.drawable.up_peach);
+            downView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    upView.setImageResource(R.drawable.up);
+                    downView.setImageResource(R.drawable.down_peach);
+                }
+            });
 
 
         }
