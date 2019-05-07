@@ -22,15 +22,13 @@ public class Account {
     private String major;
     private String status;
     private String semester;
-    private int accountID;
 
-    public Account(String username, String email, String phone, String createPass, String confirmPass, int accountID) {
+    public Account(String username, String email, String phone, String createPass, String confirmPass) {
         this.username = username;
         this.email = email;
         this.phone = phone;
         this.createPass = createPass;
         this.confirmPass = confirmPass;
-        this.accountID = accountID;
     }
 
     public Account(String username, String email, String phone, String createPass, String confirmPass, String gender, int age, String firstName,
@@ -48,10 +46,6 @@ public class Account {
         this.major = major;
         this.status = status;
         this.semester = semester;
-    }
-
-    public int getAccountID() {
-        return accountID;
     }
 
     public String getSemester() {
