@@ -19,6 +19,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private String[] forumDateDataSet;
     private String[] forumTopicDataSet;
     private static int[] forumIDDataset;
+    protected static int setID;
 
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
     /**
@@ -37,7 +38,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), Answers.class);
-                    intent.putExtra("ID", forumIDDataset[getAdapterPosition()]);
+                    //intent.putExtra("ID", forumIDDataset[getAdapterPosition()]);
+                    setID = forumIDDataset[getAdapterPosition()];
+
                     //intent.putExtra("Forum", 0);
                     v.getContext().startActivity(intent);
 
