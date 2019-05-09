@@ -10,6 +10,10 @@
     <string name="questionDescriptionString"></string>
     <string name="topicString"></string>
 
+    <string name="skill1"> "skill1" </string>
+    <string name="skill2"> "skill2" </string>
+    <string name="skill3"> "skill3" </string>
+
     <integer-array name="age">
         <item>16</item>
         <item>17</item>
