@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         signUp = (Button) findViewById(R.id.btnSignUp);
 
         numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
+        numberAttempts.setVisibility(View.GONE);
 
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 // as long as both of the methods are called, it will always run at least ONE of the else-statements in one of the methods!
                 validateUser(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString() - temporary commented out
-                //adminLogin(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
-                //validateAdmin(username.getText().toString(), password.getText().toString());
+
 
             }
         });
@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else { // fix else method - so it doesnt run every time:
                     Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
+                    numberAttempts.setVisibility(View.VISIBLE);
                     counter--;
                     numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
                     // maybe add if counter < 3 - turn text red?
