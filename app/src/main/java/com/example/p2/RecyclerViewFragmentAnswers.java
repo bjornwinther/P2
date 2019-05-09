@@ -13,6 +13,11 @@ import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.CustomAdapter.setID;
 
+import static com.example.p2.InitAnswer.answerData;
+import static com.example.p2.InitAnswer.indexAnswerData;
+import static com.example.p2.InitAnswer.maxIndexAnswerData;
+
+
 public class RecyclerViewFragmentAnswers extends Fragment {
 
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
@@ -44,7 +49,9 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
 
-        initID();
+        //initID();
+
+        initDatasetAnswer();
 
         //initDatasetAnswer();
         //initDatasetScore();
@@ -116,28 +123,30 @@ public class RecyclerViewFragmentAnswers extends Fragment {
      */
 
     private void initID() {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < indexAnswerData; i++) {
 
             initDatasetAnswer();
-            initDatasetScore();
+            //initDatasetScore();
 
         }
     }
 
-    private void initDatasetAnswer() {
-        answerAnswerDataset = new String[indexQuestionData];
-        for (int i = 0; i < indexQuestionData; i++) {
 
-            answerAnswerDataset[i] = questionData[i].getQuestionTitle();
+
+    private void initDatasetAnswer() {
+        answerAnswerDataset = new String[indexAnswerData];
+        for (int i = 0; i < indexAnswerData; i++) {
+
+            answerAnswerDataset[i] = answerData[i].getAnswerAnswer();
 
         }
     }
 
     private void initDatasetScore() {
-        answerScoreDataset = new int[indexQuestionData]; //remember to change to indexAnswerData
-        for (int i = 0; i < indexQuestionData; i++) {
+        answerScoreDataset = new int[indexAnswerData]; //remember to change to indexAnswerData
+        for (int i = 0; i < maxIndexAnswerData; i++) {
 
-            answerScoreDataset[i] = 2;
+            //answerAnswerDataset[i] = 2;
 
         }
     }

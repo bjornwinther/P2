@@ -21,8 +21,7 @@ public class Options extends AppCompatActivity {
             Intent intent = new Intent(Options.this, Profile.class);
             startActivity(intent);
         }
-    }
-    );
+    });
 }
 
 
