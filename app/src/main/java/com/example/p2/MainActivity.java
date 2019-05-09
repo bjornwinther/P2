@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(indexOfAcc == 0) {
                     accounts[indexOfAcc] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
-                            "Iver", "Ottosen", "AAU", "Math", "Complicated", "6.Semester");
+                            "Justin", "Bieber", "AAU", "Music", "Complicated", "6.Semester");
                 }
                 // as long as both of the methods are called, it will always run at least ONE of the else-statements in one of the methods!
                 validateUser(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString() - temporary commented out
