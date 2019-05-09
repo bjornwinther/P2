@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.btnLogin);
         signUp = (Button) findViewById(R.id.btnSignUp);
 
+        accounts[0] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
+                "Iver", "Ottosen", "AAU", "Math", "Complicated", "6.Semester");
+
+        numberAttempts.setVisibility(View.GONE);
         numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
 
         forgotPass.setOnClickListener(new View.OnClickListener() {
@@ -50,14 +54,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {// maybe put in try-catch?
             @Override
             public void onClick(View v) {
-                if(indexOfAcc == 0) {
-                    accounts[indexOfAcc] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
-                            "Iver", "Ottosen", "AAU", "Math", "Complicated", "6.Semester");
-                }
-                // as long as both of the methods are called, it will always run at least ONE of the else-statements in one of the methods!
                 validateUser(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString() - temporary commented out
-                //adminLogin(username.getText().toString(), password.getText().toString()); // get input with getText() and convert to string toString()
-                //validateAdmin(username.getText().toString(), password.getText().toString());
 
             }
         });
@@ -78,13 +75,15 @@ public class MainActivity extends AppCompatActivity {
 
             for(int indexLoop = 0; indexLoop <= indexOfAcc; indexLoop ++) {
                 if (username.equals(accounts[indexLoop].getUsername()) && password.equals(accounts[indexLoop].getConfirmPass())) {
+                    uniqueAccID = indexLoop;
                     Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                     startActivity(intent);
-                    uniqueAccID = indexLoop;
 
-                } else { // fix else method - so it doesnt run every time:
+                }
+                else if(!username.equals(accounts[indexLoop].getUsername()) && !password.equals(accounts[indexLoop].getConfirmPass())) { // fix else method - so it doesnt run every time:
                     Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
                     counter--;
+                    numberAttempts.setVisibility(View.VISIBLE);
                     numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
                     // maybe add if counter < 3 - turn text red?
                     if (counter <= 0) {
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }catch(Exception e){
-           System.out.println("validateUser-method went wrong");
+           System.out.println(e);
         }
     }
 
