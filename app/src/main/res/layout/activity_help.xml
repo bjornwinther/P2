@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/contact_button"
+        android:id="@+id/language_button"
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginTop="8dp"
@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/problem_button" />
+        app:layout_constraintTop_toBottomOf="@+id/privacy_button" />
 
     <Button
         android:id="@+id/terms_button"
@@ -59,11 +59,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact_button" />
+        app:layout_constraintTop_toBottomOf="@+id/language_button" />
 
 
     <Button
-        android:id="@+id/faq_button"
+        android:id="@+id/notifications_button"
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginTop="14dp"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/problem_button"
+        android:id="@+id/privacy_button"
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginTop="8dp"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/faq_button" />
+        app:layout_constraintTop_toBottomOf="@+id/notifications_button" />
 
     <ImageButton
         android:id="@+id/forumBackButton"
