@@ -132,8 +132,6 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         questionTopicSelected = parent.getItemAtPosition(position).toString();
-
-
     }
 
     @Override
