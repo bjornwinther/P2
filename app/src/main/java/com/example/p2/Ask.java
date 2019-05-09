@@ -24,6 +24,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import static com.example.p2.CustomAdapter.setID;
+
 public class Ask extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static int indexQuestionData = 0;
@@ -70,7 +72,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
         questionTitle = findViewById(R.id.askQuestionTitle);
         questionDescription = findViewById(R.id.askQuestionDescription);
 
-        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
+        //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
         questionDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
 
 
@@ -97,15 +99,15 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                             questionDate,
                             indexQuestionData
                     );
+                    setID = indexQuestionData;
                     indexQuestionData++;
                     Toast.makeText(getApplicationContext(),"Question Posted", Toast.LENGTH_SHORT).show();
+
 
 
                     Intent intent = new Intent(Ask.this, Answers.class);
                     //intent.putExtra("Ask", 0);
                     startActivity(intent);
-
-
 
                 }
 

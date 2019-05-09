@@ -2,6 +2,7 @@ package com.example.p2;
 
 import android.content.Intent;
 import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     Intent intent = new Intent(v.getContext(), Answers.class);
                     //intent.putExtra("ID", forumIDDataset[getAdapterPosition()]);
                     setID = forumIDDataset[getAdapterPosition()];
+                    Log.d("adapterID", ""+setID);
+
 
                     //intent.putExtra("Forum", 0);
                     v.getContext().startActivity(intent);

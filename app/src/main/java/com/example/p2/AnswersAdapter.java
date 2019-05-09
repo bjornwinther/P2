@@ -84,6 +84,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         public TextView getScoreView() {
             return scoreView;
         }
+
+
     }
     // END_INCLUDE(recyclerViewSampleViewHolder)
 
@@ -92,17 +94,19 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
      *
      * @param //dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
-    public AnswersAdapter(String[] answerDataSetA, int[] answerScoreDataSetA) {
+    public AnswersAdapter(String[] answerDataSetA, String[] dateDataSetA) {
         /*
         String[] userDataSet
         String[] upDataSet
         String[] downDataSet
         String[] dateDataSet
-
         */
-
         answerAnswerDataSet = answerDataSetA;
-        answerScoreDataSet = answerScoreDataSetA;
+        answerDateDataSet = dateDataSetA;
+
+
+        //int[] answerScoreDataSetA,
+        //answerScoreDataSet = answerScoreDataSetA;
 
     }
 
@@ -128,8 +132,10 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         // with that element
 
         viewHolder.getAnswerView().setText(answerAnswerDataSet[position]);
-        //viewHolder.getScoreView().setText(String.valueOf(answerScoreDataSet[position]));
 
+
+        //viewHolder.getDateView().setText(answerDateDataSet[position]);
+        //viewHolder.getScoreView().setText(String.valueOf(answerScoreDataSet[position]));
 
         /*
 viewHolder.getDateView().setText(dataset[position]);
@@ -142,8 +148,12 @@ viewHolder.getUserView().setText(dataset[position]);
     // END_INCLUDE(recyclerViewOnBindViewHolder)
 
     // Return the size of your dataset (invoked by the layout manager)
+
+
     @Override
     public int getItemCount() {
         return answerAnswerDataSet.length;
     }
+
+
 }

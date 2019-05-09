@@ -31,6 +31,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     protected AnswersAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
 
+    protected String[] answerDateDataset;
     protected String[] answerAnswerDataset;
     protected int[] answerScoreDataset;
     protected String[] forumDateDataset;
@@ -38,13 +39,12 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
     protected int[] answerArray;
 
-    protected static int getID;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getID = setID;
+        //setID;
 
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
@@ -52,6 +52,10 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         //initID();
 
         initDatasetAnswer();
+        //initDatasetDate();
+
+
+        //initDatasetDate();
 
         //initDatasetAnswer();
         //initDatasetScore();
@@ -82,7 +86,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new AnswersAdapter(answerAnswerDataset, answerScoreDataset);
+        mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset);
 
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
@@ -125,7 +129,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     private void initID() {
         for (int i = 0; i < indexAnswerData; i++) {
 
-            initDatasetAnswer();
+            //initDatasetAnswer();
             //initDatasetScore();
 
         }
@@ -138,6 +142,17 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         for (int i = 0; i < indexAnswerData; i++) {
 
             answerAnswerDataset[i] = answerData[i].getAnswerAnswer();
+
+        }
+    }
+
+    private void initDatasetDate() {
+        answerDateDataset = new String[indexAnswerData]; //remember to change to indexAnswerData
+        for (int i = 0; i < maxIndexAnswerData; i++) {
+
+            answerDateDataset[i] = answerData[i].getAnswerDate();
+            //answerAnswerDataset[i] = 2;
+
 
         }
     }

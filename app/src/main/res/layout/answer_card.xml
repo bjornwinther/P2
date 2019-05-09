@@ -2,17 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@android:color/transparent"
-    >
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/answerCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@android:color/transparent"
-        >
+        app:cardBackgroundColor="@android:color/transparent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -53,7 +52,6 @@
                 android:id="@+id/answerdateView"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginTop="4dp"
                 android:fontFamily="@font/tahoma"
                 android:text="Date"
                 android:textColor="#FFFFFF"
@@ -72,19 +70,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/upVoteClicked"
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/up_peach"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/scoreView"
                 android:layout_width="wrap_content"
@@ -92,32 +77,18 @@
                 android:text="5"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/upVote"
                 app:layout_constraintStart_toStartOf="@+id/upVote"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/upVote" />
 
             <ImageButton
                 android:id="@+id/downVote"
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/down"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scoreView" />
-
-            <ImageButton
-                android:id="@+id/downVoteClicked"
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/down_peach"
-                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/scoreView" />
 
