@@ -8,14 +8,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.util.Date;
+
+
 public class InitAnswer extends AppCompatActivity {
 
     TextView editAnswer;
     Button postAnswer;
+    Date date;
+    String dateString;
+
     static int indexAnswerData = 0;
     static int maxIndexAnswerData = 10;
     static AnswerData [] answerData = new AnswerData[maxIndexAnswerData];
-
 
 
     @Override
@@ -30,28 +36,22 @@ public class InitAnswer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                date = new java.util.Date();
+                //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
+                dateString = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
+
+                answerData[indexAnswerData] = new AnswerData(
+                        editAnswer.getText().toString(),
+                        dateString
+
+                );
+
+                indexAnswerData++;
+
                 Intent intent = new Intent(InitAnswer.this, Answers.class);
                 startActivity(intent);
 
-                answerData[indexAnswerData] = new AnswerData(
-                        editAnswer.getText().toString()
 
-                );
-                indexAnswerData++;
-
-
-                /*
-                askMissingInput.setVisibility(View.GONE);
-                    questionData[indexQuestionData] = new QuestionData(
-                            questionTitle.getText().toString(),
-                            questionDescription.getText().toString(),
-                            questionTopicSelected,
-                            questionDate,
-                            indexQuestionData
-                    );
-                    indexQuestionData++;
-
-                 */
 
             }
         });

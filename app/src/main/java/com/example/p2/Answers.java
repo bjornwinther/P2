@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -15,7 +16,6 @@ import android.widget.Toast;
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.CustomAdapter.setID;
-import static com.example.p2.RecyclerViewFragmentAnswers.getID;
 
 public class Answers extends FragmentActivity {
 
@@ -25,6 +25,7 @@ public class Answers extends FragmentActivity {
     TextView questionDate;
     TextView questionDescription;
     Button answer;
+    int ID;
 
 
     @Override
@@ -32,7 +33,8 @@ public class Answers extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answers);
 
-        getID = setID;
+        //ID = setID;
+        Log.d("ID", "ID: "+ID);
 
         questionTitle = findViewById(R.id.questionTitle);
         questionTopic = findViewById(R.id.questionTopic);
@@ -64,18 +66,17 @@ public class Answers extends FragmentActivity {
                 startActivity(intent);
             }
         });
-
-        //Intent intent = getIntent();
-       // intent.getIntExtra("ID", 0);
-        //ID = getIntent().getIntExtra("ID", 0);
-
-
-        questionTitle.setText(questionData[getID].getQuestionTitle());
-        questionTopic.setText(questionData[getID].getQuestionTopic());
-        questionDescription.setText(questionData[getID].getQuestionDescription());
-        questionDate.setText(questionData[getID].getQuestionDate());
+/*
+        Intent intent = getIntent();
+        intent.getIntExtra("ID", 0);
+        ID = getIntent().getIntExtra("ID", 0);
+*/
 
 
+        questionTitle.setText(questionData[setID].getQuestionTitle());
+        questionTopic.setText(questionData[setID].getQuestionTopic());
+        questionDescription.setText(questionData[setID].getQuestionDescription());
+        questionDate.setText(questionData[setID].getQuestionDate());
 
     }
 }

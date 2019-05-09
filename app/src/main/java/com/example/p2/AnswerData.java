@@ -8,8 +8,9 @@ public class AnswerData {
     private int answerScore;
     private int answerID;
 
-    public AnswerData(String answerAnswer) {
+    public AnswerData(String answerAnswer, String answerDate) {
         this.answerAnswer = answerAnswer;
+        this.answerDate = answerDate;
     }
 
     public AnswerData(String answerDate, String answerAnswer, String answerUser, int answerScore, int answerID) {
