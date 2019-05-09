@@ -83,6 +83,12 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
 // Apply the adapter to the spinner
         topicSpinner.setAdapter(adapter);
     }
+
+    //MENU NEW
+    public void showMenu(View view){
+        Intent intent = new Intent(Forum.this, menu.class );
+        startActivity(intent);
+    }
 //Popup Menu
     public void showPopup(View v){
         PopupMenu popup = new PopupMenu(this,v);

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu"
+    android:background="#CC000000">
+
+        <ImageButton
+        android:id="@+id/transparentBack"
+        android:layout_width="190dp"
+        android:layout_height="774dp"
+        android:background="@android:color/transparent"
+        android:onClick="close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button" />
+
+    <TextView
+        android:id="@+id/whiteBar"
+        android:layout_width="220dp"
+        android:layout_height="741dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/backOfProfile"
+        android:layout_width="221dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="#2F4E73"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menuProfileButton"
+        android:layout_width="221dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="profileGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/logOutButton"
+        android:layout_width="221dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/logOutTextBot"
+        android:layout_width="221dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="#2F4E73"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/menuForumButton"
+        android:layout_width="221dp"
+        android:layout_height="57dp"
+        android:background="@android:color/transparent"
+        android:onClick="forumGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuProfileButton" />
+
+    <Button
+        android:id="@+id/menuChatButton"
+        android:layout_width="221dp"
+        android:layout_height="57dp"
+        android:background="@android:color/transparent"
+        android:onClick="chatGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuForumButton" />
+
+    <Button
+        android:id="@+id/menuSettingsButton"
+        android:layout_width="221dp"
+        android:layout_height="57dp"
+        android:background="@android:color/transparent"
+        android:onClick="settingsGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuChatButton" />
+
+    <Button
+        android:id="@+id/menuHelpButton"
+        android:layout_width="221dp"
+        android:layout_height="57dp"
+        android:background="@android:color/transparent"
+        android:onClick="helpGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuSettingsButton" />
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="8dp"
+        android:text="NAME"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/backOfProfile"
+        app:layout_constraintStart_toStartOf="@+id/backOfProfile"
+        app:layout_constraintTop_toTopOf="@+id/backOfProfile" />
+    <TextView
+        android:id="@+id/profileName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="8dp"
+        android:text="mail@student.aau.dk"
+        android:textColor="#FFFFFF"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/backOfProfile"
+        app:layout_constraintTop_toBottomOf="@+id/profileName" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="44dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/profileName"
+        app:layout_constraintStart_toStartOf="@+id/backOfProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu_profile" />
+
+    <TextView
+        android:id="@+id/forumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Forum"
+        android:textColor="#2F4E73"
+        app:layout_constraintBottom_toTopOf="@+id/menuChatButton"
+        app:layout_constraintStart_toStartOf="@+id/menuForumButton"
+        app:layout_constraintTop_toBottomOf="@+id/backOfProfile" />
+    <TextView
+        android:id="@+id/chatText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Chat"
+        android:textColor="#2F4E73"
+        app:layout_constraintBottom_toTopOf="@+id/menuSettingsButton"
+        app:layout_constraintStart_toStartOf="@+id/menuChatButton"
+        app:layout_constraintTop_toTopOf="@+id/menuChatButton" />
+
+    <TextView
+        android:id="@+id/settingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Settings"
+        android:textColor="#2F4E73"
+        app:layout_constraintBottom_toTopOf="@+id/menuHelpButton"
+        app:layout_constraintStart_toStartOf="@+id/menuSettingsButton"
+        app:layout_constraintTop_toTopOf="@+id/menuSettingsButton" />
+
+    <TextView
+        android:id="@+id/helpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="8dp"
+        android:text="Help"
+        android:textColor="#2F4E73"
+        app:layout_constraintBottom_toBottomOf="@+id/menuHelpButton"
+        app:layout_constraintStart_toStartOf="@+id/menuHelpButton"
+        app:layout_constraintTop_toTopOf="@+id/menuHelpButton" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="45dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/menuChatButton"
+        app:layout_constraintEnd_toStartOf="@+id/forumText"
+        app:layout_constraintStart_toStartOf="@+id/menuForumButton"
+        app:layout_constraintTop_toBottomOf="@+id/backOfProfile"
+        app:srcCompat="@drawable/menu_forum" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/menuSettingsButton"
+        app:layout_constraintEnd_toStartOf="@+id/chatText"
+        app:layout_constraintStart_toStartOf="@+id/menuChatButton"
+        app:layout_constraintTop_toTopOf="@+id/menuChatButton"
+        app:srcCompat="@drawable/menu_chat" />
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="38dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/menuHelpButton"
+        app:layout_constraintEnd_toStartOf="@+id/settingsText"
+        app:layout_constraintStart_toStartOf="@+id/menuSettingsButton"
+        app:layout_constraintTop_toTopOf="@+id/menuSettingsButton"
+        app:srcCompat="@drawable/menu_setting" />
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="38dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuHelpButton"
+        app:layout_constraintEnd_toStartOf="@+id/helpText"
+        app:layout_constraintStart_toStartOf="@+id/menuHelpButton"
+        app:layout_constraintTop_toTopOf="@+id/menuHelpButton"
+        app:srcCompat="@drawable/menu_help" />
+    <TextView
+        android:id="@+id/logOutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Log out"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/logOutButton"
+        app:layout_constraintEnd_toEndOf="@+id/logOutButton"
+        app:layout_constraintStart_toStartOf="@+id/logOutButton"
+        app:layout_constraintTop_toTopOf="@+id/logOutButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

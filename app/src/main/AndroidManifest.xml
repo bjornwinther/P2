@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Chat"></activity>
+        <activity android:name=".menu"
+            android:label="@string/app_name"
+            android:theme="@style/TransparentCompat">
+        </activity>
+        <activity android:name=".Chat" />
         <activity android:name=".Help" />
         <activity android:name=".Settings" />
         <activity android:name=".InitAnswer" />
