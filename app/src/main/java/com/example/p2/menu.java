@@ -15,7 +15,9 @@ public class menu extends AppCompatActivity {
     }
     public void close(View view){
         finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
+
     public void profileGo(View view) {
         Intent goToProfile = new Intent(menu.this, Profile.class);
         startActivity(goToProfile);

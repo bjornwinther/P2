@@ -88,6 +88,7 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
     public void showMenu(View view){
         Intent intent = new Intent(Forum.this, menu.class );
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
 
