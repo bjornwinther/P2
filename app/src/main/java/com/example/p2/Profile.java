@@ -27,6 +27,7 @@ public class Profile extends AppCompatActivity {
     private TextView rating;
     private TextView mentors;
     private TextView questAnswers;
+    private Button contactBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class Profile extends AppCompatActivity {
         rating = findViewById(R.id.profileRating);
         mentors = findViewById(R.id.profileMentor);
         questAnswers = findViewById(R.id.profileQuestAnswer);
+        contactBtn = findViewById(R.id.profileContactbtn);
 
 
 
@@ -84,6 +86,13 @@ public class Profile extends AppCompatActivity {
             saveInfo.setVisibility(View.VISIBLE);
             saveInfo.setClickable(true);
             //Find method for being able to edit the info again.
+            }
+        });
+
+        contactBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Switch to private message;
             }
         });
 
