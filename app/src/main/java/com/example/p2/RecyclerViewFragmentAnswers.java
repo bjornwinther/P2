@@ -1,6 +1,5 @@
 package com.example.p2;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,35 +34,34 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     protected String[] answerDateDataset;
     protected String[] answerAnswerDataset;
     protected int[] answerScoreDataset;
-    protected int[] answerIDDataset;
     protected String[] forumDateDataset;
     protected int[] forumIDDataset;
 
     protected int[] answerArray;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //setID;
 
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
 
-        initDatasetDate();
-        initDatasetID();
+        //initID();
         initDatasetAnswer();
-
-        /*
-        for (int indexLoop = 0; indexLoop <= indexAnswerData; indexLoop++) {
-            if (answerData[indexLoop].getAnswerID() == setID) {
-
-            }
-        }
-*/
+        //initDatasetDate();
 
 
+        //initDatasetDate();
 
+        //initDatasetAnswer();
+        //initDatasetScore();
+        //initDatasetDate();
+        //initDatasetTopic();
+        //initDatasetID();
     }
 
     @Override
@@ -88,7 +86,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset);
+        mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset);
 
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
@@ -128,58 +126,53 @@ public class RecyclerViewFragmentAnswers extends Fragment {
      * from a local content provider or remote server.
      */
 
-
-//get the data from data arrays
-    private void initDatasetAnswer() {
-/*
-        for (int indexLoop = 0; indexLoop <= indexAnswerData; indexLoop++) {
-            if (answerData[indexLoop].getAnswerID() == setID) {
-
-            }
-        }
-  */
-
-        answerAnswerDataset = new String[indexAnswerData];
+    private void initID() {
         for (int i = 0; i < indexAnswerData; i++) {
 
-            answerAnswerDataset[i] = answerData[i].getAnswerAnswer();
+            //initDatasetAnswer();
+            //initDatasetScore();
 
         }
-
-
-
     }
 
 
-            private void initDatasetDate() {
-        answerDateDataset = new String[indexAnswerData]; //remember to change to indexAnswerData
+
+    private void initDatasetAnswer() { // int ID - take as parameter?
+        answerAnswerDataset = new String[indexAnswerData]; // each time a new answer is posted - a new stringObject/recycleView will be created. // !! replace indexAnswerData - just need to make this create ONE new instance
         for (int i = 0; i < indexAnswerData; i++) {
+            if(i == setID) {
+                //change answerData[i] to answerData[setID] ?
+                answerAnswerDataset[i] = answerData[i].getAnswerAnswer(); //answerData is an array of AnswerData with 10 objects
+                //answerAnswerDataSet is a String array - that is initialized in the onCreate method every time this activity is accessed.
+                //it is resizing each time according to indexAnswerData value. - as far as i know that can cause huge runtime problems.
+            }
+            //process:
+            //indexAnswerData is increased by 1 for each initialized answer in initialization-activity. (indexAnswerData is a static variable, that is 0 upon initializing program)
+            //answerAnswerDataSet string-array is initialized according to the size of indexAnswerData (illegal?) every time the onCreate of this class i called.
+            //for-loop to loop from 0 - (value of indexAnswerData at current time)
+            //EVERY loop iteration sets the object(s): answerAnswerDataset[i] (String-object) equal to answerData[i].getAnswerAnswer();
+
+            //ergo what happens is:
+            //from all answerData-objects it takes the answer by calling getAnswerAnswer and sets to a newly created string-object
+
+            //questions:
+            //when does the onCreate of this activity/class run (ergo answer to when this method runs).
+
+        }
+    }
+
+    private void initDatasetDate(int ID) {
+        answerDateDataset = new String[indexAnswerData]; //remember to change to indexAnswerData - Det her er ikke den frække. It is not the fraek!
+        for (int i = 0; i < maxIndexAnswerData; i++) {
 
             answerDateDataset[i] = answerData[i].getAnswerDate();
+            //answerAnswerDataset[i] = 2;
+
 
         }
     }
 
-        private void initDatasetID(){
-            answerIDDataset = new int[indexAnswerData];
-
-                    for (int i = 0; i < indexAnswerData; i++) {
-                        answerIDDataset[i] = answerData[i].getAnswerID();
-
-            }
-        }
-
-            /*
-    for(int indexLoop = 0; indexLoop <= indexOfAcc; indexLoop ++) {
-        if (username.equals(accounts[indexLoop].getUsername()) && password.equals(accounts[indexLoop].getConfirmPass())) {
-            uniqueAccID = indexLoop;
-            Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
-            startActivity(intent);
-*/
-
-
-/*
-    private void initDatasetScore() {
+    private void initDatasetScore(int ID) {
         answerScoreDataset = new int[indexAnswerData]; //remember to change to indexAnswerData
         for (int i = 0; i < maxIndexAnswerData; i++) {
 
@@ -187,7 +180,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
         }
     }
-*/
+
 
 
 }
