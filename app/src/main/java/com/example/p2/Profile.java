@@ -34,8 +34,8 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        name = (TextView) findViewById(R.id.profileName);
-        profilePicture = (ImageButton) findViewById(R.id.profilePic);
+        name = findViewById(R.id.profileName);
+        profilePicture = findViewById(R.id.profilePic);
         semesterAndUni = findViewById(R.id.profileSemUni);
         major = findViewById(R.id.profileMajor);
         age = findViewById(R.id.profileAge);
@@ -58,6 +58,7 @@ public class Profile extends AppCompatActivity {
                 rating.setText(String.valueOf((accounts[uniqueAccID].getRating())));
                 mentors.setText(String.valueOf(accounts[uniqueAccID].getMentorships()));
                 questAnswers.setText(String.valueOf(accounts[uniqueAccID].getTotalAnswers()));
+                profilePicture.setImageResource(R.drawable.justinbieber); // setting justin bieber as profile picture
 
 
 
