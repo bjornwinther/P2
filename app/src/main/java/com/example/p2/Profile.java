@@ -92,7 +92,9 @@ public class Profile extends AppCompatActivity {
         contactBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Switch to private message;
+                Intent intent = new Intent(Profile.this, Chat.class);
+                startActivity(intent);
+                //Switch to private message / chat activity;
             }
         });
 
