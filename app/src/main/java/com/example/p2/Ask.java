@@ -39,7 +39,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
     private EditText questionTitle;
     public String questionDate;
     private ImageButton back;
-    private ImageView options;
+    private ImageButton options;
     private Button post;
     Date date;
     private int minEntryLength = 4;
@@ -125,6 +125,8 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
             @Override
             public void onClick(View v) {
                 //changePageTo();
+                changePageTo(menu.class);
+
             }
         });
     }

@@ -20,6 +20,7 @@ import static com.example.p2.CustomAdapter.setID;
 public class Answers extends FragmentActivity {
 
     ImageButton backButton;
+    ImageButton menuBtn;
     TextView questionTitle;
     TextView questionTopic;
     TextView questionDate;
@@ -41,8 +42,17 @@ public class Answers extends FragmentActivity {
         questionDate = findViewById(R.id.questionDate);
         questionDescription = findViewById(R.id.questionDescription);
         answer = findViewById(R.id.answerButton);
+        menuBtn = findViewById(R.id.answersMenuBtn);
 
         backButton = findViewById(R.id.answersBackButton);
+
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Answers.this, menu.class);
+                startActivity(intent);
+            }
+        });
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

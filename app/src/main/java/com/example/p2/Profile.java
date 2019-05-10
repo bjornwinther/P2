@@ -28,6 +28,8 @@ public class Profile extends AppCompatActivity {
     private TextView mentors;
     private TextView questAnswers;
     private Button contactBtn;
+    private ImageButton backBtn;
+    private ImageButton menuBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class Profile extends AppCompatActivity {
         mentors = findViewById(R.id.profileMentor);
         questAnswers = findViewById(R.id.profileQuestAnswer);
         contactBtn = findViewById(R.id.profileContactbtn);
+        backBtn = findViewById(R.id.profileBackBtn);
+        menuBtn = findViewById(R.id.profileMenuBtn);
 
 
                 name.setText(accounts[uniqueAccID].getFirstName() + " " + accounts[uniqueAccID].getLastName()); // set name
@@ -95,6 +99,22 @@ public class Profile extends AppCompatActivity {
                 Intent intent = new Intent(Profile.this, Chat.class);
                 startActivity(intent);
                 //Switch to private message / chat activity;
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, Forum.class);
+                startActivity(intent);
+            }
+        });
+
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, menu.class);
+                startActivity(intent);
             }
         });
 
