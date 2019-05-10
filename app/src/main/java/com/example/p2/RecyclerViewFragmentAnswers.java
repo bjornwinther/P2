@@ -50,9 +50,13 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
 
-        initDatasetDate();
-        initDatasetID();
-        initDatasetAnswer();
+
+
+                initDatasetDate();
+                initDatasetID();
+                initDatasetAnswer();
+
+
 
         /*
         for (int indexLoop = 0; indexLoop <= indexAnswerData; indexLoop++) {
@@ -87,9 +91,11 @@ public class RecyclerViewFragmentAnswers extends Fragment {
                     .getSerializable(KEY_LAYOUT_MANAGER);
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-
-        mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset);
-
+        for(int indexLoop = 0; indexLoop < indexAnswerData; indexLoop ++) { // consider removing this.
+            if (indexLoop == setID) {
+                mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset);
+            }
+        }
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -131,9 +137,9 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
 
     private void initDatasetAnswer() { // int ID - take as parameter?
-        answerAnswerDataset = new String[indexAnswerData]; // each time a new answer is posted - a new stringObject/recycleView will be created. // !! replace indexAnswerData - just need to make this create ONE new instance
+        answerAnswerDataset = new String[indexAnswerData]; // each time a new answer is posted - a new stringObject/recycleView will be created.
         for (int i = 0; i < indexAnswerData; i++) {
-            if(i == setID) {
+            if(i == setID) { // this only restricts the string.
                 //change answerData[i] to answerData[setID] ?
                 answerAnswerDataset[i] = answerData[i].getAnswerAnswer(); //answerData is an array of AnswerData with 10 objects
                 //answerAnswerDataSet is a String array - that is initialized in the onCreate method every time this activity is accessed.
@@ -150,7 +156,6 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
             //questions:
             //when does the onCreate of this activity/class run (ergo answer to when this method runs).
-
         }
     }
 

@@ -49,7 +49,6 @@ public class Profile extends AppCompatActivity {
         contactBtn = findViewById(R.id.profileContactbtn);
 
 
-
                 name.setText(accounts[uniqueAccID].getFirstName() + " " + accounts[uniqueAccID].getLastName()); // set name
                 semesterAndUni.setText(accounts[uniqueAccID].getSemester() + " - " + accounts[uniqueAccID].getUniveristy());
                 major.setText(accounts[uniqueAccID].getMajor());
