@@ -44,6 +44,7 @@ public class RecyclerViewFragment extends Fragment {
         initDatasetDate();
         initDatasetTopic();
         initDatasetID();
+
     }
 
     @Override
@@ -137,5 +138,6 @@ public class RecyclerViewFragment extends Fragment {
             forumIDDataset[i] = questionData[i].getQuestionID();
         }
     }
+
 
 }

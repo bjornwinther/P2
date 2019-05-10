@@ -129,7 +129,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
      */
 
 
-
+//get the data from data arrays
     private void initDatasetAnswer() {
 /*
         for (int indexLoop = 0; indexLoop <= indexAnswerData; indexLoop++) {
