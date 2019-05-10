@@ -11,6 +11,8 @@ import android.widget.TextView;
 import java.text.DateFormat;
 import java.util.Date;
 
+import static com.example.p2.CustomAdapter.setID;
+
 
 public class InitAnswer extends AppCompatActivity {
 
@@ -42,8 +44,8 @@ public class InitAnswer extends AppCompatActivity {
 
                 answerData[indexAnswerData] = new AnswerData(
                         editAnswer.getText().toString(),
-                        dateString
-
+                        dateString,
+                        setID
                 );
 
                 indexAnswerData++;

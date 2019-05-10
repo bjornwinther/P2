@@ -1,5 +1,6 @@
 package com.example.p2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     protected String[] answerDateDataset;
     protected String[] answerAnswerDataset;
     protected int[] answerScoreDataset;
+    protected int[] answerIDDataset;
     protected String[] forumDateDataset;
     protected int[] forumIDDataset;
 
@@ -44,24 +46,24 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //setID;
 
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
 
-        //initID();
-
+        initDatasetDate();
+        initDatasetID();
         initDatasetAnswer();
-        //initDatasetDate();
+
+        /*
+        for (int indexLoop = 0; indexLoop <= indexAnswerData; indexLoop++) {
+            if (answerData[indexLoop].getAnswerID() == setID) {
+
+            }
+        }
+*/
 
 
-        //initDatasetDate();
 
-        //initDatasetAnswer();
-        //initDatasetScore();
-        //initDatasetDate();
-        //initDatasetTopic();
-        //initDatasetID();
     }
 
     @Override
@@ -86,7 +88,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset);
+        mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset);
 
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
@@ -126,37 +128,57 @@ public class RecyclerViewFragmentAnswers extends Fragment {
      * from a local content provider or remote server.
      */
 
-    private void initID() {
-        for (int i = 0; i < indexAnswerData; i++) {
-
-            //initDatasetAnswer();
-            //initDatasetScore();
-
-        }
-    }
-
 
 
     private void initDatasetAnswer() {
+/*
+        for (int indexLoop = 0; indexLoop <= indexAnswerData; indexLoop++) {
+            if (answerData[indexLoop].getAnswerID() == setID) {
+
+            }
+        }
+  */
+
         answerAnswerDataset = new String[indexAnswerData];
         for (int i = 0; i < indexAnswerData; i++) {
 
             answerAnswerDataset[i] = answerData[i].getAnswerAnswer();
 
         }
+
+
+
     }
 
-    private void initDatasetDate() {
+
+            private void initDatasetDate() {
         answerDateDataset = new String[indexAnswerData]; //remember to change to indexAnswerData
-        for (int i = 0; i < maxIndexAnswerData; i++) {
+        for (int i = 0; i < indexAnswerData; i++) {
 
             answerDateDataset[i] = answerData[i].getAnswerDate();
-            //answerAnswerDataset[i] = 2;
-
 
         }
     }
 
+        private void initDatasetID(){
+            answerIDDataset = new int[indexAnswerData];
+
+                    for (int i = 0; i < indexAnswerData; i++) {
+                        answerIDDataset[i] = answerData[i].getAnswerID();
+
+            }
+        }
+
+            /*
+    for(int indexLoop = 0; indexLoop <= indexOfAcc; indexLoop ++) {
+        if (username.equals(accounts[indexLoop].getUsername()) && password.equals(accounts[indexLoop].getConfirmPass())) {
+            uniqueAccID = indexLoop;
+            Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
+            startActivity(intent);
+*/
+
+
+/*
     private void initDatasetScore() {
         answerScoreDataset = new int[indexAnswerData]; //remember to change to indexAnswerData
         for (int i = 0; i < maxIndexAnswerData; i++) {
@@ -165,7 +187,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
         }
     }
-
+*/
 
 
 }

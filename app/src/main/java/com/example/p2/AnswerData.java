@@ -6,11 +6,12 @@ public class AnswerData {
     private String answerAnswer;
     private String answerUser;
     private int answerScore;
-    private int answerID;
+    static private int answerID;
 
-    public AnswerData(String answerAnswer, String answerDate) {
+    public AnswerData(String answerAnswer, String answerDate, int answerID) {
         this.answerAnswer = answerAnswer;
         this.answerDate = answerDate;
+        this.answerID = answerID;
     }
 
     public AnswerData(String answerDate, String answerAnswer, String answerUser, int answerScore, int answerID) {

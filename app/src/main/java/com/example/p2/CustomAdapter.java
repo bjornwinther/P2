@@ -41,7 +41,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     Intent intent = new Intent(v.getContext(), Answers.class);
                     //intent.putExtra("ID", forumIDDataset[getAdapterPosition()]);
                     setID = forumIDDataset[getAdapterPosition()];
-                    Log.d("adapterID", ""+setID);
+                    Log.d("questionID", ""+setID);
 
 
                     //intent.putExtra("Forum", 0);
@@ -86,6 +86,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
     // Create new views (invoked by the layout manager)
+    // onCreateViewHolder inflates the layout rows/items and initializes viewHolder.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view.
@@ -98,6 +99,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
     // Replace the contents of a view (invoked by the layout manager)
+
+    // onBindViewHolder uses the viewHolder constructed before to feed each row data from datasets.
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         //Log.d(TAG, "Element " + position + " set.");
@@ -117,4 +120,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public int getItemCount() {
         return forumTitleDataSet.length;
     }
+
+    // Remove a RecyclerView item containing a specified Data object
+    /*
+    public void remove(Data data) {
+        int position = list.indexOf(data);
+        list.remove(position);
+        notifyItemRemoved(position);
+    }
+    */
 }

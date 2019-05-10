@@ -1,6 +1,7 @@
 package com.example.p2;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
     private String[] answerDownDataSet;
     private String[] answerDateDataSet;
     private int[] answerScoreDataSet;
+    private int[] answerIDDataset;
 
 
 
@@ -40,7 +42,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                //////////
+                   // Log.d("answerID", ""+getAdapterPosition() );
                 }
             });
 
@@ -94,7 +96,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
      *
      * @param //dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
-    public AnswersAdapter(String[] answerDataSetA, String[] dateDataSetA) {
+    public AnswersAdapter(String[] answerDataSetA, String[] dateDataSetA, int [] answerIDDatasetA) {
         /*
         String[] userDataSet
         String[] upDataSet
@@ -103,6 +105,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         */
         answerAnswerDataSet = answerDataSetA;
         answerDateDataSet = dateDataSetA;
+        answerIDDataset = answerIDDatasetA;
 
 
         //int[] answerScoreDataSetA,
@@ -132,6 +135,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         // with that element
 
         viewHolder.getAnswerView().setText(answerAnswerDataSet[position]);
+        viewHolder.getDateView().setText(answerDateDataSet[position]);
 
 
         //viewHolder.getDateView().setText(answerDateDataSet[position]);
