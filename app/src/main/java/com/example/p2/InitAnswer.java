@@ -24,6 +24,7 @@ public class InitAnswer extends AppCompatActivity {
     static int indexAnswerData = 0;
     static int maxIndexAnswerData = 10;
     static AnswerData [] answerData = new AnswerData[maxIndexAnswerData];
+    static int questionLoaded;
 
 
     @Override
@@ -33,6 +34,8 @@ public class InitAnswer extends AppCompatActivity {
 
         editAnswer = findViewById(R.id.editAnswer);
         postAnswer = findViewById(R.id.postAnswer);
+
+        questionLoaded = setID;
 
         postAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +48,7 @@ public class InitAnswer extends AppCompatActivity {
                 answerData[indexAnswerData] = new AnswerData(
                         editAnswer.getText().toString(),
                         dateString,
-                        setID
+                        setID, questionLoaded
                 );
 
                 indexAnswerData++;
