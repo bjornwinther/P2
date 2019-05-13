@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.btnLogin);
         signUp = (Button) findViewById(R.id.btnSignUp);
 
-        accounts[0] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
+        accounts[uniqueAccID] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
                 "Iver", "Ottosen", "AAU", "Math", "Complicated", "6.Semester");
 
         numberAttempts.setVisibility(View.GONE);
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
     private void changePageTo(Class page) {
         Intent intent = new Intent(MainActivity.this, page);
         startActivity(intent);
+
     }
 
 

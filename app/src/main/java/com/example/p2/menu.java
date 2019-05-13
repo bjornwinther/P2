@@ -21,25 +21,31 @@ public class menu extends AppCompatActivity {
     public void profileGo(View view) {
         Intent goToProfile = new Intent(menu.this, Profile.class);
         startActivity(goToProfile);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
     public void forumGo(View view) {
-        Intent goToProfile = new Intent(menu.this, Forum.class);
-        startActivity(goToProfile);
+        Intent goToForum = new Intent(menu.this, Forum.class);
+        startActivity(goToForum);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
     public void settingsGo(View view) {
-        Intent goToProfile = new Intent(menu.this, Settings.class);
-        startActivity(goToProfile);
+        Intent goToSettings = new Intent(menu.this, Settings.class);
+        startActivity(goToSettings);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
     public void helpGo(View view) {
-        Intent goToProfile = new Intent(menu.this, Help.class);
-        startActivity(goToProfile);
+        Intent goToHelp = new Intent(menu.this, Help.class);
+        startActivity(goToHelp);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
     public void chatGo(View view) {
-        Intent goToProfile = new Intent(menu.this, Chat.class);
-        startActivity(goToProfile);
+        Intent goToChat = new Intent(menu.this, Chat.class);
+        startActivity(goToChat);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
     public void logOutGo(View view) {
-        Intent goToProfile = new Intent(menu.this, MainActivity.class);
-        startActivity(goToProfile);
+        Intent goToSignin = new Intent(menu.this, MainActivity.class);
+        startActivity(goToSignin);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
 }
