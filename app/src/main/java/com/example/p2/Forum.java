@@ -39,8 +39,8 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
         setContentView(R.layout.activity_forum);
 
         //help overlay:
-       // Intent intent = new Intent(Forum.this, HelpOverlay.class);
-        //startActivity(intent);
+        Intent intent = new Intent(Forum.this, HelpOverlay.class);
+        startActivity(intent);
 
         // look up enums for sorting through posts - implement it as interface
 
