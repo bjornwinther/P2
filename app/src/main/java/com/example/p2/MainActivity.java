@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button login;
     private Button signUp;
     private int counter = 5;
+    private Boolean validated;
 
     static Account[] accounts = new Account[10];
     static int indexOfAcc = 0;
@@ -38,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.btnLogin);
         signUp = (Button) findViewById(R.id.btnSignUp);
 
+        validated = false;
+
         accounts[0] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
-                "Iver", "Ottosen", "AAU", "Math", "Complicated", "6.Semester");
+                "Iver", "Ottosen", "AAU", "Math", "6.Semester");
 
         numberAttempts.setVisibility(View.GONE);
         numberAttempts.setText("No. of attempts remaining: " + String.valueOf(counter));
@@ -76,11 +79,14 @@ public class MainActivity extends AppCompatActivity {
             for(int indexLoop = 0; indexLoop <= indexOfAcc; indexLoop ++) {
                 if (username.equals(accounts[indexLoop].getUsername()) && password.equals(accounts[indexLoop].getConfirmPass())) {
                     uniqueAccID = indexLoop;
+                    validated = true;
+                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
                     startActivity(intent);
 
                 }
-                else if(!username.equals(accounts[indexLoop].getUsername()) && !password.equals(accounts[indexLoop].getConfirmPass())) { // fix else method - so it doesnt run every time:
+            }
+                if(!validated) { // fix else method - so it doesnt run every time:
                     Toast.makeText(getApplicationContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
                     counter--;
                     numberAttempts.setVisibility(View.VISIBLE);
@@ -90,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         login.setEnabled(false); // Deactivates login-button.
                     }
                 }
-            }
+
         }catch(Exception e){
            System.out.println(e);
         }

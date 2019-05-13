@@ -25,7 +25,6 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
     private EditText lastName;
     private EditText uni;
     private EditText major;
-    private EditText status;
     private String selectedGender;
     private int selectedAge;
     private String selectedSemester;
@@ -44,7 +43,6 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
         lastName = findViewById(R.id.susLName);
         uni = findViewById(R.id.susUni);
         major = findViewById(R.id.susMajor);
-        status = findViewById(R.id.susStatus);
 
         spinnerGender.setOnItemSelectedListener(this);
         spinnerAge.setOnItemSelectedListener(this);
@@ -53,11 +51,10 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
         List<String> genderList = new ArrayList<>();
         genderList.add("Male");
         genderList.add("Female");
-        genderList.add("Freak");
 
         List<Integer>  ageList = new ArrayList<>();
-        for(int i = 0; i < 10; i++){
-            ageList.add(16+i);
+        for(int i = 0; i < 12; i++){
+            ageList.add(18+i);
         }
 
         List<String> semesterList = new ArrayList<>();
@@ -84,7 +81,6 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
                 accounts[indexOfAcc].setLastName(lastName.getText().toString());
                 accounts[indexOfAcc].setUniveristy(uni.getText().toString());
                 accounts[indexOfAcc].setMajor(major.getText().toString());
-                accounts[indexOfAcc].setStatus(status.getText().toString());
                 accounts[indexOfAcc].setGender(selectedGender);
                 accounts[indexOfAcc].setAge(selectedAge);
                 accounts[indexOfAcc].setSemester(selectedSemester);

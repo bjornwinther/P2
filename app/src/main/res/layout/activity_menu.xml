@@ -46,7 +46,7 @@
     <Button
         android:id="@+id/menuProfileButton"
         android:layout_width="221dp"
-        android:layout_height="120dp"
+        android:layout_height="117dp"
         android:layout_marginStart="8dp"
         android:background="@android:color/transparent"
         android:onClick="profileGo"
@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuSettingsButton" />
     <TextView
-        android:id="@+id/profileName"
+        android:id="@+id/menuName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -127,7 +127,7 @@
         app:layout_constraintStart_toStartOf="@+id/backOfProfile"
         app:layout_constraintTop_toTopOf="@+id/backOfProfile" />
     <TextView
-        android:id="@+id/profileName3"
+        android:id="@+id/menuEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -137,7 +137,7 @@
         android:textColor="#FFFFFF"
         android:textSize="8sp"
         app:layout_constraintStart_toStartOf="@+id/backOfProfile"
-        app:layout_constraintTop_toBottomOf="@+id/profileName" />
+        app:layout_constraintTop_toBottomOf="@+id/menuName" />
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="44dp"
@@ -147,7 +147,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/profileName"
+        app:layout_constraintEnd_toStartOf="@+id/menuName"
         app:layout_constraintStart_toStartOf="@+id/backOfProfile"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/menu_profile" />
