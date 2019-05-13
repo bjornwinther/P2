@@ -59,20 +59,13 @@
                 android:id="@+id/profileAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="68dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
                 android:text="TextView"
                 android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.65"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profilePic"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toEndOf="@+id/profilePic"
+                app:layout_constraintStart_toEndOf="@+id/profileName"
+                app:layout_constraintTop_toBottomOf="@+id/profilePic" />
 
             <TextView
                 android:id="@+id/profileSemUni"
@@ -96,16 +89,14 @@
                 android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="204dp"
-                android:layout_marginRight="204dp"
-                android:layout_marginBottom="68dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
                 android:text="TextView"
                 android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profilePic"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toStartOf="@+id/profileAge"
+                app:layout_constraintStart_toStartOf="@+id/profilePic"
+                app:layout_constraintTop_toBottomOf="@+id/profilePic" />
 
             <TextView
                 android:id="@+id/profileMajor"
@@ -133,13 +124,13 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:adjustViewBounds="true"
-                tools:srcCompat="@drawable/justinbieber"
                 android:background="#FFFFFF"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.551"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/justinbieber" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -174,7 +165,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Write a short description about yourself"
+        android:hint="Write a short description about yourself and topics you know about"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -215,153 +206,158 @@
         android:id="@+id/profileUni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="University"
+        android:textColor="#2F4E73"
+        app:layout_constraintEnd_toEndOf="@+id/profileUniImage"
+        app:layout_constraintStart_toStartOf="@+id/profileUniImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileUniImage" />
+
+    <TextView
+        android:id="@+id/profileUni2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/profileRating"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUniImage"
-        app:layout_constraintVertical_bias="0.13" />
+        android:text="AAU"
+        android:textColor="#2F4E73"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/profileContactbtn"
+        app:layout_constraintEnd_toEndOf="@+id/profileUniImage"
+        app:layout_constraintStart_toStartOf="@+id/profileUniImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileUni"
+        app:layout_constraintVertical_bias="0.043" />
 
     <TextView
         android:id="@+id/profileRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/profileMentor"
-        app:layout_constraintStart_toEndOf="@+id/profileUni"
-        app:layout_constraintTop_toBottomOf="@+id/profileRatingImage"
-        app:layout_constraintVertical_bias="0.139" />
+        android:text="Rating"
+        android:textColor="#2F4E73"
+        app:layout_constraintEnd_toEndOf="@+id/profileRatingImage"
+        app:layout_constraintStart_toStartOf="@+id/profileRatingImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileRatingImage" />
+
+    <TextView
+        android:id="@+id/profileRating2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="4.6"
+        android:textColor="#2F4E73"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/profileUni2"
+        app:layout_constraintEnd_toEndOf="@+id/profileRatingImage"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/profileRatingImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileRating"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/profileMentor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/profileQuestAnswer"
-        app:layout_constraintStart_toEndOf="@+id/profileRating"
-        app:layout_constraintTop_toBottomOf="@+id/profileMentorImage"
-        app:layout_constraintVertical_bias="0.139" />
+        android:text="Mentees"
+        android:textColor="#2F4E73"
+        app:layout_constraintEnd_toEndOf="@+id/profileMentorImage"
+        app:layout_constraintStart_toStartOf="@+id/profileMentorImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileMentorImage" />
+
+    <TextView
+        android:id="@+id/profileMentor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="#2F4E73"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/profileMentorImage"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/profileMentorImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileMentor" />
 
     <TextView
         android:id="@+id/profileQuestAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:gravity="center"
+        android:text="Answers"
+        android:textColor="#2F4E73"
+        app:layout_constraintEnd_toEndOf="@+id/profileQuestAnswImage"
+        app:layout_constraintStart_toStartOf="@+id/profileQuestAnswImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileQuestAnswImage" />
+
+    <TextView
+        android:id="@+id/profileQuestAnswer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profileMentor"
-        app:layout_constraintTop_toBottomOf="@+id/profileQuestAnswImage"
-        app:layout_constraintVertical_bias="0.139" />
+        android:text="256"
+        android:textColor="#2F4E73"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/profileContactbtn"
+        app:layout_constraintEnd_toEndOf="@+id/profileQuestAnswImage"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="@+id/profileQuestAnswImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileQuestAnswer"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/profileUniImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/profileRatingImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileInfo"
         app:srcCompat="@drawable/hat" />
 
     <ImageView
         android:id="@+id/profileRatingImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="116dp"
-        app:layout_constraintStart_toEndOf="@+id/profileUniImage"
+        android:layout_width="69dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/profileMentorImage"
         app:layout_constraintTop_toBottomOf="@+id/profileInfo"
         app:srcCompat="@drawable/star" />
 
     <ImageView
         android:id="@+id/profileMentorImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toStartOf="@+id/profileQuestAnswImage"
         app:layout_constraintTop_toBottomOf="@+id/profileInfo"
         app:srcCompat="@drawable/mentor" />
 
     <ImageView
         android:id="@+id/profileQuestAnswImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileInfo"
         app:srcCompat="@drawable/quest" />
-
-    <TextView
-        android:id="@+id/skill1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="92dp"
-        android:text="@string/skill1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/skill2" />
-
-    <TextView
-        android:id="@+id/skill2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="76dp"
-        android:text="@string/skill2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileInfo"
-        app:layout_constraintVertical_bias="0.946" />
-
-    <TextView
-        android:id="@+id/skill3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="92dp"
-        android:text="@string/skill3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/skill2" />
 
     <Button
         android:id="@+id/profileContactbtn"
