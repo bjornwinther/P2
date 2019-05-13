@@ -80,6 +80,7 @@
         android:hint="@string/typeanswer"
         android:inputType="textMultiLine"
         android:padding="10dp"
+        android:textColor="#2F4E73"
         app:layout_constraintBottom_toTopOf="@+id/postAnswer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
