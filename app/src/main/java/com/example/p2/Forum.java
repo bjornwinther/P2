@@ -32,10 +32,15 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
 
     //int insertArrayIndexHere = 10;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
+
+        //help overlay:
+        Intent intent = new Intent(Forum.this, HelpOverlay.class);
+        startActivity(intent);
 
         // look up enums for sorting through posts - implement it as interface
 

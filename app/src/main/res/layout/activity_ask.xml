@@ -73,28 +73,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/button_background"
         android:text="Post"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/askQuestionDescription"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
 
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
@@ -108,8 +103,10 @@
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/askPost"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topicSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/topicSpinner"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/askQuestionTitle"
@@ -147,12 +144,13 @@
         android:id="@+id/askMissingInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="25dp"
         android:text="Missing Input"
         android:textColor="#FF0000"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/askPost"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/askPost" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

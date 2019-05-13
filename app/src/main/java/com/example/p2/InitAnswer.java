@@ -64,4 +64,14 @@ public class InitAnswer extends AppCompatActivity {
 
 
     }
+    //MENU NEW
+    public void showMenu(View view){
+        Intent intent = new Intent(InitAnswer.this, menu.class );
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
+
+    public void backButt(View view){
+        finish();
+    }
 }

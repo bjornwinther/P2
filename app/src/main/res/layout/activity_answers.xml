@@ -91,7 +91,9 @@
 
                 android:fontFamily="@font/tahoma"
                 android:text="Title"
+                android:textColor="#2F4E73"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,6 +104,7 @@
 
                 android:fontFamily="@font/tahoma"
                 android:text="Topic"
+                android:textColor="#2F4E73"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/questionTitle" />
@@ -113,6 +116,7 @@
 
                 android:fontFamily="@font/tahoma"
                 android:text="Profile"
+                android:textColor="#2F4E73"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/questionTopic" />
@@ -137,6 +141,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/tahoma"
                 android:text="Description"
+                android:textColor="#2F4E73"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/questionUser" />
@@ -218,7 +223,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="There are no answers yet"
-        android:textColor="#FFFFFF"
+        android:textColor="#332F4E73"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/answers_sample_content_fragment"
         app:layout_constraintStart_toStartOf="@+id/answers_sample_content_fragment"
