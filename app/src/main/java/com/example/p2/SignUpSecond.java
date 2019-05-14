@@ -46,6 +46,7 @@ public class SignUpSecond extends AppCompatActivity implements AdapterView.OnIte
         major = findViewById(R.id.susMajor);
         status = findViewById(R.id.susStatus);
 
+
         spinnerGender.setOnItemSelectedListener(this);
         spinnerAge.setOnItemSelectedListener(this);
         spinnerSemester.setOnItemSelectedListener(this);

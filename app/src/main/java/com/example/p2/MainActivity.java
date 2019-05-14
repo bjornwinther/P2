@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     static int uniqueAccID;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         forgotPass = (TextView) findViewById(R.id.tvForgotPass);
         login = (Button) findViewById(R.id.btnLogin);
         signUp = (Button) findViewById(R.id.btnSignUp);
+
+
+
 
         accounts[uniqueAccID] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
                 "Iver", "Ottosen", "AAU", "Math", "Complicated", "6.Semester");

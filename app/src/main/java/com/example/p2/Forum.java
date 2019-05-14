@@ -30,6 +30,7 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
     private String questionTopicSelected;
 
 
+
     //int insertArrayIndexHere = 10;
 
 
@@ -38,9 +39,18 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
-        //help overlay:
-       // Intent intent = new Intent(Forum.this, HelpOverlay.class);
-        //startActivity(intent);
+        //Open help screen first time: https://stackoverflow.com/questions/7238532/how-to-launch-activity-only-once-when-app-is-opened-for-first-time
+
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+        if (isFirstRun) {
+            //show start activity
+            startActivity(new Intent(Forum.this, HelpOverlay.class));
+        }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).commit();
+
+
 
         // look up enums for sorting through posts - implement it as interface
 
@@ -111,4 +121,5 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 }

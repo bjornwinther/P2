@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InitAnswer">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
@@ -69,11 +70,11 @@
     <EditText
         android:id="@+id/editAnswer"
         android:layout_width="389dp"
-        android:layout_height="580dp"
+        android:layout_height="533dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:fontFamily="@font/tahoma"
         android:gravity="top"
@@ -84,7 +85,7 @@
         app:layout_constraintBottom_toTopOf="@+id/postAnswer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/postAnswer"

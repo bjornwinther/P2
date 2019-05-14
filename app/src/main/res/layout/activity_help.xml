@@ -63,19 +63,38 @@
 
 
     <Button
+        android:id="@+id/terms_button2"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/tahoma"
+        android:onClick="helpOpen"
+        android:text="Show help screen"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifications_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <Button
         android:id="@+id/notifications_button"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/tahoma"
         android:text="FAQ"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/terms_button2" />
 
     <Button
         android:id="@+id/privacy_button"
