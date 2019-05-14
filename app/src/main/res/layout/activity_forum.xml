@@ -83,6 +83,19 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
+                android:id="@+id/Logo"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/branch_small" />
+
+            <ImageButton
                 android:id="@+id/MagnifyingGlass"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -96,22 +109,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/forumMenuButton"
                 app:layout_constraintTop_toTopOf="@+id/forumMenuButton" />
-
-            <!--<ImageButton
-                android:id="@+id/forumBackButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />-->
 
             <ImageButton
                 android:id="@+id/forumMenuButton"

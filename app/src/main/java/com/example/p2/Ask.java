@@ -99,13 +99,11 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
                             questionDate,
                             indexQuestionData
                     );
-                    setID = indexQuestionData;
+
                     indexQuestionData++;
                     Toast.makeText(getApplicationContext(),"Question Posted", Toast.LENGTH_SHORT).show();
 
-
-
-                    Intent intent = new Intent(Ask.this, Answers.class);
+                    Intent intent = new Intent(Ask.this, Forum.class);
                     //intent.putExtra("Ask", 0);
                     startActivity(intent);
 

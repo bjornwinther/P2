@@ -24,8 +24,8 @@
             android:id="@+id/rowConstraint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/card_background"
+            android:padding="10dp"
 
             >
 
@@ -42,14 +42,15 @@
 
             <TextView
                 android:id="@+id/titleView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/tahoma"
 
+                android:fontFamily="@font/tahoma"
                 android:text="title"
                 android:textColor="#EBA888"
                 android:textSize="24sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/forwardView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/topicView" />
 
