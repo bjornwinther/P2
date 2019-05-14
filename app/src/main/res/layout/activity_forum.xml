@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -79,21 +80,21 @@
                 android:padding="10dp"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toStartOf="@+id/MagnifyingGlass"
-                app:layout_constraintStart_toEndOf="@+id/forumBackButton"
+                app:layout_constraintStart_toEndOf="@+id/Logo"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/Logo"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginStart="4dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
+                android:src="@drawable/branch_small"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/branch_small" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/MagnifyingGlass"
