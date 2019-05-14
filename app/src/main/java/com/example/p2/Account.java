@@ -20,7 +20,6 @@ public class Account {
     private String lastName;
     private String university;
     private String major;
-    private String status;
     private String semester;
     private double rating;
     private int amountOfRates;
@@ -37,7 +36,7 @@ public class Account {
     }
 
     public Account(String username, String email, String phone, String createPass, String confirmPass, String gender, int age, String firstName,
-                   String lastName, String university, String major, String status, String semester) {
+                   String lastName, String university, String major, String semester) {
         this.username = username;
         this.email = email;
         this.phone = phone;
@@ -49,7 +48,6 @@ public class Account {
         this.lastName = lastName;
         this.university = university;
         this.major = major;
-        this.status = status;
         this.semester = semester;
     }
 
@@ -104,14 +102,6 @@ public class Account {
 
     public void setMajor(String major) {
         this.major = major;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getFirstName() {

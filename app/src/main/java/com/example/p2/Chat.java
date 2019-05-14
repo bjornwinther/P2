@@ -32,9 +32,9 @@ public class Chat extends AppCompatActivity {
                 sentMessage.setText(chatbox.getText().toString());
                 sentMessage.setVisibility(View.VISIBLE);
                 chatbox.clearAnimation();
-                // what to do when send-button is clicked.
+                chatbox.setText(String.valueOf("")); // deletes message after sending it
             }
-        });
+            });
 
     }
     //MENU NEW

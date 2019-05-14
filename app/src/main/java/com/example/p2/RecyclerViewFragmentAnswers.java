@@ -91,8 +91,8 @@ public class RecyclerViewFragmentAnswers extends Fragment {
                     .getSerializable(KEY_LAYOUT_MANAGER);
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-        for(int indexLoop = 0; indexLoop < indexAnswerData; indexLoop ++) { // consider removing this.
-            if (indexLoop == setID) {
+        for (int i = 0; i < indexAnswerData; i++) {
+            if (answerData[i].getQuestLoaded() == setID) {
                 mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset);
             }
         }
@@ -139,7 +139,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     private void initDatasetAnswer() { // int ID - take as parameter?
         answerAnswerDataset = new String[indexAnswerData]; // each time a new answer is posted - a new stringObject/recycleView will be created.
         for (int i = 0; i < indexAnswerData; i++) {
-            if(i == setID) { // this only restricts the string.
+            if(answerData[i].getQuestLoaded() == setID) { // this only restricts the string.
                 //change answerData[i] to answerData[setID] ?
                 answerAnswerDataset[i] = answerData[i].getAnswerAnswer(); //answerData is an array of AnswerData with 10 objects
                 //answerAnswerDataSet is a String array - that is initialized in the onCreate method every time this activity is accessed.

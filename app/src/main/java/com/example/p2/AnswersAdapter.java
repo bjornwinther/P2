@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import static com.example.p2.Ask.questionData;
+import static com.example.p2.CustomAdapter.setID;
+import static com.example.p2.InitAnswer.answerData;
+import static com.example.p2.InitAnswer.indexAnswerData;
+
 public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHolder> {
 
     private String[] answerAnswerDataSet;
@@ -118,8 +123,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view.
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.answer_card, viewGroup, false);
+                View v = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.answer_card, viewGroup, false);
 
         return new ViewHolder(v);
     }
@@ -156,7 +161,12 @@ viewHolder.getUserView().setText(dataset[position]);
 
     @Override
     public int getItemCount() {
-        return answerAnswerDataSet.length;
+        //for (int i = 0; i < indexAnswerData; i++) {
+            //if (answerData[i].getQuestLoaded() == setID) {
+                return answerAnswerDataSet.length;
+            //}
+        //}
+        //return 0;
     }
 
 

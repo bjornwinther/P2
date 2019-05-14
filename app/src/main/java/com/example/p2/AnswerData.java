@@ -1,5 +1,8 @@
 package com.example.p2;
 
+import static com.example.p2.InitAnswer.answerData;
+import static com.example.p2.InitAnswer.indexAnswerData;
+
 public class AnswerData {
 
     private String answerDate;
@@ -7,11 +10,13 @@ public class AnswerData {
     private String answerUser;
     private int answerScore;
     static private int answerID;
+    private int questLoaded;
 
-    public AnswerData(String answerAnswer, String answerDate, int answerID) {
+    public AnswerData(String answerAnswer, String answerDate, int answerID, int questLoaded) {
         this.answerAnswer = answerAnswer;
         this.answerDate = answerDate;
         this.answerID = answerID;
+        this.questLoaded = questLoaded;
     }
 
     public AnswerData(String answerDate, String answerAnswer, String answerUser, int answerScore, int answerID) {
@@ -20,6 +25,15 @@ public class AnswerData {
         this.answerUser = answerUser;
         this.answerScore = answerScore;
         this.answerID = answerID;
+    }
+
+
+    public int getQuestLoaded() {
+        return questLoaded;
+    }
+
+    public void setQuestLoaded(int questLoaded) {
+        this.questLoaded = questLoaded;
     }
 
     public String getAnswerDate() {
