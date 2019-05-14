@@ -130,7 +130,7 @@
                 app:layout_constraintHorizontal_bias="0.551"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/justinbieber" />
+                tools:srcCompat="@drawable/profilepic" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
