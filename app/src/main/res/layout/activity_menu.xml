@@ -8,7 +8,7 @@
     tools:context=".menu"
     android:background="#CC000000">
 
-        <ImageButton
+    <ImageButton
         android:id="@+id/transparentBack"
         android:layout_width="190dp"
         android:layout_height="774dp"
@@ -102,7 +102,7 @@
         android:layout_width="221dp"
         android:layout_height="57dp"
         android:background="@android:color/transparent"
-        android:onClick="settingsGo"
+        android:onClick="myPostsGo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuChatButton" />
 
@@ -111,9 +111,19 @@
         android:layout_width="221dp"
         android:layout_height="57dp"
         android:background="@android:color/transparent"
-        android:onClick="helpGo"
+        android:onClick="settingsGo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuSettingsButton" />
+
+    <Button
+        android:id="@+id/menuHelpButton2"
+        android:layout_width="221dp"
+        android:layout_height="57dp"
+        android:background="@android:color/transparent"
+        android:onClick="helpGo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuHelpButton" />
+
     <TextView
         android:id="@+id/menuName"
         android:layout_width="wrap_content"
@@ -180,31 +190,41 @@
         app:layout_constraintTop_toTopOf="@+id/menuChatButton" />
 
     <TextView
-        android:id="@+id/settingsText"
+        android:id="@+id/chatText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Settings"
+        android:text="My posts"
         android:textColor="#2F4E73"
         app:layout_constraintBottom_toTopOf="@+id/menuHelpButton"
         app:layout_constraintStart_toStartOf="@+id/menuSettingsButton"
         app:layout_constraintTop_toTopOf="@+id/menuSettingsButton" />
 
     <TextView
+        android:id="@+id/settingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Settings"
+        android:textColor="#2F4E73"
+        app:layout_constraintBottom_toTopOf="@+id/menuHelpButton2"
+        app:layout_constraintStart_toStartOf="@+id/menuHelpButton"
+        app:layout_constraintTop_toTopOf="@+id/menuHelpButton" />
+
+    <TextView
         android:id="@+id/helpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="8dp"
         android:text="Help"
         android:textColor="#2F4E73"
-        app:layout_constraintBottom_toBottomOf="@+id/menuHelpButton"
-        app:layout_constraintStart_toStartOf="@+id/menuHelpButton"
-        app:layout_constraintTop_toTopOf="@+id/menuHelpButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/menuHelpButton2"
+        app:layout_constraintStart_toStartOf="@+id/menuHelpButton2"
+        app:layout_constraintTop_toTopOf="@+id/menuHelpButton2" />
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="45dp"
@@ -235,33 +255,32 @@
         app:layout_constraintStart_toStartOf="@+id/menuChatButton"
         app:layout_constraintTop_toTopOf="@+id/menuChatButton"
         app:srcCompat="@drawable/menu_chat" />
+
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="38dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/menuHelpButton"
+        app:layout_constraintBottom_toTopOf="@+id/menuHelpButton2"
         app:layout_constraintEnd_toStartOf="@+id/settingsText"
-        app:layout_constraintStart_toStartOf="@+id/menuSettingsButton"
-        app:layout_constraintTop_toTopOf="@+id/menuSettingsButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/menuHelpButton"
+        app:layout_constraintTop_toTopOf="@+id/menuHelpButton"
         app:srcCompat="@drawable/menu_setting" />
+
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="38dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/menuHelpButton"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuHelpButton2"
         app:layout_constraintEnd_toStartOf="@+id/helpText"
-        app:layout_constraintStart_toStartOf="@+id/menuHelpButton"
-        app:layout_constraintTop_toTopOf="@+id/menuHelpButton"
+        app:layout_constraintStart_toStartOf="@+id/menuHelpButton2"
+        app:layout_constraintTop_toTopOf="@+id/menuHelpButton2"
         app:srcCompat="@drawable/menu_help" />
     <TextView
         android:id="@+id/logOutText"
@@ -275,4 +294,16 @@
         app:layout_constraintEnd_toEndOf="@+id/logOutButton"
         app:layout_constraintStart_toStartOf="@+id/logOutButton"
         app:layout_constraintTop_toTopOf="@+id/logOutButton" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="34dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/menuHelpButton"
+        app:layout_constraintStart_toStartOf="@+id/menuSettingsButton"
+        app:layout_constraintTop_toTopOf="@+id/menuSettingsButton"
+        app:srcCompat="@drawable/post" />
 </androidx.constraintlayout.widget.ConstraintLayout>
