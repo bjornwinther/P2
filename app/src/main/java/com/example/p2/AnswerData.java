@@ -12,13 +12,14 @@ public class AnswerData {
     static private int answerID;
     private int questLoaded;
 
-    public AnswerData(String answerAnswer, String answerDate, int answerID, int questLoaded) {
+    public AnswerData(String answerAnswer, String answerDate, int answerID, int questLoaded, int answerScore) {
         this.answerAnswer = answerAnswer;
         this.answerDate = answerDate;
         this.answerID = answerID;
         this.questLoaded = questLoaded;
+        this.answerScore = answerScore;
     }
-
+/*
     public AnswerData(String answerDate, String answerAnswer, String answerUser, int answerScore, int answerID) {
         this.answerDate = answerDate;
         this.answerAnswer = answerAnswer;
@@ -26,7 +27,7 @@ public class AnswerData {
         this.answerScore = answerScore;
         this.answerID = answerID;
     }
-
+*/
 
     public int getQuestLoaded() {
         return questLoaded;
@@ -54,5 +55,9 @@ public class AnswerData {
 
     public int getAnswerID() {
         return answerID;
+    }
+
+    public void setAnswerScore(int answerScore) {
+        this.answerScore = answerScore;
     }
 }

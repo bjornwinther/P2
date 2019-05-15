@@ -56,7 +56,9 @@ public class InitAnswer extends AppCompatActivity {
                     answerData[indexAnswerData] = new AnswerData(
                             editAnswer.getText().toString(),
                             dateString,
-                            setID, questionLoaded
+                            setID,
+                            questionLoaded,
+                            0
                     );
 
                     indexAnswerData++;

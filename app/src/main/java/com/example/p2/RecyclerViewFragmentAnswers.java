@@ -59,6 +59,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
                 initDatasetID();
                 initDatasetAnswer();
                 initDatasetUser();
+                initDatasetScore();
 
 
 
@@ -95,7 +96,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
         for (int i = 0; i < indexAnswerData; i++) {
             if (answerData[i].getQuestLoaded() == setID) {
-                mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset, answerUserDataset);
+                mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset, answerUserDataset, answerScoreDataset);
             }
         }
         // Set CustomAdapter as the adapter for RecyclerView.
@@ -191,16 +192,15 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     }
 
 
-/*
     private void initDatasetScore() {
         answerScoreDataset = new int[indexAnswerData]; //remember to change to indexAnswerData
-        for (int i = 0; i < maxIndexAnswerData; i++) {
+        for (int i = 0; i < indexAnswerData; i++) {
 
-            //answerAnswerDataset[i] = 2;
+            answerScoreDataset[i] = answerData[i].getAnswerScore();
 
         }
     }
-*/
+
 
 
 }
