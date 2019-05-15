@@ -16,7 +16,7 @@ import static com.example.p2.InitAnswer.questionLoaded;
 
 public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHolder> {
 
-    private String[] answerAnswerDataSet;
+    private static String[] answerAnswerDataSet;
     private String[] answerUpDataSet;
     private String[] answerDownDataSet;
     private String[] answerDateDataSet;
@@ -155,12 +155,9 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        //for (int i = 0; i < indexAnswerData; i++) {
-            //if (answerData[i].getQuestLoaded() == setID) {
+
                 return answerAnswerDataSet.length;
-            //}
-        //}
-        //return 0;
+
     }
 
 

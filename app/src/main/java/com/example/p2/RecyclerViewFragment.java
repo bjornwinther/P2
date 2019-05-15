@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import static com.example.p2.InitAnswer.answerData;
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.MainActivity.accounts;
@@ -34,6 +34,7 @@ public class RecyclerViewFragment extends Fragment {
     protected String[] forumTopicDataset;
     protected String[] forumDateDataset;
     protected String[] forumUserDataset;
+    protected String[] forumAnswersDataset;
     protected int[] forumIDDataset;
 
 
@@ -48,6 +49,7 @@ public class RecyclerViewFragment extends Fragment {
         initDatasetTopic();
         initDatasetID();
         initDatasetUser();
+        initDatasetAnswers();
 
     }
 
@@ -74,7 +76,7 @@ public class RecyclerViewFragment extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset, forumIDDataset, forumUserDataset);
+        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset, forumIDDataset, forumUserDataset, forumAnswersDataset);
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -120,6 +122,7 @@ public class RecyclerViewFragment extends Fragment {
             forumTitleDataset[i] = questionData[i].getQuestionTitle();
         }
     }
+
     private void initDatasetTopic() {
         forumTopicDataset = new String[indexQuestionData];
         for (int i = 0; i < indexQuestionData; i++) {
@@ -127,6 +130,7 @@ public class RecyclerViewFragment extends Fragment {
             forumTopicDataset[i] = questionData[i].getQuestionTopic();
         }
     }
+
     private void initDatasetDate() {
         forumDateDataset = new String[indexQuestionData];
         for (int i = 0; i < indexQuestionData; i++) {
@@ -143,15 +147,24 @@ public class RecyclerViewFragment extends Fragment {
         }
     }
 
-    private void initDatasetUser(){
+    private void initDatasetUser() {
         forumUserDataset = new String[indexQuestionData];
-        for (int i = 0; i<indexQuestionData; i++){
+        for (int i = 0; i < indexQuestionData; i++) {
 
             forumUserDataset[i] = accounts[uniqueAccID].getUsername();
+        }
+    }
+
+    private void initDatasetAnswers() {
+        forumAnswersDataset = new String[indexQuestionData];
+        for (int i = 0; i < indexQuestionData; i++) {
+
+            if (answerData[i] != null){
+                    forumAnswersDataset[i] = Integer.toString(answerData[i].getAnswerAnswer().length());
+            } else forumAnswersDataset[i] = Integer.toString(0);
+
         }
 
 
     }
-
-
 }

@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import static com.example.p2.Ask.questionData;
+import static com.example.p2.InitAnswer.answerData;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     private static final String TAG = "CustomAdapter";
@@ -22,6 +23,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private String[] forumDateDataSet;
     private String[] forumTopicDataSet;
     private String[] forumUserDataSet;
+    private String[] forumAnswersDataset;
     private static int[] forumIDDataset;
     protected static int setID;
 
@@ -34,6 +36,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         private final TextView topicView;
         private final TextView dateView;
         private final TextView userView;
+        private final TextView answersView;
 
 
 
@@ -61,6 +64,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             dateView = (TextView) v.findViewById(R.id.dateView);
             titleView = (TextView) v.findViewById(R.id.titleView);
             userView = (TextView) v.findViewById(R.id.userView);
+            answersView = (TextView) v.findViewById(R.id.answersView);
 
             userView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,9 +85,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         public TextView getDateView() {
             return dateView;
         }
-
         public TextView getUserView() {
             return userView;
+        }
+
+        public TextView getAnswersView() {
+            return answersView;
         }
     }
     // END_INCLUDE(recyclerViewSampleViewHolder)
@@ -93,16 +100,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      *
      // @param dataSe String[] containing the data to populate views to be used by RecyclerView.
      */
-    public CustomAdapter(String[] titleDataSet, String[] topicDataSet, String[] dateDataSet, int[]IDDataset, String[] userDataset) {
+    public CustomAdapter(String[] titleDataSet, String[] topicDataSet, String[] dateDataSet, int[]IDDataset, String[] userDataset, String[] answersDataset) {
 
         forumTitleDataSet = titleDataSet;
         forumTopicDataSet = topicDataSet;
         forumDateDataSet = dateDataSet;
         forumIDDataset = IDDataset;
         forumUserDataSet = userDataset;
-
-
-
+        forumAnswersDataset = answersDataset;
     }
 
     // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
@@ -132,10 +137,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getTitleView().setText(forumTitleDataSet[position]);
         viewHolder.getTopicView().setText(forumTopicDataSet[position]);
         viewHolder.getUserView().setText(forumUserDataSet[position]);
-
+        viewHolder.getAnswersView().setText(forumAnswersDataset[position]);
 
 
     }
+
     // END_INCLUDE(recyclerViewOnBindViewHolder)
 
     // Return the size of your dataset (invoked by the layout manager)
