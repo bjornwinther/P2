@@ -13,6 +13,7 @@ import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.MainActivity.accounts;
 import static com.example.p2.MainActivity.uniqueAccID;
+import static com.example.p2.AnswersAdapter.answerAnswerDataSet;
 
 public class RecyclerViewFragment extends Fragment {
 
@@ -160,8 +161,8 @@ public class RecyclerViewFragment extends Fragment {
         for (int i = 0; i < indexQuestionData; i++) {
 
             if (answerData[i] != null){
-                    forumAnswersDataset[i] = Integer.toString(answerData[i].getAnswerAnswer().length());
-            } else forumAnswersDataset[i] = Integer.toString(0);
+                    forumAnswersDataset[i] = ""+Integer.toString(answerAnswerDataSet.length)+" Answers";
+            } else forumAnswersDataset[i] = "0 Answers";
 
         }
 

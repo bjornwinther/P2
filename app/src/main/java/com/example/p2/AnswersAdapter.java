@@ -16,7 +16,7 @@ import static com.example.p2.InitAnswer.questionLoaded;
 
 public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHolder> {
 
-    private static String[] answerAnswerDataSet;
+    protected static String[] answerAnswerDataSet;
     private String[] answerUpDataSet;
     private String[] answerDownDataSet;
     private String[] answerDateDataSet;
