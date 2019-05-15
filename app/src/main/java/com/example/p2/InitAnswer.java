@@ -17,6 +17,7 @@ import static com.example.p2.CustomAdapter.setID;
 public class InitAnswer extends AppCompatActivity {
 
     TextView editAnswer;
+    TextView inputError;
     Button postAnswer;
     Date date;
     String dateString;
@@ -25,6 +26,7 @@ public class InitAnswer extends AppCompatActivity {
     static int maxIndexAnswerData = 10;
     static AnswerData [] answerData = new AnswerData[maxIndexAnswerData];
     static int questionLoaded;
+    private final int minEntryLength = 4;
 
 
     @Override
@@ -34,6 +36,7 @@ public class InitAnswer extends AppCompatActivity {
 
         editAnswer = findViewById(R.id.editAnswer);
         postAnswer = findViewById(R.id.postAnswer);
+        inputError = findViewById(R.id.answerMissingInput);
 
         questionLoaded = setID;
 
@@ -41,22 +44,29 @@ public class InitAnswer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                date = new java.util.Date();
-                //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
-                dateString = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
+                if (editAnswer.getText().toString().length() < minEntryLength) {
+                    inputError.setVisibility(View.VISIBLE);
+                } else {
 
-                answerData[indexAnswerData] = new AnswerData(
-                        editAnswer.getText().toString(),
-                        dateString,
-                        setID, questionLoaded
-                );
+                    inputError.setVisibility(View.GONE);
+                    date = new java.util.Date();
+                    //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
+                    dateString = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
 
-                indexAnswerData++;
+                    answerData[indexAnswerData] = new AnswerData(
+                            editAnswer.getText().toString(),
+                            dateString,
+                            setID,
+                            questionLoaded,
+                            0
+                    );
 
-                Intent intent = new Intent(InitAnswer.this, Answers.class);
-                startActivity(intent);
+                    indexAnswerData++;
 
+                    Intent intent = new Intent(InitAnswer.this, Answers.class);
+                    startActivity(intent);
 
+                }
 
             }
         });

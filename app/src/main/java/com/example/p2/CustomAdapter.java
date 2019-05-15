@@ -21,6 +21,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private String[] forumTitleDataSet;
     private String[] forumDateDataSet;
     private String[] forumTopicDataSet;
+    private String[] forumUserDataSet;
     private static int[] forumIDDataset;
     protected static int setID;
 
@@ -32,6 +33,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         private final TextView titleView;
         private final TextView topicView;
         private final TextView dateView;
+        private final TextView userView;
+
 
 
         public ViewHolder(View v) {
@@ -56,6 +59,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             topicView = (TextView) v.findViewById(R.id.topicView);
             dateView = (TextView) v.findViewById(R.id.dateView);
             titleView = (TextView) v.findViewById(R.id.titleView);
+            userView = (TextView) v.findViewById(R.id.userView);
 
 
         }
@@ -69,6 +73,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         public TextView getDateView() {
             return dateView;
         }
+
+        public TextView getUserView() {
+            return userView;
+        }
     }
     // END_INCLUDE(recyclerViewSampleViewHolder)
 
@@ -77,12 +85,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      *
      // @param dataSe String[] containing the data to populate views to be used by RecyclerView.
      */
-    public CustomAdapter(String[] titleDataSet, String[] topicDataSet, String[] dateDataSet, int[]IDDataset) {
+    public CustomAdapter(String[] titleDataSet, String[] topicDataSet, String[] dateDataSet, int[]IDDataset, String[] userDataset) {
 
         forumTitleDataSet = titleDataSet;
         forumTopicDataSet = topicDataSet;
         forumDateDataSet = dateDataSet;
         forumIDDataset = IDDataset;
+        forumUserDataSet = userDataset;
+
+
 
     }
 
@@ -112,6 +123,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getDateView().setText(forumDateDataSet[position]);
         viewHolder.getTitleView().setText(forumTitleDataSet[position]);
         viewHolder.getTopicView().setText(forumTopicDataSet[position]);
+        viewHolder.getUserView().setText(forumUserDataSet[position]);
+
 
 
     }

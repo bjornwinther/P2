@@ -1,7 +1,5 @@
 package com.example.p2;
 
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,22 +8,21 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import static com.example.p2.Ask.questionData;
 import static com.example.p2.CustomAdapter.setID;
 import static com.example.p2.InitAnswer.answerData;
 import static com.example.p2.InitAnswer.indexAnswerData;
+import static com.example.p2.InitAnswer.questionLoaded;
 
 public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHolder> {
 
     private String[] answerAnswerDataSet;
-    private String[] answerUserDataSet;
     private String[] answerUpDataSet;
     private String[] answerDownDataSet;
     private String[] answerDateDataSet;
+    private String[] answerUserDataset;
     private int[] answerScoreDataSet;
     private int[] answerIDDataset;
-
-
+    private static int answerID;
 
 
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
@@ -47,11 +44,11 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   // Log.d("answerID", ""+getAdapterPosition() );
+
                 }
             });
 
-            userView = v.findViewById(R.id.answeruserView);
+            userView = v.findViewById(R.id.userView);
             dateView = v.findViewById(R.id.answerdateView);
             answerView = v.findViewById(R.id.answeranswerView);
             scoreView = v.findViewById(R.id.scoreView);
@@ -65,6 +62,9 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                 public void onClick(View v) {
                     upView.setImageResource(R.drawable.up_peach);
                     downView.setImageResource(R.drawable.down);
+
+                    answerData[setID].setAnswerScore(answerData[questionLoaded].getAnswerScore()+1);
+
                 }
             });
             downView.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +72,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                 public void onClick(View v) {
                     upView.setImageResource(R.drawable.up);
                     downView.setImageResource(R.drawable.down_peach);
+
+                    answerData[setID].setAnswerScore(answerData[questionLoaded].getAnswerScore()-1);
                 }
             });
         }
@@ -101,7 +103,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
      *
      * @param //dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
-    public AnswersAdapter(String[] answerDataSetA, String[] dateDataSetA, int [] answerIDDatasetA) {
+    public AnswersAdapter(String[] answerDataSetA, String[] dateDataSetA, int [] answerIDDatasetA, String [] answerUserDatasetA, int [] answerScoreDataSetA) {
         /*
         String[] userDataSet
         String[] upDataSet
@@ -111,6 +113,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         answerAnswerDataSet = answerDataSetA;
         answerDateDataSet = dateDataSetA;
         answerIDDataset = answerIDDatasetA;
+        answerUserDataset = answerUserDatasetA;
+        answerScoreDataSet = answerScoreDataSetA;
 
 
         //int[] answerScoreDataSetA,
@@ -141,17 +145,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
 
         viewHolder.getAnswerView().setText(answerAnswerDataSet[position]);
         viewHolder.getDateView().setText(answerDateDataSet[position]);
-
-
-        //viewHolder.getDateView().setText(answerDateDataSet[position]);
-        //viewHolder.getScoreView().setText(String.valueOf(answerScoreDataSet[position]));
-
-        /*
-viewHolder.getDateView().setText(dataset[position]);
-viewHolder.getDownView().setText(dataset[position]);
-viewHolder.getUpView().setText(dataset[position]);
-viewHolder.getUserView().setText(dataset[position]);
-        */
+        viewHolder.getUserView().setText(answerUserDataset[position]);
+        viewHolder.getScoreView().setText(Integer.toString(answerScoreDataSet[position]));
 
     }
     // END_INCLUDE(recyclerViewOnBindViewHolder)

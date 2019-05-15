@@ -78,7 +78,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
 
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
+                
                 if (questionTitle.getText().toString().length() < minEntryLength){
                     askMissingInput.setVisibility(View.VISIBLE);
                     askMissingInput.setText("Please write your question");
