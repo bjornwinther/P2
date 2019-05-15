@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Spinner;
@@ -25,6 +26,7 @@ import static com.example.p2.Ask.questionData;
 
 public class Forum extends FragmentActivity implements AdapterView.OnItemSelectedListener {
 
+    ImageView logo;
     TextView noPosts;
     private Button ask;
     private String questionTopicSelected;
@@ -61,8 +63,16 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
             transaction.commit();
         }
 
+        logo = findViewById(R.id.Logo);
         ask = findViewById(R.id.Ask);
         noPosts = findViewById(R.id.noPosts);
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePageTo(Forum.class);
+            }
+        });
 
         ask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

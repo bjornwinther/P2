@@ -14,9 +14,11 @@ import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.CustomAdapter.setID;
 
+import static com.example.p2.MainActivity.accounts;
 import static com.example.p2.InitAnswer.answerData;
 import static com.example.p2.InitAnswer.indexAnswerData;
 import static com.example.p2.InitAnswer.maxIndexAnswerData;
+import static com.example.p2.MainActivity.uniqueAccID;
 
 
 public class RecyclerViewFragmentAnswers extends Fragment {
@@ -34,6 +36,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
     protected String[] answerDateDataset;
     protected String[] answerAnswerDataset;
+    protected String[] answerUserDataset;
     protected int[] answerScoreDataset;
     protected int[] answerIDDataset;
     protected String[] forumDateDataset;
@@ -55,18 +58,17 @@ public class RecyclerViewFragmentAnswers extends Fragment {
                 initDatasetDate();
                 initDatasetID();
                 initDatasetAnswer();
+                initDatasetUser();
 
 
 
-        /*
+/*
         for (int indexLoop = 0; indexLoop <= indexAnswerData; indexLoop++) {
             if (answerData[indexLoop].getAnswerID() == setID) {
 
             }
         }
 */
-
-
 
     }
 
@@ -93,7 +95,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
         for (int i = 0; i < indexAnswerData; i++) {
             if (answerData[i].getQuestLoaded() == setID) {
-                mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset);
+                mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset, answerUserDataset);
             }
         }
         // Set CustomAdapter as the adapter for RecyclerView.
@@ -179,13 +181,14 @@ public class RecyclerViewFragmentAnswers extends Fragment {
         }
     }
 
-            /*
-    for(int indexLoop = 0; indexLoop <= indexOfAcc; indexLoop ++) {
-        if (username.equals(accounts[indexLoop].getUsername()) && password.equals(accounts[indexLoop].getConfirmPass())) {
-            uniqueAccID = indexLoop;
-            Intent intent = new Intent(MainActivity.this, Forum.class); // correct so it directs to the correct class (not Forum?)
-            startActivity(intent);
-*/
+    private void initDatasetUser(){
+        answerUserDataset = new String[indexAnswerData];
+
+        for (int i = 0; i < indexAnswerData; i++) {
+            answerUserDataset[i] = accounts[uniqueAccID].getUsername();
+
+        }
+    }
 
 
 /*

@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
+import static com.example.p2.MainActivity.accounts;
+import static com.example.p2.MainActivity.uniqueAccID;
 
 public class RecyclerViewFragment extends Fragment {
 
@@ -31,6 +33,7 @@ public class RecyclerViewFragment extends Fragment {
     protected String[] forumTitleDataset;
     protected String[] forumTopicDataset;
     protected String[] forumDateDataset;
+    protected String[] forumUserDataset;
     protected int[] forumIDDataset;
 
 
@@ -44,6 +47,7 @@ public class RecyclerViewFragment extends Fragment {
         initDatasetDate();
         initDatasetTopic();
         initDatasetID();
+        initDatasetUser();
 
     }
 
@@ -70,7 +74,7 @@ public class RecyclerViewFragment extends Fragment {
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 
-        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset, forumIDDataset);
+        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset, forumIDDataset, forumUserDataset);
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -137,6 +141,16 @@ public class RecyclerViewFragment extends Fragment {
 
             forumIDDataset[i] = questionData[i].getQuestionID();
         }
+    }
+
+    private void initDatasetUser(){
+        forumUserDataset = new String[indexQuestionData];
+        for (int i = 0; i<indexQuestionData; i++){
+
+            forumUserDataset[i] = accounts[uniqueAccID].getUsername();
+        }
+
+
     }
 
 
