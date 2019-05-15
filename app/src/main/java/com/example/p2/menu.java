@@ -44,6 +44,13 @@ public class menu extends AppCompatActivity {
         Intent goToForum = new Intent(menu.this, Forum.class);
         startActivity(goToForum);
         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+    }
+
+    public void myPostsGo(View view) {
+        Intent goToSignin = new Intent(menu.this, MyPosts.class);
+        startActivity(goToSignin);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
     public void settingsGo(View view) {
         Intent goToSettings = new Intent(menu.this, Settings.class);
