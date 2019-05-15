@@ -63,7 +63,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                     upView.setImageResource(R.drawable.up_peach);
                     downView.setImageResource(R.drawable.down);
 
-                    answerData[setID].setAnswerScore(answerData[questionLoaded].getAnswerScore()+1);
+                    answerData[setID].setAnswerScore(answerData[getAdapterPosition()].getAnswerScore()+1);
 
                 }
             });
@@ -73,7 +73,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                     upView.setImageResource(R.drawable.up);
                     downView.setImageResource(R.drawable.down_peach);
 
-                    answerData[setID].setAnswerScore(answerData[questionLoaded].getAnswerScore()-1);
+                    answerData[setID].setAnswerScore(answerData[getAdapterPosition()].getAnswerScore()-1);
                 }
             });
         }
@@ -104,21 +104,12 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
      * @param //dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
     public AnswersAdapter(String[] answerDataSetA, String[] dateDataSetA, int [] answerIDDatasetA, String [] answerUserDatasetA, int [] answerScoreDataSetA) {
-        /*
-        String[] userDataSet
-        String[] upDataSet
-        String[] downDataSet
-        String[] dateDataSet
-        */
+
         answerAnswerDataSet = answerDataSetA;
         answerDateDataSet = dateDataSetA;
         answerIDDataset = answerIDDatasetA;
         answerUserDataset = answerUserDatasetA;
         answerScoreDataSet = answerScoreDataSetA;
-
-
-        //int[] answerScoreDataSetA,
-        //answerScoreDataSet = answerScoreDataSetA;
 
     }
 
