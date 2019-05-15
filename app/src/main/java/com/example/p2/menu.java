@@ -63,7 +63,7 @@ public class menu extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
     public void chatGo(View view) {
-        Intent goToChat = new Intent(menu.this, Chat.class);
+        Intent goToChat = new Intent(menu.this, MyChats.class);
         startActivity(goToChat);
         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
