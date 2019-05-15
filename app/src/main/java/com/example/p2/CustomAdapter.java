@@ -56,11 +56,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 }
             });
 
+
             topicView = (TextView) v.findViewById(R.id.topicView);
             dateView = (TextView) v.findViewById(R.id.dateView);
             titleView = (TextView) v.findViewById(R.id.titleView);
             userView = (TextView) v.findViewById(R.id.userView);
 
+            userView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), Profile.class);
+                    v.getContext().startActivity(intent);
+                }
+            });
 
         }
 

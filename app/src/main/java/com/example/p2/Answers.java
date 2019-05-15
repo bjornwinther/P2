@@ -1,6 +1,5 @@
 package com.example.p2;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -11,11 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.CustomAdapter.setID;
+import static com.example.p2.MainActivity.accounts;
+import static com.example.p2.MainActivity.uniqueAccID;
 
 public class Answers extends FragmentActivity {
 
@@ -25,6 +23,7 @@ public class Answers extends FragmentActivity {
     TextView questionTopic;
     TextView questionDate;
     TextView questionDescription;
+    TextView questionUser;
     Button answer;
     int ID;
 
@@ -41,8 +40,10 @@ public class Answers extends FragmentActivity {
         questionTopic = findViewById(R.id.questionTopic);
         questionDate = findViewById(R.id.questionDate);
         questionDescription = findViewById(R.id.questionDescription);
+        questionUser = findViewById(R.id.questionUser);
         answer = findViewById(R.id.answerButton);
         menuBtn = findViewById(R.id.answersMenuBtn);
+
 
         backButton = findViewById(R.id.answersBackButton);
 
@@ -76,17 +77,21 @@ public class Answers extends FragmentActivity {
                 startActivity(intent);
             }
         });
-/*
-        Intent intent = getIntent();
-        intent.getIntExtra("ID", 0);
-        ID = getIntent().getIntExtra("ID", 0);
-*/
 
+        questionUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Profile.class);
+                v.getContext().startActivity(intent);
+            }
+        });
 
         questionTitle.setText(questionData[setID].getQuestionTitle());
         questionTopic.setText(questionData[setID].getQuestionTopic());
         questionDescription.setText(questionData[setID].getQuestionDescription());
         questionDate.setText(questionData[setID].getQuestionDate());
+        questionUser.setText(accounts[uniqueAccID].getUsername());
+
 
     }
 

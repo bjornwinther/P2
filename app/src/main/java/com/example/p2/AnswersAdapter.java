@@ -1,5 +1,6 @@
 package com.example.p2;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +75,13 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                     downView.setImageResource(R.drawable.down_peach);
 
                     answerData[setID].setAnswerScore(answerData[getAdapterPosition()].getAnswerScore()-1);
+                }
+            });
+            userView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), Profile.class);
+                    v.getContext().startActivity(intent);
                 }
             });
         }
