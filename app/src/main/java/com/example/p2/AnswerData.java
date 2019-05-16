@@ -19,15 +19,6 @@ public class AnswerData {
         this.questLoaded = questLoaded;
         this.answerScore = answerScore;
     }
-/*
-    public AnswerData(String answerDate, String answerAnswer, String answerUser, int answerScore, int answerID) {
-        this.answerDate = answerDate;
-        this.answerAnswer = answerAnswer;
-        this.answerUser = answerUser;
-        this.answerScore = answerScore;
-        this.answerID = answerID;
-    }
-*/
 
     public int getQuestLoaded() {
         return questLoaded;
