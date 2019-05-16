@@ -25,6 +25,7 @@ public class Help extends AppCompatActivity {
     }
 
     public void helpOpen(View view){
+        //Help overlay reset
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
                 .putBoolean("isFirstRun", true).commit();
         Intent intent1 = new Intent(Help.this, Forum.class);
