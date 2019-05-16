@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         validated = false;
 
+        //Help overlay reset
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", true).commit();
+
         accounts[0] = new Account("", "admin@hotmail.com", "12345678", "", "", "SuperHuMAN", 22,
                 "Iver", "Ottosen", "AAU", "Math", "6.Semester");
 
