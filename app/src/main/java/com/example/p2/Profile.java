@@ -48,7 +48,7 @@ public class Profile extends AppCompatActivity {
         rating = findViewById(R.id.profileRating);
         mentors = findViewById(R.id.profileMentor);
         questAnswers = findViewById(R.id.profileQuestAnswer);
-        contactBtn = findViewById(R.id.profileContactbtn);
+        contactBtn = findViewById(R.id.contact);
         backBtn = findViewById(R.id.profileBackBtn);
         menuBtn = findViewById(R.id.profileMenuBtn);
 
