@@ -14,6 +14,7 @@ import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
 import static com.example.p2.CustomAdapter.setID;
 
+import static com.example.p2.InitAnswer.indexLength;
 import static com.example.p2.MainActivity.accounts;
 import static com.example.p2.InitAnswer.answerData;
 import static com.example.p2.InitAnswer.indexAnswerData;
@@ -94,11 +95,11 @@ public class RecyclerViewFragmentAnswers extends Fragment {
                     .getSerializable(KEY_LAYOUT_MANAGER);
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-        for (int i = 0; i < indexAnswerData; i++) {
-            if (answerData[i].getQuestLoaded() == setID) {
+        //for (int i = 0; i < indexAnswerData; i++) {
+           // if (answerData[setID][i].getQuestLoaded() == setID) {
                 mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset, answerUserDataset, answerScoreDataset);
-            }
-        }
+         //   }
+        //}
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -140,11 +141,18 @@ public class RecyclerViewFragmentAnswers extends Fragment {
 
 
     private void initDatasetAnswer() { // int ID - take as parameter?
-        answerAnswerDataset = new String[indexAnswerData]; // each time a new answer is posted - a new stringObject/recycleView will be created.
-        for (int i = 0; i < indexAnswerData; i++) {
-            if(answerData[i].getQuestLoaded() == setID) { // this only restricts the string.
+        answerAnswerDataset = new String[indexLength[setID]]; // each time a new answer is posted - a new stringObject/recycleView will be created.
+        for (int i = 0; i < indexLength[setID]; i++) {
+            //commmented this line out 16/5
+            //if(answerData[i].getQuestLoaded() == setID) { // this only restricts the string.
+
+            if (answerData[setID][i] != null){
+
+                answerAnswerDataset[i] = answerData[setID][i].getAnswerAnswer(); //answerData is an array of AnswerData with 10 objects
+            }
+
                 //change answerData[i] to answerData[setID] ?
-                answerAnswerDataset[i] = answerData[i].getAnswerAnswer(); //answerData is an array of AnswerData with 10 objects
+
                 //answerAnswerDataSet is a String array - that is initialized in the onCreate method every time this activity is accessed.
                 //it is resizing each time according to indexAnswerData value. - as far as i know that can cause huge runtime problems.
             }
@@ -160,43 +168,60 @@ public class RecyclerViewFragmentAnswers extends Fragment {
             //questions:
             //when does the onCreate of this activity/class run (ergo answer to when this method runs).
         }
-    }
+
 
 
 
     private void initDatasetDate() {
-        answerDateDataset = new String[indexAnswerData]; //remember to change to indexAnswerData
-        for (int i = 0; i < indexAnswerData; i++) {
+        answerDateDataset = new String[answerData[setID].length]; //remember to change to indexAnswerData
+        for (int i = 0; i < answerData[setID].length; i++) {
 
-            answerDateDataset[i] = answerData[i].getAnswerDate();
+            if (answerData[setID][i] != null){
+
+                answerDateDataset[i] = answerData[setID][i].getAnswerDate();
+
+            }
 
         }
     }
 
-    private void initDatasetID(){
-        answerIDDataset = new int[indexAnswerData];
 
-        for (int i = 0; i < indexAnswerData; i++) {
-            answerIDDataset[i] = answerData[i].getAnswerID();
+    private void initDatasetID(){
+        answerIDDataset = new int[answerData[setID].length];
+
+        for (int i = 0; i < answerData[setID].length; i++) {
+            if (answerData[setID][i] != null){
+
+                answerIDDataset[i] = answerData[setID][i].getAnswerID();
+
+            }
 
         }
     }
 
     private void initDatasetUser(){
-        answerUserDataset = new String[indexAnswerData];
 
-        for (int i = 0; i < indexAnswerData; i++) {
-            answerUserDataset[i] = accounts[uniqueAccID].getUsername();
+        answerUserDataset = new String[answerData[setID].length];
+        for (int i = 0; i < answerData[setID].length; i++) {
+            if (answerData[setID][i] != null){
+
+                answerUserDataset[i] = accounts[uniqueAccID].getUsername();
+
+            }
 
         }
     }
 
 
     private void initDatasetScore() {
-        answerScoreDataset = new int[indexAnswerData]; //remember to change to indexAnswerData
-        for (int i = 0; i < indexAnswerData; i++) {
+        answerScoreDataset = new int[answerData[setID].length]; //remember to change to indexAnswerData
+        for (int i = 0; i < answerData[setID].length; i++) {
 
-            answerScoreDataset[i] = answerData[i].getAnswerScore();
+            if (answerData[setID][i] != null){
+
+                answerScoreDataset[i] = answerData[setID][i].getAnswerScore();
+
+            }
 
         }
     }

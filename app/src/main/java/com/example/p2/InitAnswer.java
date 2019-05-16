@@ -22,9 +22,11 @@ public class InitAnswer extends AppCompatActivity {
     Date date;
     String dateString;
 
-    static int indexAnswerData = 0;
+    static int [] indexLength = new int [10];
+    static int indexAnswerData;
+    static int answerMax = 0;
     static int maxIndexAnswerData = 10;
-    static AnswerData [] answerData = new AnswerData[maxIndexAnswerData];
+    static AnswerData [][] answerData = new AnswerData[10][10];
     static int questionLoaded;
     private final int minEntryLength = 4;
 
@@ -53,15 +55,39 @@ public class InitAnswer extends AppCompatActivity {
                     //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
                     dateString = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
 
-                    answerData[indexAnswerData] = new AnswerData(
-                            editAnswer.getText().toString(),
-                            dateString,
-                            setID,
-                            questionLoaded,
-                            0
-                    );
+                    for (indexAnswerData = 0; indexAnswerData<10; indexAnswerData++) {
 
-                    indexAnswerData++;
+                        if (answerData[setID][indexAnswerData] == null) {
+
+                            answerData[setID][indexAnswerData] = new AnswerData(
+                                    editAnswer.getText().toString(),
+                                    dateString,
+                                    setID,
+                                    questionLoaded,
+                                    0
+                            );
+
+                            indexLength[setID] = indexAnswerData+1;
+
+
+                            break;
+
+
+                        }
+
+
+
+
+                        }
+
+
+
+
+
+
+
+                    //indexAnswerData++;
+
 
                     Intent intent = new Intent(InitAnswer.this, Answers.class);
                     startActivity(intent);

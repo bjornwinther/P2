@@ -50,7 +50,7 @@ public class RecyclerViewFragment extends Fragment {
         initDatasetTopic();
         initDatasetID();
         initDatasetUser();
-        initDatasetAnswers();
+        //initDatasetAnswers();
 
     }
 

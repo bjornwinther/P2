@@ -64,7 +64,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                     upView.setImageResource(R.drawable.up_peach);
                     downView.setImageResource(R.drawable.down);
 
-                    answerData[setID].setAnswerScore(answerData[getAdapterPosition()].getAnswerScore()+1);
+                    answerData[setID][indexAnswerData].setAnswerScore(answerData[setID][getAdapterPosition()].getAnswerScore()+1);
 
                 }
             });
@@ -74,7 +74,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                     upView.setImageResource(R.drawable.up);
                     downView.setImageResource(R.drawable.down_peach);
 
-                    answerData[setID].setAnswerScore(answerData[getAdapterPosition()].getAnswerScore()-1);
+                    answerData[setID][indexAnswerData].setAnswerScore(answerData[setID][getAdapterPosition()].getAnswerScore()-1);
                 }
             });
             userView.setOnClickListener(new View.OnClickListener() {
@@ -157,6 +157,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
     public int getItemCount() {
 
                 return answerAnswerDataSet.length;
+
 
     }
 
