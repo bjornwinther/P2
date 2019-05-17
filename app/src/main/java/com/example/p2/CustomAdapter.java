@@ -136,7 +136,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getTitleView().setText(forumTitleDataSet[position]);
         viewHolder.getTopicView().setText(forumTopicDataSet[position]);
         viewHolder.getUserView().setText(forumUserDataSet[position]);
-       // viewHolder.getAnswersView().setText(forumAnswersDataset[position]);
+        viewHolder.getAnswersView().setText(forumAnswersDataset[position]);
 
 
     }

@@ -8,9 +8,12 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import static com.example.p2.CustomAdapter.setID;
 import static com.example.p2.InitAnswer.answerData;
 import static com.example.p2.Ask.indexQuestionData;
 import static com.example.p2.Ask.questionData;
+import static com.example.p2.InitAnswer.indexLength;
 import static com.example.p2.MainActivity.accounts;
 import static com.example.p2.MainActivity.uniqueAccID;
 import static com.example.p2.AnswersAdapter.answerAnswerDataSet;
@@ -50,7 +53,8 @@ public class RecyclerViewFragment extends Fragment {
         initDatasetTopic();
         initDatasetID();
         initDatasetUser();
-        //initDatasetAnswers();
+        initDatasetAnswers();
+
 
     }
 
@@ -161,7 +165,7 @@ public class RecyclerViewFragment extends Fragment {
         for (int i = 0; i < indexQuestionData; i++) {
 
             if (answerData[i] != null){
-                    forumAnswersDataset[i] = ""+Integer.toString(answerAnswerDataSet.length)+" Answers";
+                    forumAnswersDataset[i] = ""+indexLength[i]+" Answers";
             } else forumAnswersDataset[i] = "0 Answers";
 
         }
