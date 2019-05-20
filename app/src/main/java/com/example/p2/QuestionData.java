@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class QuestionData implements Serializable{
 
-    public String questionTitle;
-    public String questionDescription;
-    public String questionAnswers;
-    public String questionTopic;
-    public String questionDate;
-    public int questionID;
+    private String questionTitle;
+    private String questionDescription;
+    private String questionAnswers;
+    private String questionTopic;
+    private String questionDate;
+    private int questionID;
 
 
     public QuestionData(String questionTitle, String questionDescription, String questionTopic, String questionDate, int questionID){

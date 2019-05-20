@@ -61,7 +61,7 @@ public class Profile extends AppCompatActivity {
                 rating.setText(String.valueOf((accounts[uniqueAccID].getRating())));
                 mentors.setText(String.valueOf(accounts[uniqueAccID].getMentorships()));
                 questAnswers.setText(String.valueOf(accounts[uniqueAccID].getTotalAnswers()));
-                profilePicture.setImageResource(R.drawable.justinbieber); // setting justin bieber as profile picture
+                profilePicture.setImageResource(R.drawable.profilepic); // setting justin bieber as profile picture
 
 
 

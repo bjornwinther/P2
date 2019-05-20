@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import static com.example.p2.InitAnswer.answerData;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
-    private static final String TAG = "CustomAdapter";
 
     private String[] forumTitleDataSet;
     private String[] forumDateDataSet;

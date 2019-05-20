@@ -21,10 +21,13 @@ import static com.example.p2.Ask.indexQuestionData;
 
 public class Forum extends FragmentActivity implements AdapterView.OnItemSelectedListener {
 
-    ImageView logo;
-    TextView noPosts;
+    private ImageView logo;
+    private TextView noPosts;
     private Button ask;
     private String questionTopicSelected;
+    private Boolean isFirstRun;
+    private ImageButton goOptions;
+    private Spinner topicSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
 
         //Open help screen first time: https://stackoverflow.com/questions/7238532/how-to-launch-activity-only-once-when-app-is-opened-for-first-time
 
-        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+        isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                 .getBoolean("isFirstRun", true);
         if (isFirstRun) {
             //show start activity
@@ -76,18 +79,18 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
             noPosts.setVisibility(View.VISIBLE);
         }
 
-        ImageButton goOptions = (ImageButton) findViewById(R.id.forumMenuButton);
+        goOptions = (ImageButton) findViewById(R.id.forumMenuButton);
         registerForContextMenu(goOptions);
 
         //define spinner
-        final Spinner topicSpinner = (Spinner) findViewById(R.id.topicSpinner);
+        topicSpinner = (Spinner) findViewById(R.id.topicSpinner);
         topicSpinner.setOnItemSelectedListener(this);
-// Create an ArrayAdapter using the string array and a default spinner layout
+        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.topics_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+        R.array.topics_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+        // Apply the adapter to the spinner
         topicSpinner.setAdapter(adapter);
     }
 
@@ -97,7 +100,6 @@ public class Forum extends FragmentActivity implements AdapterView.OnItemSelecte
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
-
 
     private void changePageTo(Class page) {
         Intent intent = new Intent(Forum.this, page);

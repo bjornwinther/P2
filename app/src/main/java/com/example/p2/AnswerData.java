@@ -48,7 +48,7 @@ public class AnswerData {
         return answerID;
     }
 
-    public void setAnswerScore(int answerScore) {
+    protected void setAnswerScore(int answerScore) {
         this.answerScore = answerScore;
     }
 }
