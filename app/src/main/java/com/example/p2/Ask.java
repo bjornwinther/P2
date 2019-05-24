@@ -30,8 +30,7 @@ public class Ask extends AppCompatActivity implements AdapterView.OnItemSelected
 
     public static int indexQuestionData = 0;
     public static int maxIndexQuestionData = 5;
-    static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
-
+    public static QuestionData [] questionData = new QuestionData[maxIndexQuestionData];
 
     private String questionTopicSelected;
     private TextView askMissingInput;

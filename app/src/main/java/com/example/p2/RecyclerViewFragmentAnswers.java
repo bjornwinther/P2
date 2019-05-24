@@ -72,11 +72,9 @@ public class RecyclerViewFragmentAnswers extends Fragment {
                     .getSerializable(KEY_LAYOUT_MANAGER);
         }
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-        //for (int i = 0; i < indexAnswerData; i++) {
-           // if (answerData[setID][i].getQuestLoaded() == setID) {
+
                 mAdapter = new AnswersAdapter(answerAnswerDataset, answerDateDataset, answerIDDataset, answerUserDataset, answerScoreDataset);
-         //   }
-        //}
+
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         // END_INCLUDE(initializeRecyclerView)
@@ -131,15 +129,13 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     //questions:
     //when does the onCreate of this activity/class run (ergo answer to when this method runs).
 
-    private void initDatasetAnswer() { // int ID - take as parameter?
-        answerAnswerDataset = new String[indexLength[setID]]; // each time a new answer is posted - a new stringObject/recycleView will be created.
+    private void initDatasetAnswer() {
+        answerAnswerDataset = new String[indexLength[setID]];
         for (int i = 0; i < indexLength[setID]; i++) {
-            //commmented this line out 16/5
-            //if(answerData[i].getQuestLoaded() == setID) { // this only restricts the string.
 
             if (answerData[setID][i] != null){
 
-                answerAnswerDataset[i] = answerData[setID][i].getAnswerAnswer(); //answerData is an array of AnswerData with 10 objects
+                answerAnswerDataset[i] = answerData[setID][i].getAnswerAnswer();
             }
 
             }
@@ -186,7 +182,7 @@ public class RecyclerViewFragmentAnswers extends Fragment {
     }
 
     private void initDatasetScore() {
-        answerScoreDataset = new int[answerData[setID].length]; //remember to change to indexAnswerData
+        answerScoreDataset = new int[answerData[setID].length];
         for (int i = 0; i < answerData[setID].length; i++) {
 
             if (answerData[setID][i] != null){

@@ -49,14 +49,11 @@ public class InitAnswer extends AppCompatActivity {
                 if (editAnswer.getText().toString().length() < minEntryLength) {
                     inputError.setVisibility(View.VISIBLE);
                 } else {
-
                     inputError.setVisibility(View.GONE);
                     date = new java.util.Date();
-                    //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.UK);
                     dateString = DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
 
                     for (indexAnswerData = 0; indexAnswerData<10; indexAnswerData++) {
-
                         if (answerData[setID][indexAnswerData] == null) {
 
                             answerData[setID][indexAnswerData] = new AnswerData(
@@ -69,36 +66,16 @@ public class InitAnswer extends AppCompatActivity {
 
                             indexLength[setID] = indexAnswerData+1;
 
-
                             break;
-
-
                         }
-
-
-
-
-                        }
-
-
-
-
-
-
-
-                    //indexAnswerData++;
-
+                    }
 
                     Intent intent = new Intent(InitAnswer.this, Answers.class);
                     startActivity(intent);
 
                 }
-
             }
         });
-
-
-
     }
     //MENU NEW
     public void showMenu(View view){

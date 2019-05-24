@@ -20,7 +20,6 @@ import static com.example.p2.AnswersAdapter.answerAnswerDataSet;
 
 public class RecyclerViewFragment extends Fragment {
 
-    private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
 
     private enum LayoutManagerType {
@@ -44,8 +43,6 @@ public class RecyclerViewFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Initialize dataset, this data would usually come from a local content provider or
-        // remote server.
         initDatasetTitle();
         initDatasetDate();
         initDatasetTopic();
@@ -60,30 +57,19 @@ public class RecyclerViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.recycler_view_frag, container, false);
-
-
-        // BEGIN_INCLUDE(initializeRecyclerView)
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-
-        // LinearLayoutManager is used here, this will layout the elements in a similar fashion
-        // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
-        // elements are laid out.
         mLayoutManager = new LinearLayoutManager(getActivity());
-
         mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
 
         if (savedInstanceState != null) {
-            // Restore saved layout manager type.
             mCurrentLayoutManagerType = (LayoutManagerType) savedInstanceState
                     .getSerializable(KEY_LAYOUT_MANAGER);
         }
+
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-
-        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset, forumIDDataset, forumUserDataset, forumAnswersDataset);
-        // Set CustomAdapter as the adapter for RecyclerView.
+        mAdapter = new CustomAdapter(forumTitleDataset, forumTopicDataset, forumDateDataset,
+                forumIDDataset, forumUserDataset, forumAnswersDataset);
         mRecyclerView.setAdapter(mAdapter);
-        // END_INCLUDE(initializeRecyclerView)
-
         return rootView;
     }
 
@@ -92,10 +78,10 @@ public class RecyclerViewFragment extends Fragment {
      *
      * @param layoutManagerType Type of layout manager to switch to.
      */
+
     public void setRecyclerViewLayoutManager(LayoutManagerType layoutManagerType) {
         int scrollPosition = 0;
 
-        // If a layout manager has already been set, get current scroll position.
         if (mRecyclerView.getLayoutManager() != null) {
             scrollPosition = ((LinearLayoutManager) mRecyclerView.getLayoutManager())
                     .findFirstCompletelyVisibleItemPosition();
@@ -107,7 +93,7 @@ public class RecyclerViewFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        // Save currently selected layout manager.
+
         savedInstanceState.putSerializable(KEY_LAYOUT_MANAGER, mCurrentLayoutManagerType);
         super.onSaveInstanceState(savedInstanceState);
     }
@@ -167,7 +153,5 @@ public class RecyclerViewFragment extends Fragment {
             } else forumAnswersDataset[i] = "0 Answers";
 
         }
-
-
     }
 }

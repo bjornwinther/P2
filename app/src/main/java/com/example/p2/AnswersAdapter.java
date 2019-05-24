@@ -12,13 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import static com.example.p2.CustomAdapter.setID;
 import static com.example.p2.InitAnswer.answerData;
 import static com.example.p2.InitAnswer.indexAnswerData;
-import static com.example.p2.InitAnswer.questionLoaded;
 
 public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHolder> {
 
     protected static String[] answerAnswerDataSet;
-    private String[] answerUpDataSet;
-    private String[] answerDownDataSet;
     private String[] answerDateDataSet;
     private String[] answerUserDataset;
     private int[] answerScoreDataSet;
@@ -68,6 +65,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
 
                 }
             });
+
             downView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -77,6 +75,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
                     answerData[setID][indexAnswerData].setAnswerScore(answerData[setID][getAdapterPosition()].getAnswerScore()-1);
                 }
             });
+
             userView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -104,7 +103,6 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
 
 
     }
-    // END_INCLUDE(recyclerViewSampleViewHolder)
 
     /**
      * Initialize the dataset of the Adapter.
@@ -121,26 +119,17 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
 
     }
 
-    // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
-    // Create new views (invoked by the layout manager)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view.
+
                 View v = LayoutInflater.from(viewGroup.getContext())
                         .inflate(R.layout.answer_card, viewGroup, false);
 
         return new ViewHolder(v);
     }
-    // END_INCLUDE(recyclerViewOnCreateViewHolder)
 
-    // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        //Log.d(TAG, "Element " + position + " set.");
-
-        // Get element from your dataset at this position and replace the contents of the view
-        // with that element
 
         viewHolder.getAnswerView().setText(answerAnswerDataSet[position]);
         viewHolder.getDateView().setText(answerDateDataSet[position]);
@@ -148,17 +137,10 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.ViewHold
         viewHolder.getScoreView().setText(Integer.toString(answerScoreDataSet[position]));
 
     }
-    // END_INCLUDE(recyclerViewOnBindViewHolder)
-
-    // Return the size of your dataset (invoked by the layout manager)
-
 
     @Override
     public int getItemCount() {
-
                 return answerAnswerDataSet.length;
-
-
     }
 
 
